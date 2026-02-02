@@ -43,6 +43,10 @@ always @(A or B or opcode)
 		5b'01110 : //negate
 			
 		5b'01111 : //not
+		
+		endcase
+	end
+endmodule
 			
 		
 			
