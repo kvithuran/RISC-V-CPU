@@ -1,0 +1,122 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/CPU/simulation/modelsim
+vadder
+Z1 !s110 1770064700
+!i10b 1
+!s100 Vhf^j=4hGZCC<B`eZPk9M0
+IPHV8gndS1YeCRc>UmEf7A3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1769457393
+8C:/CPU/RCAdd.v
+FC:/CPU/RCAdd.v
+L0 2
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1770064700.000000
+!s107 C:/CPU/RCAdd.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/CPU|C:/CPU/RCAdd.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+C:/CPU
+Z7 tCvgOpt 0
+vBus
+R1
+!i10b 1
+!s100 _LJ7mo<7FlheOhjo9d>W63
+IM177j<;P5lfA?]9R0ml5W3
+R2
+R0
+w1769466690
+8C:/CPU/Bus.v
+FC:/CPU/Bus.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/CPU/Bus.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/CPU|C:/CPU/Bus.v|
+!i113 1
+R5
+R6
+R7
+n@bus
+vDataPath
+R1
+!i10b 1
+!s100 [N5Q1mjb>>AR2c0^^Dg6l3
+I3Okj9aX<HR941CnTz2cIG2
+R2
+R0
+w1770064433
+8C:/CPU/DataPath.v
+FC:/CPU/DataPath.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/CPU/DataPath.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/CPU|C:/CPU/DataPath.v|
+!i113 1
+R5
+R6
+R7
+n@data@path
+vregister
+R1
+!i10b 1
+!s100 ?d7T2AgnQ]DGQ;oX1B4ml0
+I2]Q;odeNemQnI=]R0Ck8M1
+R2
+R0
+w1769457847
+8C:/CPU/register.v
+FC:/CPU/register.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/CPU/register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/CPU|C:/CPU/register.v|
+!i113 1
+R5
+R6
+R7
+vtutorial_tb
+R1
+!i10b 1
+!s100 2Nj;c8JW^WPM0SM4g?oOE0
+IIBYboBWiBW[Z>zLSa^GdG2
+R2
+R0
+w1770064623
+8C:/CPU/tutorial_tb.v
+FC:/CPU/tutorial_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/CPU/tutorial_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/CPU|C:/CPU/tutorial_tb.v|
+!i113 1
+R5
+R6
+R7

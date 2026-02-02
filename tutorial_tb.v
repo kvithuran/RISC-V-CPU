@@ -1,9 +1,11 @@
 `timescale 1ns/10ps
 
 module tutorial_tb();
-    reg clock, clear, RZout, RAout, RBout, RAin, RBin, RZin;
+    reg clock, clear, RZout, RAout, RBout, R1out, R2out, RAin, RBin, RZin, R1in, R2in;
     reg [31:0] AddImmediate;
     reg [31:0] RegisterAImmediate;
+	 reg [31:0] Register1Immediate;
+	 reg [31:0] Register2Immediate;
 
     reg [3:0] present_state;
 
@@ -12,8 +14,9 @@ module tutorial_tb();
         AddImmediate,
         RegisterAImmediate,
 		  Register1Immediate,
-        RZout, RAout, RBout,
-        RAin, RBin, RZin, R1in
+		  Register2Immediate,
+        RZout, RAout, RBout, R1out, R2out,
+        RAin, RBin, RZin, R1in, R2in
     );
 
     parameter init = 4'd1, T0 = 4'd2, T1 = 4'd3, T2 = 4'd4;
@@ -41,7 +44,10 @@ module tutorial_tb();
             // ldi A, 5
             T0: begin
                 RegisterAImmediate <= 32'h5; RAin <= 1;
+					 
                 #15 RegisterAImmediate <= 32'h00; RAin <= 0;
+					 Register1Immediate <= 32'h1; R1in <= 1;
+					 #15 RegisterAImmediate <= 32'h00; R1in <= 0;
             end
 
             // add B, A, 5 - 2 steps
@@ -56,11 +62,10 @@ module tutorial_tb();
             T2: begin
                 RZout <= 1; RBin <= 1;
                 #15 RZout <= 0; RBin <= 0;
+					 
+					 
             end
-				// check if registers can move data
-				T3: begin
-					 Register1Immediate <= 32'h1; R1in <= 1;
-                #15 RegisterAImmediate <= 32'h00; RAin <= 0;
+                
 
         endcase
     end

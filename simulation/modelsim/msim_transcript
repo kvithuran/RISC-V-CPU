@@ -1,0 +1,183 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do CPU_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/RCAdd.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:38:20 on Feb 02,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/RCAdd.v 
+# -- Compiling module adder
+# 
+# Top level modules:
+# 	adder
+# End time: 15:38:20 on Feb 02,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/register.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:38:20 on Feb 02,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/register.v 
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+# End time: 15:38:20 on Feb 02,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/Bus.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:38:20 on Feb 02,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/Bus.v 
+# -- Compiling module Bus
+# 
+# Top level modules:
+# 	Bus
+# End time: 15:38:20 on Feb 02,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/DataPath.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:38:20 on Feb 02,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/DataPath.v 
+# -- Compiling module DataPath
+# 
+# Top level modules:
+# 	DataPath
+# End time: 15:38:20 on Feb 02,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/tutorial_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:38:20 on Feb 02,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/tutorial_tb.v 
+# -- Compiling module tutorial_tb
+# 
+# Top level modules:
+# 	tutorial_tb
+# End time: 15:38:20 on Feb 02,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tutorial_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tutorial_tb 
+# Start time: 15:38:24 on Feb 02,2026
+# Loading work.tutorial_tb
+# Loading work.DataPath
+# Loading work.register
+# Loading work.adder
+# Loading work.Bus
+# ** Warning: (vsim-3017) C:/CPU/tutorial_tb.v(12): [TFMPC] - Too few port connections. Expected 60, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tutorial_tb/DP File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R7out'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R8out'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R9out'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R10out'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R11out'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R12out'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R13out'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R14out'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R15out'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'HIout'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'LOout'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'Zhighout'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'Zlowout'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'PCout'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'MDRout'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'InPortout'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'Cout'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'RAin'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'RBin'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'RZin'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R0in'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R1in'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R2in'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R3in'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R4in'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R5in'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R6in'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R7in'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R8in'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R9in'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R10in'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R11in'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R12in'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R13in'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R14in'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'R15in'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'HIin'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'LOin'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'Zhighin'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'Zlowin'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'PCin'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'MDRin'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'InPortin'.
+# ** Warning: (vsim-3722) C:/CPU/tutorial_tb.v(12): [TFMPC] - Missing connection for port 'Cin'.
+# ** Warning: (vsim-3017) C:/CPU/DataPath.v(77): [TFMPC] - Too few port connections. Expected 55, found 7.
+#    Time: 0 ps  Iteration: 0  Instance: /tutorial_tb/DP/bus File: C:/CPU/Bus.v
+# ** Warning: (vsim-3015) C:/CPU/DataPath.v(77): [PCDPC] - Port size (32) does not match connection size (1) for port 'BusMuxInR0'. The port definition is at: C:/CPU/Bus.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /tutorial_tb/DP/bus File: C:/CPU/Bus.v
+# ** Warning: (vsim-3015) C:/CPU/DataPath.v(77): [PCDPC] - Port size (32) does not match connection size (1) for port 'BusMuxInR1'. The port definition is at: C:/CPU/Bus.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /tutorial_tb/DP/bus File: C:/CPU/Bus.v
+# ** Warning: (vsim-3015) C:/CPU/DataPath.v(77): [PCDPC] - Port size (32) does not match connection size (1) for port 'BusMuxInR2'. The port definition is at: C:/CPU/Bus.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /tutorial_tb/DP/bus File: C:/CPU/Bus.v
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInR4'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInR5'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInR6'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInR7'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInR8'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInR9'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInR10'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInR11'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInR12'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInR13'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInR14'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInR15'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInHI'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInLO'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInZHI'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInZLO'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInPC'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInMDR'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInInPort'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxInCSignExtended'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'RZout'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'RAout'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'RBout'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'R0out'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'R1out'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'R2out'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'R3out'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'R4out'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'R5out'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'R6out'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'R7out'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'R8out'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'R9out'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'R10out'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'R11out'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'R12out'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'R13out'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'R14out'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'R15out'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'HIout'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'LOout'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'Zhighout'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'Zlowout'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'PCout'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'MDRout'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'InPortout'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'Cout'.
+# ** Warning: (vsim-3722) C:/CPU/DataPath.v(77): [TFMPC] - Missing connection for port 'BusMuxOut'.
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 500 ns
+# End time: 15:41:12 on Feb 02,2026, Elapsed time: 0:02:48
+# Errors: 0, Warnings: 97
