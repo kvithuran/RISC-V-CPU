@@ -1,0 +1,14 @@
+# Quartus / Intel FPGA junk
+db/
+incremental_db/
+output_files/
+*.rpt
+*.qws
+*.qpf.bak
+*.qsf.bak
+*.smsg
+*.jdi
+*.pin
+*.sof
+*.pof
+*.rdr.flock
