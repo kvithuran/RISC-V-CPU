@@ -29,7 +29,7 @@
 //
 // ============================================================================
 //   Ver  :| Author            :| Mod. Date :| Changes Made:
-//   V1.0 :| Yue Yang          :| 08/25/2014:| Initial Revision
+//   V1.0 :| Yue Yanggg          :| 08/25/2014:| Initial Revision
 // ============================================================================
 `define Enable_CLOCK2
 `define Enable_CLOCK3
