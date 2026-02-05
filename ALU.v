@@ -4,45 +4,62 @@ module alu(input wire [31:0] A,
 				output reg [31:0]  zhi, 
 				output reg [31:0] zlow);
 
-wire [31;0] adder_out;				
-RCAdd adder(A, B, adder_out)
+wire [31:0] adder_out;				
+RCAdd adder(A, B, adder_out);
+
+reg [31:0] neg_B;
+wire [31:0] sub_out;
+RCAdd sub(A, neg_B, sub_out);
+
+wire [63:0] mult_out;
+
+multiplier mult(A, B, mult_out);
+
+reg [31:0] shift_reg;
 				
-always @(A or B or opcode)
+always @(*)
 	begin
 	
-	case (opcode)
+	neg_B = ~B + 1;
+	
+	case (opcode) 
 		
-		5b'00000 : zlow = adder_out; //Addition
+		5'b00000 : zlow = adder_out; //Addition
 			
-		5b'00001 : //Subtraction
+		5'b00001 : zlow = sub_out; //Subtraction
 		
-		5b'00010 : zlow = A & B; //and
+		5'b00010 : zlow = A & B; //and
 		
-		5b'00011 : //or
+		5'b00011 : zlow = A | B;//or
 		
-		5b'00100 : //Shift right logical
+		5'b00100 : zlow = A >> B;	//Shift right logical
 			
-		5b'00101 : //Shift right arithmetic
+		5'b00101 : zlow = A >>> B; //Shift right arithmetic
 		
-		5b'00110 : //Shift left
+		5'b00110 : zlow = A << B; //Shift left
 			
-		5b'00111 : //Rotate right
+		5'b00111 : zlow = (A >> B) | (A << (32 - B)); //Rotate right
 			
-		5b'01000 : //Rotate left
+		5'b01000 : zlow = (A << B) | (A >> (32 - B)); //Rotate left
 		
-		5b'01001 : //Add immediate
+		5'b01001 : zlow = adder_out; //Add immediate
 		
-		5b'01010 : //And immediate
+		5'b01010 : zlow = A & B; //And immediate
 		
-		5b'01011 : //OR immediate
+		5'b01011 : zlow = A | B; //OR immediate
 		
-		5b'01100 : //Division
+		//5'b01100 : // Division (Vithuran implement your work here)
 			
-		5b'01101 : //Multiplication
+		5'b01101 : begin //Multiplication
 			
-		5b'01110 : //negate
+			zlow = mult_out[31:0];
+			zhi = mult_out[63:32];
 			
-		5b'01111 : //not
+		end
+			
+		5'b01110 : zlow = ~B + 1; //negate
+			
+		5'b01111 : zlow = ~B; //not
 		
 		endcase
 	end
