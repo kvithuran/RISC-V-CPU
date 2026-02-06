@@ -12,62 +12,60 @@
 # 
 # vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/RCAdd.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:57:33 on Feb 06,2026
+# Start time: 16:52:38 on Feb 06,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/RCAdd.v 
 # -- Compiling module adder
 # 
 # Top level modules:
 # 	adder
-# End time: 15:57:33 on Feb 06,2026, Elapsed time: 0:00:00
+# End time: 16:52:38 on Feb 06,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/register.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:57:33 on Feb 06,2026
+# Start time: 16:52:38 on Feb 06,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/register.v 
 # -- Compiling module register
 # 
 # Top level modules:
 # 	register
-# End time: 15:57:33 on Feb 06,2026, Elapsed time: 0:00:00
+# End time: 16:52:38 on Feb 06,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/Bus.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:57:33 on Feb 06,2026
+# Start time: 16:52:38 on Feb 06,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/Bus.v 
 # -- Compiling module Bus
 # 
 # Top level modules:
 # 	Bus
-# End time: 15:57:33 on Feb 06,2026, Elapsed time: 0:00:00
+# End time: 16:52:38 on Feb 06,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/DataPath.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:57:33 on Feb 06,2026
+# Start time: 16:52:38 on Feb 06,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/DataPath.v 
 # -- Compiling module DataPath
 # 
 # Top level modules:
 # 	DataPath
-# End time: 15:57:33 on Feb 06,2026, Elapsed time: 0:00:00
+# End time: 16:52:38 on Feb 06,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/andTB.v}
+# vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/divisionTB.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:57:33 on Feb 06,2026
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/andTB.v 
-# -- Compiling module andTB
+# Start time: 16:52:38 on Feb 06,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/divisionTB.v 
+# -- Compiling module division_tb
 # 
 # Top level modules:
-# 	andTB
-# End time: 15:57:33 on Feb 06,2026, Elapsed time: 0:00:00
+# 	division_tb
+# End time: 16:52:38 on Feb 06,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  andTB
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" andTB 
-# Start time: 15:57:33 on Feb 06,2026
-# Loading work.andTB
-# ** Error: (vsim-3033) C:/CPU/andTB.v(12): Instantiation of 'Datapath' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /andTB File: C:/CPU/andTB.v
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  divisionTB
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" divisionTB 
+# Start time: 16:52:38 on Feb 06,2026
+# ** Error: (vsim-3170) Could not find 'divisionTB'.
 #         Searched libraries:
 #             C:/intelFPGA_lite/18.1/modelsim_ase/altera/verilog/altera
 #             C:/intelFPGA_lite/18.1/modelsim_ase/altera/verilog/220model
@@ -83,5 +81,5 @@
 # Error: Error loading design
 #        Pausing macro execution
 # MACRO ./CPU_run_msim_rtl_verilog.do PAUSED at line 15
-# End time: 15:57:40 on Feb 06,2026, Elapsed time: 0:00:07
+# End time: 16:53:08 on Feb 06,2026, Elapsed time: 0:00:30
 # Errors: 1, Warnings: 0

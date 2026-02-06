@@ -2,6 +2,7 @@ module DataPath(
     input wire clock, clear,
     input wire [31:0] A,
     input wire [31:0] RegisterAImmediate,
+	 input wire [31:0] RegisterBImmediate,
 	 input wire [31:0] Register1Immediate,
 	 input wire [31:0] Register2Immediate,
     input wire RZout, RAout, RBout, R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, InPortout, Cout,

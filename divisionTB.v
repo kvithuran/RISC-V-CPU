@@ -3,8 +3,8 @@
 module division_tb();
 
     reg clock, clear;
-    reg RAout, RBout, R1out, R2out, RZout, R3out;
-    reg RAin,  RBin,  R1in,  R2in,  RZin,  R3in;
+    reg RZout, RAout, RBout, R1out, R2out, RYout;
+    reg RAin, RBin, RZin, R1in, R2in, RYin;
 
     reg [31:0] RegisterAImmediate;
     reg [31:0] RegisterBImmediate;
@@ -12,12 +12,27 @@ module division_tb();
     reg [3:0] present_state;
 
     DataPath DP(
-        clock, clear,
-        RegisterAImmediate,
-        RegisterBImmediate,
-        RAout, RBout, R1out, R2out, RZout, R3out,
-        RAin, RBin, R1in, R2in, RZin, R3in
-    );
+    .clock(clock),
+    .clear(clear),
+
+    .RegisterAImmediate(RegisterAImmediate),
+    .RegisterBImmediate(RegisterBImmediate),
+
+    .RAout(RAout),
+    .RBout(RBout),
+    .RZout(RZout),
+    .R1out(R1out),
+    .R2out(R2out),
+    .RYout(RYout),
+
+    .RAin(RAin),
+    .RBin(RBin),
+    .RZin(RZin),
+    .R1in(R1in),
+    .R2in(R2in),
+    .RYin(RYin)
+);
+
 
     parameter init = 4'd1, 
               T0   = 4'd2, 
@@ -28,6 +43,14 @@ module division_tb();
 
     initial begin
         clock = 0;
+		  clear = 0;
+		  RZout = 0; RAout = 0; RBout = 0;
+		  R1out = 0; R2out = 0; RYout = 0;
+		  RAin = 0; RBin = 0; RZin = 0;
+		  R1in = 0; R2in = 0; RYin = 0;
+		  
+		  RegisterAImmediate = 0;
+		  RegisterBImmediate = 0;
         present_state = 4'd0;
     end
 
@@ -42,8 +65,8 @@ module division_tb();
                 RegisterAImmediate <= 32'd0;
                 RegisterBImmediate <= 32'd0;
 
-                RAout <= 0; RBout <= 0; R1out <=20; R2out <= 0; RZout <= 0; R3out <= 0;
-                RAin  <= 0; RBin  <= 0; R1in  <= 0; R2in  <= 0; RZin  <= 0; R3in  <= 0;
+                RAout <= 0; RBout <= 0; R1out <= 0; R2out <= 0; RZout <= 0; RYout <= 0;
+                RAin  <= 0; RBin  <= 0; R1in  <= 0; R2in  <= 0; RZin  <= 0; RYin  <= 0;
 
                 #15 clear <= 0;
             end
@@ -67,8 +90,8 @@ module division_tb();
                 RAout <= 1;
                 RBout <= 1;
                 RZin  <= 1;   // quotient
-                R3in  <= 1;   // remainder
-                #15 RAout <= 0; RBout <= 0; RZin <= 0; R3in <= 0;
+                RYin  <= 1;   // remainder
+                #15 RAout <= 0; RBout <= 0; RZin <= 0; RYin <= 0;
             end
 
             // mv C, Z  (save quotient)
@@ -80,9 +103,9 @@ module division_tb();
 
             // mv D, Y (save remainder)
             T4: begin
-                R3out <= 1; 
+                RYout <= 1; 
                 R2in  <= 1;
-                #15 R3out <= 0; R2in <= 0;
+                #15 RYout <= 0; R2in <= 0;
             end
 
         endcase

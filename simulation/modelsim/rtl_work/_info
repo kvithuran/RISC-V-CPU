@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/CPU/simulation/modelsim
 vadder
-Z1 !s110 1770411453
+Z1 !s110 1770414758
 !i10b 1
 !s100 Vhf^j=4hGZCC<B`eZPk9M0
 IPHV8gndS1YeCRc>UmEf7A3
@@ -23,36 +23,13 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1770411453.000000
+Z4 !s108 1770414758.000000
 !s107 C:/CPU/RCAdd.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/CPU|C:/CPU/RCAdd.v|
 !i113 1
 Z5 o-vlog01compat -work work
 Z6 !s92 -vlog01compat -work work +incdir+C:/CPU
 Z7 tCvgOpt 0
-vandTB
-R1
-!i10b 1
-!s100 1M9lQfH`iFWZ71FKbj6mh2
-IYBnTTh6D:AUN:1aEK?j[N0
-R2
-R0
-w1770411379
-8C:/CPU/andTB.v
-FC:/CPU/andTB.v
-L0 2
-R3
-r1
-!s85 0
-31
-R4
-!s107 C:/CPU/andTB.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/CPU|C:/CPU/andTB.v|
-!i113 1
-R5
-R6
-R7
-nand@t@b
 vBus
 R1
 !i10b 1
@@ -79,11 +56,11 @@ n@bus
 vDataPath
 R1
 !i10b 1
-!s100 [N5Q1mjb>>AR2c0^^Dg6l3
-I3Okj9aX<HR941CnTz2cIG2
+!s100 gOEDLHUN:Gzj;5co]Z^dE0
+IPMb=LSAFAkb1O`ljK356l0
 R2
 R0
-w1770410785
+w1770414304
 8C:/CPU/DataPath.v
 FC:/CPU/DataPath.v
 L0 1
@@ -99,6 +76,28 @@ R5
 R6
 R7
 n@data@path
+vdivision_tb
+R1
+!i10b 1
+!s100 AA_33mz<ZhENKJ9Sa3zJS1
+I2LoVb:YlHB5ScT_HG4@8?2
+R2
+R0
+w1770414682
+8C:/CPU/divisionTB.v
+FC:/CPU/divisionTB.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/CPU/divisionTB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/CPU|C:/CPU/divisionTB.v|
+!i113 1
+R5
+R6
+R7
 vregister
 R1
 !i10b 1
