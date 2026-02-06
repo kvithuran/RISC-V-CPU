@@ -5,11 +5,12 @@ module alu(input wire [31:0] A,
 				output reg [31:0] zlow);
 
 wire [31:0] adder_out;				
-RCAdd adder(A, B, adder_out);
+adder adder(A, B, adder_out);
 
 reg [31:0] neg_B;
+
 wire [31:0] sub_out;
-RCAdd sub(A, neg_B, sub_out);
+adder sub(A, neg_B, sub_out);
 
 wire [63:0] mult_out;
 
@@ -19,7 +20,7 @@ multiplier mult(A, B, mult_out);
 wire [31:0] div_rem_out;
 wire [31:0] div_quo_out;
 
-divisor div(A, B, div_quo_out, div_rem_out);
+divider div(A, B, div_quo_out, div_rem_out);
 
 reg [31:0] shift_reg;
 				
@@ -67,7 +68,7 @@ always @(*)
 			
 		end
 			
-		5'b01110 : zlow = neg_b; //negate
+		5'b01110 : zlow = neg_B; //negate
 			
 		5'b01111 : zlow = ~B; //not
 		

@@ -81,7 +81,7 @@ register MAR(clear, clock, MARin, BusMuxOut, BusMuxInMAR);
 
 //ALU
 
-ALU alu(YtoALU, BusMuxOut, opcode, zhiresult, zlowresult);
+alu alu(YtoALU, BusMuxOut, opcode, zhiresult, zlowresult);
 
 Bus bus( //Mux
     BusMuxInRZ, BusMuxInRA, BusMuxInRB,BusMuxInR0, BusMuxInR1, BusMuxInR2, BusMuxInR3, BusMuxInR4, BusMuxInR5, BusMuxInR6, BusMuxInR7, BusMuxInR8, BusMuxInR9, BusMuxInR10, BusMuxInR11, BusMuxInR12, BusMuxInR13, BusMuxInR14, BusMuxInR15, BusMuxInHI, BusMuxInLO, BusMuxInZHI, BusMuxInZLO, BusMuxInPC, BusMuxInMDR, BusMuxInInPort, BusMuxInCSignExtended, BusMuxInIR, BusMuxInMAR,
