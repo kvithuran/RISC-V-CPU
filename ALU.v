@@ -15,6 +15,12 @@ wire [63:0] mult_out;
 
 multiplier mult(A, B, mult_out);
 
+
+wire [31:0] div_rem_out;
+wire [31:0] div_quo_out;
+
+divisor div(A, B, div_quo_out, div_rem_out);
+
 reg [31:0] shift_reg;
 				
 always @(*)
@@ -48,7 +54,11 @@ always @(*)
 		
 		5'b01011 : zlow = A | B; //OR immediate
 		
-		//5'b01100 : // Division (Vithuran implement your work here)
+		5'b01100 : begin // Division
+			zlow = div_quo_out;
+			zhi = div_rem_out;
+		end
+		
 			
 		5'b01101 : begin //Multiplication
 			
@@ -57,7 +67,7 @@ always @(*)
 			
 		end
 			
-		5'b01110 : zlow = ~B + 1; //negate
+		5'b01110 : zlow = neg_b; //negate
 			
 		5'b01111 : zlow = ~B; //not
 		
