@@ -6,7 +6,8 @@ module DataPath(
 	 input wire [31:0] Register1Immediate,
 	 input wire [31:0] Register2Immediate,
     input wire RZout, RAout, RBout, R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, InPortout, Cout, IRout, MARout,
-    input wire RAin, RBin, RZin,R0in,R1in,R2in,R3in,R4in,R5in,R6in,R7in,R8in,R9in,R10in,R11in,R12in,R13in,R14in,R15in,HIin, LOin, Zhighin, Zlowin, PCin, MDRin, InPortin, Cin, IRin, Yin, MARin
+    input wire RAin, RBin, RZin,R0in,R1in,R2in,R3in,R4in,R5in,R6in,R7in,R8in,R9in,R10in,R11in,R12in,R13in,R14in,R15in,HIin, LOin, Zhighin, Zlowin, PCin, MDRin, InPortin, Cin, IRin, Yin, MARin,
+	 input wire [31:0] Mdatain
 );
 
 //Outputs from each register to go to bus multiplexer.
@@ -69,7 +70,7 @@ register LO(clear, clock, LOin, BusMuxOut, BusMuxInLO);
 register Zhigh(clear, clock, Zhighin, zhiresult, BusMuxInZHI);
 register Zlow(clear, clock, Zlowin, zlowresult, BusMuxInZLO);
 register PC(clear, clock, PCin, BusMuxOut, BusMuxInPC);
-register MDR(clear, clock, MDRin, BusMuxOut, BusMuxInMDR);
+register MDR(clear, clock, MDRin, Mdatain, BusMuxInMDR);
 register InPort(clear, clock, InPortin, BusMuxOut, BusMuxInInPort);
 register CSignExtended(clear, clock, Cin, BusMuxOut, BusMuxInCSignExtended);
 register IR(clear, clock, IRin, BusMuxOut, BusMuxInIR);
@@ -84,10 +85,10 @@ register MAR(clear, clock, MARin, BusMuxOut, BusMuxInMAR);
 alu alu(YtoALU, BusMuxOut, opcode, zhiresult, zlowresult);
 
 Bus bus( //Mux
-    BusMuxInRZ, BusMuxInRA, BusMuxInRB,BusMuxInR0, BusMuxInR1, BusMuxInR2, BusMuxInR3, BusMuxInR4, BusMuxInR5, BusMuxInR6, BusMuxInR7, BusMuxInR8, BusMuxInR9, BusMuxInR10, BusMuxInR11, BusMuxInR12, BusMuxInR13, BusMuxInR14, BusMuxInR15, BusMuxInHI, BusMuxInLO, BusMuxInZHI, BusMuxInZLO, BusMuxInPC, BusMuxInMDR, BusMuxInInPort, BusMuxInCSignExtended, BusMuxInIR, BusMuxInMAR,
+    BusMuxInRA, BusMuxInRB,BusMuxInR0, BusMuxInR1, BusMuxInR2, BusMuxInR3, BusMuxInR4, BusMuxInR5, BusMuxInR6, BusMuxInR7, BusMuxInR8, BusMuxInR9, BusMuxInR10, BusMuxInR11, BusMuxInR12, BusMuxInR13, BusMuxInR14, BusMuxInR15, BusMuxInHI, BusMuxInLO, BusMuxInZHI, BusMuxInZLO, BusMuxInPC, BusMuxInMDR, BusMuxInInPort, BusMuxInCSignExtended, BusMuxInIR, BusMuxInMAR,
     
 	 //Encoder
-    RZout, RAout, RBout, R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, InPortout, Cout, IRout, MARout,
+    RAout, RBout, R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, InPortout, Cout, IRout, MARout,
 
     BusMuxOut);
 
