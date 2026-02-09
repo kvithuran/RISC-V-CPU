@@ -10,92 +10,92 @@
 # Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374 {C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/divisor.v}
+# vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/divisor.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:31:33 on Feb 06,2026
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374" C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/divisor.v 
+# Start time: 16:43:40 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/divisor.v 
 # -- Compiling module divider
 # 
 # Top level modules:
 # 	divider
-# End time: 22:31:33 on Feb 06,2026, Elapsed time: 0:00:00
+# End time: 16:43:40 on Feb 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374 {C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/ALU.v}
+# vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/ALU.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:31:33 on Feb 06,2026
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374" C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/ALU.v 
+# Start time: 16:43:40 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/ALU.v 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 22:31:33 on Feb 06,2026, Elapsed time: 0:00:00
+# End time: 16:43:40 on Feb 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374 {C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/RCAdd.v}
+# vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/RCAdd.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:31:33 on Feb 06,2026
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374" C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/RCAdd.v 
+# Start time: 16:43:40 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/RCAdd.v 
 # -- Compiling module adder
 # 
 # Top level modules:
 # 	adder
-# End time: 22:31:33 on Feb 06,2026, Elapsed time: 0:00:00
+# End time: 16:43:40 on Feb 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374 {C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/register.v}
+# vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/register.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:31:33 on Feb 06,2026
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374" C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/register.v 
+# Start time: 16:43:40 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/register.v 
 # -- Compiling module register
 # 
 # Top level modules:
 # 	register
-# End time: 22:31:33 on Feb 06,2026, Elapsed time: 0:00:00
+# End time: 16:43:40 on Feb 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374 {C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/Bus.v}
+# vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/Bus.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:31:33 on Feb 06,2026
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374" C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/Bus.v 
+# Start time: 16:43:41 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/Bus.v 
 # -- Compiling module Bus
 # 
 # Top level modules:
 # 	Bus
-# End time: 22:31:34 on Feb 06,2026, Elapsed time: 0:00:01
+# End time: 16:43:41 on Feb 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374 {C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v}
+# vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/DataPath.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:31:34 on Feb 06,2026
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374" C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v 
+# Start time: 16:43:41 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/DataPath.v 
 # -- Compiling module DataPath
 # 
 # Top level modules:
 # 	DataPath
-# End time: 22:31:34 on Feb 06,2026, Elapsed time: 0:00:00
+# End time: 16:43:41 on Feb 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374 {C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplier.v}
+# vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/multiplier.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:31:34 on Feb 06,2026
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374" C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplier.v 
+# Start time: 16:43:41 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/multiplier.v 
 # -- Compiling module multiplier
 # 
 # Top level modules:
 # 	multiplier
-# End time: 22:31:34 on Feb 06,2026, Elapsed time: 0:00:00
+# End time: 16:43:41 on Feb 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374 {C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v}
+# vlog -vlog01compat -work work +incdir+C:/CPU {C:/CPU/divisionTB.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:31:34 on Feb 06,2026
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374" C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v 
-# -- Compiling module multiplication_tb
+# Start time: 16:43:41 on Feb 09,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/CPU" C:/CPU/divisionTB.v 
+# -- Compiling module divisionTB
 # 
 # Top level modules:
-# 	multiplication_tb
-# End time: 22:31:34 on Feb 06,2026, Elapsed time: 0:00:00
+# 	divisionTB
+# End time: 16:43:41 on Feb 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  multiplication_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" multiplication_tb 
-# Start time: 22:31:34 on Feb 06,2026
-# Loading work.multiplication_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  divisionTB
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" divisionTB 
+# Start time: 16:43:41 on Feb 09,2026
+# Loading work.divisionTB
 # Loading work.DataPath
 # Loading work.register
 # Loading work.alu
@@ -103,181 +103,182 @@
 # Loading work.multiplier
 # Loading work.divider
 # Loading work.Bus
-# ** Warning: (vsim-3017) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [TFMPC] - Too few port connections. Expected 67, found 63.
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RZout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RAout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RBout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R0out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R1out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R7out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R8out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R9out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R10out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R11out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R12out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R13out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R14out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R15out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'HIout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'LOout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'InPortout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'Cout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'IRout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'MARout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RAin'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RBin'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RZin'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R0in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R1in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R7in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R8in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R9in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R10in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R11in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R12in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R13in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R14in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R15in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'HIin'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'LOin'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'InPortin'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'Cin'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3722) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [TFMPC] - Missing connection for port 'A'.
-# ** Warning: (vsim-3722) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [TFMPC] - Missing connection for port 'RegisterAImmediate'.
-# ** Warning: (vsim-3722) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [TFMPC] - Missing connection for port 'Register1Immediate'.
-# ** Warning: (vsim-3722) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [TFMPC] - Missing connection for port 'Register2Immediate'.
+# ** Warning: (vsim-3017) C:/CPU/divisionTB.v(29): [TFMPC] - Too few port connections. Expected 67, found 63.
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RZout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RAout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RBout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R0out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R1out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R7out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R8out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R9out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R10out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R11out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R12out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R13out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R14out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R15out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'HIout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'LOout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'InPortout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'Cout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'IRout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'MARout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RAin'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RBin'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RZin'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R0in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R1in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R7in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R8in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R9in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R10in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R11in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R12in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R13in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R14in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R15in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'HIin'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'LOin'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'InPortin'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'Cin'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3722) C:/CPU/divisionTB.v(29): [TFMPC] - Missing connection for port 'A'.
+# ** Warning: (vsim-3722) C:/CPU/divisionTB.v(29): [TFMPC] - Missing connection for port 'RegisterAImmediate'.
+# ** Warning: (vsim-3722) C:/CPU/divisionTB.v(29): [TFMPC] - Missing connection for port 'Register1Immediate'.
+# ** Warning: (vsim-3722) C:/CPU/divisionTB.v(29): [TFMPC] - Missing connection for port 'Register2Immediate'.
 # 
 # add wave *
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
-# run 5000 ns
-add wave -r /*
-restart -force
-# ** Warning: (vsim-3017) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [TFMPC] - Too few port connections. Expected 67, found 63.
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RZout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RAout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RBout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R0out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R1out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R7out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R8out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R9out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R10out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R11out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R12out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R13out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R14out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R15out'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'HIout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'LOout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'InPortout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'Cout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'IRout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'MARout'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RAin'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RBin'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RZin'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R0in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R1in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R7in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R8in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R9in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R10in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R11in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R12in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R13in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R14in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R15in'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'HIin'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'LOin'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'InPortin'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3015) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'Cin'. The port definition is at: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /multiplication_tb/DPTest File: C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-# ** Warning: (vsim-3722) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [TFMPC] - Missing connection for port 'A'.
-# ** Warning: (vsim-3722) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [TFMPC] - Missing connection for port 'RegisterAImmediate'.
-# ** Warning: (vsim-3722) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [TFMPC] - Missing connection for port 'Register1Immediate'.
-# ** Warning: (vsim-3722) C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v(29): [TFMPC] - Missing connection for port 'Register2Immediate'.
+# run 2000 ns
+add wave -position insertpoint  \
+sim:/divisionTB/DPTest/R2/q
+add wave -position insertpoint  \
+sim:/divisionTB/DPTest/R3/q
+restart
+# ** Warning: (vsim-3017) C:/CPU/divisionTB.v(29): [TFMPC] - Too few port connections. Expected 67, found 63.
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RZout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RAout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RBout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R0out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R1out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R7out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R8out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R9out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R10out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R11out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R12out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R13out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R14out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R15out'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'HIout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'LOout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'InPortout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'Cout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'IRout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'MARout'. The port definition is at: C:/CPU/DataPath.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RAin'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RBin'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'RZin'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R0in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R1in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R7in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R8in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R9in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R10in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R11in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R12in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R13in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R14in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'R15in'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'HIin'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'LOin'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'InPortin'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3015) C:/CPU/divisionTB.v(29): [PCDPC] - Port size (1) does not match connection size (32) for port 'Cin'. The port definition is at: C:/CPU/DataPath.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /divisionTB/DPTest File: C:/CPU/DataPath.v
+# ** Warning: (vsim-3722) C:/CPU/divisionTB.v(29): [TFMPC] - Missing connection for port 'A'.
+# ** Warning: (vsim-3722) C:/CPU/divisionTB.v(29): [TFMPC] - Missing connection for port 'RegisterAImmediate'.
+# ** Warning: (vsim-3722) C:/CPU/divisionTB.v(29): [TFMPC] - Missing connection for port 'Register1Immediate'.
+# ** Warning: (vsim-3722) C:/CPU/divisionTB.v(29): [TFMPC] - Missing connection for port 'Register2Immediate'.
 run 2000ns
-add wave -position insertpoint sim:/multiplication_tb/DPTest/R2/*
-add wave -position insertpoint sim:/multiplication_tb/DPTest/R2/*
-add wave -position insertpoint sim:/multiplication_tb/DPTest/R5/*
-add wave -position insertpoint sim:/multiplication_tb/DPTest/R6/*
+# End time: 16:44:22 on Feb 09,2026, Elapsed time: 0:00:41
+# Errors: 0, Warnings: 86

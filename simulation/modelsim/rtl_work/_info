@@ -7,182 +7,183 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/simulation/modelsim
+Z0 dC:/CPU/simulation/modelsim
 vadder
-Z1 !s110 1770435093
+Z1 !s110 1770673420
 !i10b 1
 !s100 Vhf^j=4hGZCC<B`eZPk9M0
-I<aaN`:bU18oPAekR:GnQ80
+IPHV8gndS1YeCRc>UmEf7A3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1770066049
-8C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/RCAdd.v
-FC:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/RCAdd.v
+w1770408264
+8C:/CPU/RCAdd.v
+FC:/CPU/RCAdd.v
 L0 2
-Z4 OV;L;10.5b;63
+Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1770435093.000000
-!s107 C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/RCAdd.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374|C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/RCAdd.v|
+Z4 !s108 1770673420.000000
+!s107 C:/CPU/RCAdd.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/CPU|C:/CPU/RCAdd.v|
 !i113 1
-Z6 o-vlog01compat -work work
-Z7 !s92 -vlog01compat -work work +incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374
-Z8 tCvgOpt 0
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+C:/CPU
+Z7 tCvgOpt 0
 valu
 R1
 !i10b 1
 !s100 jETB<mYlhzcmB9mNOmQHz0
-I>VaoBGbf>3EPfbXzLo:DE0
+IaUUeJUU]YTQ^1RHhJW^222
 R2
 R0
-w1770416520
-8C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/ALU.v
-FC:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/ALU.v
+w1770416735
+8C:/CPU/ALU.v
+FC:/CPU/ALU.v
 L0 1
-R4
+R3
 r1
 !s85 0
 31
-R5
-!s107 C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/ALU.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374|C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/ALU.v|
+R4
+!s107 C:/CPU/ALU.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/CPU|C:/CPU/ALU.v|
 !i113 1
+R5
 R6
 R7
-R8
 vBus
-Z9 !s110 1770435094
+Z8 !s110 1770673421
 !i10b 1
 !s100 UNc?llM^dm1i6_>a`VW1X1
-IFaPz[H8g5M@=n^QX=gnY62
+I;;bd8;oX@0@P`d0T@o?6;1
 R2
 R0
-w1770426848
-8C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/Bus.v
-FC:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/Bus.v
+Z9 w1770578357
+8C:/CPU/Bus.v
+FC:/CPU/Bus.v
 L0 1
-R4
+R3
 r1
 !s85 0
 31
-R5
-!s107 C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/Bus.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374|C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/Bus.v|
+Z10 !s108 1770673421.000000
+!s107 C:/CPU/Bus.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/CPU|C:/CPU/Bus.v|
 !i113 1
+R5
 R6
 R7
-R8
 n@bus
 vDataPath
-R9
+R8
 !i10b 1
 !s100 D1LYFefJ7cHg778f]NhO^2
-IEH>hoFDfFY`?n8b:]`D7<0
+IoVYKK:UVLzmR^lWhR7DOl2
 R2
 R0
-w1770426725
-8C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
-FC:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v
+R9
+8C:/CPU/DataPath.v
+FC:/CPU/DataPath.v
 L0 1
-R4
+R3
 r1
 !s85 0
 31
-Z10 !s108 1770435094.000000
-!s107 C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374|C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/DataPath.v|
+R10
+!s107 C:/CPU/DataPath.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/CPU|C:/CPU/DataPath.v|
 !i113 1
+R5
 R6
 R7
-R8
 n@data@path
 vdivider
 R1
 !i10b 1
-!s100 Ej;KbJ0<i6CgaQfk7ElD>2
-IW_ce;jH9H:dfY>3G92HQ52
+!s100 GkKGX^jcgOf]NRJ6^YgDg1
+I292dC[9cb[AiHm?DzieY<0
 R2
 R0
-w1770408757
-8C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/divisor.v
-FC:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/divisor.v
+w1770672746
+8C:/CPU/divisor.v
+FC:/CPU/divisor.v
 L0 1
-R4
+R3
 r1
 !s85 0
 31
-R5
-!s107 C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/divisor.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374|C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/divisor.v|
+R4
+!s107 C:/CPU/divisor.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/CPU|C:/CPU/divisor.v|
 !i113 1
+R5
 R6
 R7
+vdivisionTB
 R8
-vmultiplication_tb
-R9
 !i10b 1
-!s100 0mnFYGk_:FY>]<J_?5?[N1
-I8]DoP:hBmJGFfOJ`ZS3TB0
+!s100 [dn5O0diQdIQbEn_gbY1C3
+I4MU4AAh[W@6H@PT`1BWk@3
 R2
 R0
-w1770434992
-8C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v
-FC:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v
+w1770673401
+8C:/CPU/divisionTB.v
+FC:/CPU/divisionTB.v
 L0 3
-R4
+R3
 r1
 !s85 0
 31
 R10
-!s107 C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374|C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplication_tb.v|
+!s107 C:/CPU/divisionTB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/CPU|C:/CPU/divisionTB.v|
 !i113 1
+R5
 R6
 R7
-R8
+ndivision@t@b
 vmultiplier
-R9
+R8
 !i10b 1
 !s100 z7QOleLOHjGBC@Z0kZ`HZ3
-In5IaoIS9WT<43Mhm48jEf3
+IaaP==WUFZRX;`GVnG>5?33
 R2
 R0
-w1770257432
-8C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplier.v
-FC:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplier.v
+w1770408270
+8C:/CPU/multiplier.v
+FC:/CPU/multiplier.v
 L0 1
-R4
+R3
 r1
 !s85 0
 31
 R10
-!s107 C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplier.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374|C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/multiplier.v|
+!s107 C:/CPU/multiplier.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/CPU|C:/CPU/multiplier.v|
 !i113 1
+R5
 R6
 R7
-R8
 vregister
 R1
 !i10b 1
 !s100 ?d7T2AgnQ]DGQ;oX1B4ml0
-IZD_0TXQTWSHbJliX1E8Yj1
+I2]Q;odeNemQnI=]R0Ck8M1
 R2
 R0
-R3
-8C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/register.v
-FC:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/register.v
+w1769457847
+8C:/CPU/register.v
+FC:/CPU/register.v
 L0 1
-R4
+R3
 r1
 !s85 0
 31
-R5
-!s107 C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/register.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374|C:/Users/hersz/Desktop/CPU-Design-Project/ELEC374/register.v|
+R4
+!s107 C:/CPU/register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/CPU|C:/CPU/register.v|
 !i113 1
+R5
 R6
 R7
-R8
