@@ -4,13 +4,15 @@ module alu(input wire [31:0] A,
 				output reg [31:0]  zhi, 
 				output reg [31:0] zlow);
 
-wire [31:0] adder_out;				
-adder adder(A, B, adder_out);
+wire [31:0] adder_out;		
+wire [31:0] overflow_flag_out;		
+adder adder(A, B, adder_out, overflow_flag_out);
 
 reg [31:0] neg_B;
 
 wire [31:0] sub_out;
-adder sub(A, neg_B, sub_out);
+wire [31:0] sub_overflow_flag_out;
+adder sub(A, neg_B, sub_out, sub_overflow_flag_out);
 
 wire [63:0] mult_out;
 
@@ -31,9 +33,15 @@ always @(*)
 	
 	case (opcode) 
 		
-		5'b00000 : zlow = adder_out; //Addition
+		5'b00000 : begin
+			zlow = adder_out; //Addition
+			zhi = overflow_flag_out;
+			end
 			
-		5'b00001 : zlow = sub_out; //Subtraction
+		5'b00001 : begin 
+			zlow = sub_out; //Subtraction
+			zhi = sub_overflow_flag_out;
+			end
 		
 		5'b00010 : zlow = A & B; //and
 		
