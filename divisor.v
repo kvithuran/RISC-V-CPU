@@ -11,42 +11,87 @@ reg signed [63:0] A;   // partial remainder
 reg signed [31:0] Q;   // quotient register
 reg signed [31:0] M;   // divisor
 
-always @(*)
-    begin
 
-    // Initialize
+reg signed [31:0] dividend_abs;
+reg signed [31:0] divisor_abs;
+reg signed [31:0] Q_unsigned;
+reg signed [31:0] R_unsigned;
+reg sign_q;
+reg sign_r;
+
+always @(*) begin
+    // Extract signs
+    sign_q = dividend[31] ^ divisor[31];  // quotient sign
+    sign_r = dividend[31];                // remainder sign follows dividend
+
+    // Absolute values
+    dividend_abs = dividend[31] ? -dividend : dividend;
+    divisor_abs  = divisor[31]  ? -divisor  : divisor;
+
+    // ===== Unsigned non-restoring division core =====
     A = 64'sd0;
-    Q = dividend;
-    M = divisor;
+    Q = dividend_abs;
+    M = divisor_abs;
 
-    // Main non-restoring division loop
     for (i = 0; i < 32; i = i + 1) begin
-
-        // Left shift {A, Q}
-        A = (A << 1) | (Q[31]);
+        A = (A << 1) | Q[31];
         Q = Q << 1;
 
-        // Non-restoring step
         if (A[63] == 0)
             A = A - M;
         else
             A = A + M;
 
-        // Set quotient bit
-        if (A[63] == 0)
-            Q[0] = 1'b1;
-        else
-            Q[0] = 1'b0;
-
+        Q[0] = (A[63] == 0);
     end
 
-    // Final correction step
     if (A[63] == 1)
         A = A + M;
 
-    quotient  = Q;
-    remainder = A[31:0];
+    Q_unsigned = Q;
+    R_unsigned = A[31:0];
 
+    // ===== Apply signs =====
+    quotient  = sign_q ? -Q_unsigned : Q_unsigned;
+    remainder = sign_r ? -R_unsigned : R_unsigned;
 end
+//
+//always @(*)
+//    begin
+//
+//    // Initialize
+//    A = 64'sd0;
+//    Q = dividend;
+//    M = divisor;
+//
+//    // Main non-restoring division loop
+//    for (i = 0; i < 32; i = i + 1) begin
+//
+//        // Left shift {A, Q}
+//        A = (A << 1) | (Q[31]);
+//        Q = Q << 1;
+//
+//        // Non-restoring step
+//        if (A[63] == 0)
+//            A = A - M;
+//        else
+//            A = A + M;
+//
+//        // Set quotient bit
+//        if (A[63] == 0)
+//            Q[0] = 1'b1;
+//        else
+//            Q[0] = 1'b0;
+//
+//    end
+//
+//    // Final correction step
+//    if (A[63] == 1)
+//        A = A + M;
+//
+//    quotient  = Q;
+//    remainder = A[31:0];
+//
+//end
 
 endmodule
