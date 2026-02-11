@@ -508,7 +508,7 @@ set_global_assignment -name EDA_TEST_BENCH_NAME divisionTB -section_id eda_simul
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id divisionTB
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "2000 ns" -section_id divisionTB
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME divisionTB -section_id divisionTB
-set_global_assignment -name EDA_TEST_BENCH_FILE divisionTB.v -section_id divisionTB
 set_global_assignment -name EDA_TEST_BENCH_FILE tutorial_tb.v -section_id tutorial_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE multiplication_tb.v -section_id multiplication_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE divisionTB.v -section_id divisionTB
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

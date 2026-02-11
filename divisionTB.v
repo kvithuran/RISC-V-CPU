@@ -12,9 +12,9 @@ module divisionTB;
     reg [4:0] opcode;   //Opcode directely used
 	 
 	 //Defining non relevant signals.
-	 reg RZout, RAout, RBout, R0out, R1out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out;
+	 reg R0out, R1out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out;
     reg HIout, LOout, InPortout, Cout, IRout, MARout;
-    reg RAin, RBin, RZin, R0in, R1in, R5in, R6in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in;
+    reg R0in, R1in, R5in, R6in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in;
     reg HIin, LOin, InPortin, Cin;
 	 
 	 //State machine definitions.
@@ -28,14 +28,13 @@ module divisionTB;
 	
 	DataPath DPTest(.clock(Clock), .clear(Clear), .opcode(opcode),
 							
-						.R2out(R2out), .R3out(R3out), .R4out(R4out), .R5out(R5out), .R6out(R6out), .R2in(R2in), .R3in(R3in), .R4in(R4in), .R5in(R5in), .R6in(R6in), .Yin(Yin), .Zlowin(Zlowin), .Zhighin(Zhighin), .Zlowout(Zlowout), .Zhighout(Zhighout),
-						
-						.RZout(0), .RAout(0), .RBout(0), .R0out(0), .R1out(0), .R7out(0), 
-						.R8out(0), .R9out(0), .R10out(0), .R11out(0), .R12out(0), .R13out(0), .R14out(0), .R15out(0),
-						.HIout(0), .LOout(0), .PCout(PCout), .MDRout(MDRout), .InPortout(0), .Cout(0), .IRout(0), .MARout(0),
-						.RAin(0), .RBin(0), .RZin(0), .R0in(0), .R1in(0), .R7in(0), 
-						.R8in(0), .R9in(0), .R10in(0), .R11in(0), .R12in(0), .R13in(0), .R14in(0), .R15in(0),
-						.HIin(0), .LOin(0), .PCin(PCin), .MDRin(MDRin), .InPortin(0), .Cin(0), .IRin(IRin), .MARin(MARin),
+						.R0out(R0out), .R1out(R1out), .R2out(R2out), .R3out(R3out), .R4out(R4out), .R5out(R5out), .R6out(R6out), .R7out(R7out), .R8out(R8out), 
+						.R9out(R9out), .R10out(R10out), .R11out(R11out), .R12out(R12out), .R13out(R13out), .R14out(R14out), .R15out(R15out),
+						.R0in(R0in), .R1in(R1in), .R2in(R2in), .R3in(R3in), .R4in(R4in), .R5in(R5in), .R6in(R6in), .R7in(R7in), .R8in(R8in), 
+						.R9in(R9in), .R10in(R10in), .R11in(R11in), .R12in(R12in), .R13in(R13in), .R14in(R14in), .R15in(R15in),
+						.Yin(Yin), .Zlowin(Zlowin), .Zhighin(Zhighin), .Zlowout(Zlowout), .Zhighout(Zhighout),
+					
+						.PCout(PCout), .MDRout(MDRout), .PCin(PCin), .MDRin(MDRin), .IRin(IRin), .MARin(MARin),
 						
 						.Mdatain(Mdatain)
 						
@@ -137,7 +136,7 @@ module divisionTB;
 			PCout <= 0; MARin <= 0;
 			Mdatain <= 32'd0;
 			//Read <= 1;
-			//MDRin <= 1; Mdatain <= [OPCODE FOR mul R2, R5, R6] instead we will force op code in T2.
+			//MDRin <= 1;
 			MDRin <= 1;
 			
 		end
