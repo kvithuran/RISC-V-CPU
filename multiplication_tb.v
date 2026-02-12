@@ -20,7 +20,7 @@ module multiplication_tb;
 	 
 	 //State machine definitions.
 	 parameter Default = 5'b00000, Reg_load1a = 5'b00001, Reg_load1b = 5'b00010, Reg_load2a = 5'b00011, Reg_load2b = 5'b00100, Reg_load3a = 5'b00101, Reg_load3b = 5'b00110, 
-              T0 = 5'b01000, T1 = 5'b01001, T2 = 5'b01010, T3 = 5'b01011, T4 = 5'b01100, T5 = 5'b01101;
+              T0 = 5'b01000, T1 = 5'b01001, T2 = 5'b01010, T3 = 5'b01011, T4 = 5'b01100, T5 = 5'b01101, T6 = 5'b01110;
 				  
 
 	
@@ -64,6 +64,7 @@ module multiplication_tb;
 				T2 : Present_state = T3;
 				T3 : Present_state = T4;
 				T4 : Present_state = T5;
+				T5 : Present_state = T6;
 	endcase
  end
  
@@ -87,7 +88,7 @@ module multiplication_tb;
 		Reg_load1a: begin
 			R2in <= 0; R1in <= 0; R3in <= 0; R2out <= 0; R1out <= 0; R3out <= 0; R4in <= 0; R4out <= 0; Yin <= 0; Zhighin <= 0; Zhighout <= 0; Zlowin <= 0; Zlowout <= 0; MDRin <= 0; MDRout <= 0;
 			Clear <= 0;
-			Mdatain <= -32'd4601;
+			Mdatain <= -32'd21267091;
 			//Read <= 0;
 			MDRin <= 1;
 			//Read <= 1; 
@@ -102,7 +103,7 @@ module multiplication_tb;
 			end
 		Reg_load2a: begin
 			MDRout <= 0; R1in <= 0;
-			Mdatain <= -32'd3116;
+			Mdatain <= 32'd3441196;
 			//Read <= 0;
 			MDRin <= 1;
 			
@@ -128,37 +129,45 @@ module multiplication_tb;
 		T0: begin
 			MDRout <= 0; R2in <= 0;
 			PCout <= 1; MARin <= 1;
-			//IncPC <= 1;
+			IncPC <= 1; Zhighin <= 1; Zlowin <= 1;
 			
 		end
 		T1: begin
+			IncPC <= 0; Zhighin <= 0; Zlowin <= 0;
 			PCout <= 0; MARin <= 0;
+			Zlowout <= 1;
+			PCin <= 1;
 			Mdatain <= 32'd0;
-			//Read <= 1;
+			Read <= 1;
 			MDRin <= 1;
 			
 		end
 		T2: begin
+			Zlowout <= 0;
+			PCin <= 0;
+			Read <= 0;
 			MDRin <= 0;
 			MDRout <= 1; IRin <= 1;
 			opcode <= 5'b01101;
 			end
 		T3: begin
 			MDRout <= 0; IRin <= 0;
-			R1out <= 1; Yin <= 1;
+			R3out <= 1; Yin <= 1;
 		end
 		T4: begin
-			R1out <= 0; Yin <= 0;
+			R3out <= 0; Yin <= 0;
 			
-			R3out <= 1;
+			R1out <= 1;
 			Zhighin <= 1; 
 			Zlowin <= 1;
 		end
 		T5: begin
-			R3out <= 0; Zhighin <= 0; Zlowin <= 0;
+			R1out <= 0; Zhighin <= 0; Zlowin <= 0;
 			Zlowout <= 1; R2in <= 1;
-			#20 Zlowout <= 0; R2in <= 0;
-			#20 Zhighout <= 1; R4in <= 1;
+		end
+		T6: begin 
+			Zlowout <= 0; R2in <= 0;
+			Zhighout <= 1; R4in <= 1;
 			#20 Zhighout <= 0; R4in <= 0;
 		end
 	endcase
