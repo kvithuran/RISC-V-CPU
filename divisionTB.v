@@ -2,16 +2,16 @@
 
 module divisionTB;
 
-    reg PCout, Zlowout, Zhighout, MDRout; //Select Signals
-    reg R2out, R3out, R4out; //Needed register out controls.
+    reg PCout, Zlowout, Zhighout, MDRout;
+    reg R2out, R3out, R4out; 
     reg MARin, Zlowin, Zhighin, PCin, MDRin, IRin, Yin;
-    reg IncPC, Read; //Placeholders based from provided template
-    reg R2in, R3in, R4in; //Register in controls.
+    reg IncPC, Read; 
+    reg R2in, R3in, R4in;
     reg Clock, Clear;
-    reg [31:0] Mdatain; //From template
-    reg [4:0] opcode;   //Opcode directely used
+    reg [31:0] Mdatain;
+    reg [4:0] opcode;   
 	 
-	 //Defining non relevant signals.
+	 
 	 reg R0out, R1out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out;
     reg HIout, LOout, InPortout, Cout, IRout, MARout;
     reg R0in, R1in, R5in, R6in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in;
