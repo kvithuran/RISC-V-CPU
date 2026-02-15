@@ -1,6 +1,6 @@
 `timescale 1ns / 10ps
 
-module addition_tb;
+module subtraction_tb;
 
     reg PCout, Zlowout, Zhighout, MDRout;
     reg R2out, R3out, R4out;
@@ -98,12 +98,12 @@ module addition_tb;
 		
 		Reg_load1b: begin
 			MDRin <= 0;
-			MDRout <= 1; R5in <= 1;
+			MDRout <= 1; R6in <= 1;
 			
 			end
 		Reg_load2a: begin
-			MDRout <= 0; R5in <= 0;
-			Mdatain <= -32'd2107996148;
+			MDRout <= 0; R6in <= 0;
+			Mdatain <= -32'd2137996148;
 			//Read <= 0;
 			MDRin <= 1;
 			
@@ -112,10 +112,10 @@ module addition_tb;
 			end
 		Reg_load2b: begin
 			MDRin <= 0;
-			MDRout <= 1; R6in <= 1;
+			MDRout <= 1; R5in <= 1;
 		end
 		Reg_load3a: begin
-			MDRout <= 0; R6in <= 0;
+			MDRout <= 0; R5in <= 0;
 			Mdatain <= 32'd2;
 			//Read <= 1;
 			MDRin <= 1;
@@ -148,7 +148,7 @@ module addition_tb;
 			Read <= 0;
 			MDRin <= 0;
 			MDRout <= 1; IRin <= 1;
-			opcode <= 5'b00000;
+			opcode <= 5'b00001;
 			end
 		T3: begin
 			MDRout <= 0; IRin <= 0;

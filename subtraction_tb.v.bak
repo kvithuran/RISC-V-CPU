@@ -1,6 +1,6 @@
 `timescale 1ns / 10ps
 
-module addition_tb;
+module subtraction_tb;
 
     reg PCout, Zlowout, Zhighout, MDRout;
     reg R2out, R3out, R4out;
@@ -103,7 +103,7 @@ module addition_tb;
 			end
 		Reg_load2a: begin
 			MDRout <= 0; R5in <= 0;
-			Mdatain <= -32'd2107996148;
+			Mdatain <= 32'd237996148;
 			//Read <= 0;
 			MDRin <= 1;
 			
@@ -148,7 +148,7 @@ module addition_tb;
 			Read <= 0;
 			MDRin <= 0;
 			MDRout <= 1; IRin <= 1;
-			opcode <= 5'b00000;
+			opcode <= 5'b00001;
 			end
 		T3: begin
 			MDRout <= 0; IRin <= 0;
