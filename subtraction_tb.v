@@ -103,7 +103,7 @@ module subtraction_tb;
 			end
 		Reg_load2a: begin
 			MDRout <= 0; R6in <= 0;
-			Mdatain <= -32'd2137996148;
+			Mdatain <= 32'd2137996148;
 			//Read <= 0;
 			MDRin <= 1;
 			
