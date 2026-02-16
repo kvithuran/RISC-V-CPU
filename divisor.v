@@ -7,9 +7,9 @@ module divider(
 
 integer i;
 
-reg signed [63:0] A;   // partial remainder
-reg signed [31:0] Q;   // quotient register
-reg signed [31:0] M;   // divisor
+reg signed [63:0] A;   //partial remainder
+reg signed [31:0] Q;   //quotient register
+reg signed [31:0] M;   //divisor
 
 
 reg signed [31:0] dividend_abs;
@@ -20,15 +20,15 @@ reg sign_q;
 reg sign_r;
 
 always @(*) begin
-    // Extract signs
-    sign_q = dividend[31] ^ divisor[31];  // quotient sign
-    sign_r = dividend[31];                // remainder sign follows dividend
+    //Get signs
+    sign_q = dividend[31] ^ divisor[31];  //quotient sign
+    sign_r = dividend[31];                //remainder sign follows dividend
 
-    // Absolute values
+    //Get Absolute values
     dividend_abs = dividend[31] ? -dividend : dividend;
     divisor_abs  = divisor[31]  ? -divisor  : divisor;
 
-    // ===== Unsigned non-restoring division core =====
+    //unsigned non-restoring division algorithm
     A = 64'sd0;
     Q = dividend_abs;
     M = divisor_abs;
@@ -51,7 +51,7 @@ always @(*) begin
     Q_unsigned = Q;
     R_unsigned = A[31:0];
 
-    // ===== Apply signs =====
+    //reapply signs
     quotient  = sign_q ? -Q_unsigned : Q_unsigned;
     remainder = sign_r ? -R_unsigned : R_unsigned;
 end
