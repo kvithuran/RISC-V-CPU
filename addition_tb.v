@@ -152,17 +152,17 @@ module addition_tb;
 			end
 		T3: begin
 			MDRout <= 0; IRin <= 0;
-			R6out <= 1; Yin <= 1;
+			R5out <= 1; Yin <= 1;
 		end
 		T4: begin
-			R6out <= 0; Yin <= 0;
+			R5out <= 0; Yin <= 0;
 			
-			R5out <= 1;
+			R6out <= 1;
 			Zhighin <= 1; 
 			Zlowin <= 1;
 		end
 		T5: begin
-			R5out <= 0; Zhighin <= 0; Zlowin <= 0;
+			R6out <= 0; Zhighin <= 0; Zlowin <= 0;
 			Zlowout <= 1; R2in <= 1;
 		end
 		T6: begin 

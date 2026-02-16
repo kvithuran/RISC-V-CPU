@@ -129,15 +129,18 @@ module divisionTB;
 		T0: begin
 			MDRout <= 0; R2in <= 0;
 			PCout <= 1; MARin <= 1;
-			//IncPC <= 1;
+			IncPC <= 1;
+			Zlowin <= 1;
 			
 		end
 		T1: begin
+			IncPC <= 0; Zlowin <= 0;
 			PCout <= 0; MARin <= 0;
 			Mdatain <= 32'd0;
-			//Read <= 1;
-			//MDRin <= 1;
+			Read <= 1;
 			MDRin <= 1;
+			PCin <= 1;
+			Zlowout <= 1;
 			
 		end
 		T2: begin
@@ -147,23 +150,23 @@ module divisionTB;
 			end
 		T3: begin
 			MDRout <= 0; IRin <= 0;
-			R5out <= 1; Yin <= 1;
+			R3out <= 1; Yin <= 1;
 		end
 		T4: begin
-			R5out <= 0; Yin <= 0;
+			R3out <= 0; Yin <= 0;
 			
-			R6out <= 1; 
+			R1out <= 1; 
 			Zlowin <= 1;
 			Zhighin <=1;
 		end
 		T5: begin
-			R6out <= 0; Zlowin <= 0; Zhighin <= 0;
-			Zlowout <= 1; R2in <= 1;
+			R1out <= 0; Zlowin <= 0; Zhighin <= 0;
+			Zlowout <= 1; LOin <= 1;
 		end
 		T6: begin
-			Zlowout <= 0; R2in <= 0;
-			Zhighout <= 1; R3in <= 1;
-			#20 Zhighout <= 0; R3in <=0;
+			Zlowout <= 0; LOin <= 0;
+			Zhighout <= 1; HIin <= 1;
+			#20 Zhighout <= 0; HIin <=0;
 			
 		end
 			

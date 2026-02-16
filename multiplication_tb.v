@@ -163,12 +163,12 @@ module multiplication_tb;
 		end
 		T5: begin
 			R1out <= 0; Zhighin <= 0; Zlowin <= 0;
-			Zlowout <= 1; R2in <= 1;
+			Zlowout <= 1; LOin <= 1;
 		end
 		T6: begin 
-			Zlowout <= 0; R2in <= 0;
-			Zhighout <= 1; R4in <= 1;
-			#20 Zhighout <= 0; R4in <= 0;
+			Zlowout <= 0; LOin <= 0;
+			Zhighout <= 1; HIin <= 1;
+			#20 Zhighout <= 0; HIin <= 0;
 		end
 	endcase
 end
