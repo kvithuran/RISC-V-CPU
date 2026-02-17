@@ -23,7 +23,6 @@ module not_tb;
 				  
 
 	
-
 	reg [4:0] Present_state = Default;
 	
 	DataPath DPTest(.clock(Clock), .clear(Clear), .opcode(opcode),

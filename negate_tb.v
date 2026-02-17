@@ -25,7 +25,6 @@ module negate_tb;
 	
 
 	reg [4:0] Present_state = Default;
-	
 	DataPath DPTest(.clock(Clock), .clear(Clear), .opcode(opcode),
 							
 						.R0out(R0out), .R1out(R1out), .R2out(R2out), .R3out(R3out), .R4out(R4out), .R5out(R5out), .R6out(R6out), .R7out(R7out), .R8out(R8out), 

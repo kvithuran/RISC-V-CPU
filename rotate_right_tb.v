@@ -22,7 +22,6 @@ module rotate_right_tb;
               T0 = 5'b01000, T1 = 5'b01001, T2 = 5'b01010, T3 = 5'b01011, T4 = 5'b01100, T5 = 5'b01101, T6 = 5'b01110;
 				  
 
-	
 
 	reg [4:0] Present_state = Default;
 	
