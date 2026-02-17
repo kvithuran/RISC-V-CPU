@@ -1,6 +1,6 @@
 `timescale 1ns / 10ps
 
-module rotate_right_tb;
+module not_tb;
 
     reg PCout, Zlowout, Zhighout, MDRout;
     reg R2out, R3out, R4out; 
@@ -54,16 +54,13 @@ module rotate_right_tb;
 			case(Present_state)
 				Default : Present_state = Reg_load1a;
 				Reg_load1a : Present_state = Reg_load1b;
-				Reg_load1b : Present_state = Reg_load2a;
-				Reg_load2a : Present_state = Reg_load2b;
-				Reg_load2b : Present_state = T0;
+				Reg_load1b : Present_state = T0;
 				
 				T0 : Present_state = T1;
 				T1 : Present_state = T2;
 				T2 : Present_state = T3;
 				T3 : Present_state = T4;
 				T4 : Present_state = T5;
-				T5 : Present_state = T6;
 	endcase
  end
  
@@ -88,35 +85,18 @@ module rotate_right_tb;
 			R2in <= 0; R5in <= 0; R6in <= 0; R2out <= 0; R5out <= 0; R6out <= 0; Yin <= 0; Zhighin <= 0; Zhighout <= 0; Zlowin <= 0; Zlowout <= 0; MDRin <= 0; MDRout <= 0;
 			Clear <= 0;
 			Mdatain <= 32'd24;
-			//Read <= 0;
 			MDRin <= 1;
-			//Read <= 1; 
-			
-			//#25 Read <= 0; MDRin <= 0; // for your current implementation
 		end
 		
 		Reg_load1b: begin
 			MDRin <= 0;
-			MDRout <= 1; R0in <= 1;
+			MDRout <= 1; R7in <= 1;
 			
 			end
-		Reg_load2a: begin
-			MDRout <= 0; R0in <= 0;
-			Mdatain <= 32'd4;
-			//Read <= 0;
-			MDRin <= 1;
-			
-			//Read <= 0;
-			
-			end
-		Reg_load2b: begin
-			MDRin <= 0;
-			MDRout <= 1; R4in <= 1;
-		end
 	
 		
 		T0: begin
-			MDRout <= 0; R4in <= 0;
+			MDRout <= 0; R7in <= 0;
 			PCout <= 1; MARin <= 1;
 			IncPC <= 1;
 			Zlowin <= 1;
@@ -132,32 +112,6 @@ module rotate_right_tb;
 			Zlowout <= 1;
 			
 		end
-//		T2: begin
-//			MDRin <= 0;
-//			MDRout <= 1; IRin <= 1;
-//			opcode <= 5'b00111;
-//			end
-//		T3: begin
-//			MDRout <= 0; IRin <= 0;
-//			R3out <= 1; Yin <= 1;
-//		end
-//		T4: begin
-//			R3out <= 0; Yin <= 0;
-//			
-//			R1out <= 1; 
-//			Zlowin <= 1;
-//			Zhighin <=1;
-//		end
-//		T5: begin
-//			R1out <= 0; Zlowin <= 0; Zhighin <= 0;
-//			Zlowout <= 1; LOin <= 1;
-//		end
-//		T6: begin
-//			Zlowout <= 0; LOin <= 0;
-//			Zhighout <= 1; HIin <= 1;
-//			#20 Zhighout <= 0; HIin <=0;
-//			
-//		end
 		T2: begin
 			Zlowout <= 0;
 			PCin <= 0;
@@ -166,49 +120,31 @@ module rotate_right_tb;
 
 			MDRout <= 1;
 			IRin <= 1;
-			opcode <= 5'b00111;  // your ROR opcode
+			opcode <= 5'b01110;  // your ROR opcode
 		end
 		T3: begin
 			 MDRout <= 0;
 			 IRin <= 0;
 
-			 R0out <= 1;   // source register
-			 Yin <= 1;
+			 R7out <= 1;   // source register
+			 Zlowin <= 1;
 		end
 		T4: begin
-			 R0out <= 0;
-			 Yin <= 0;
-
-			 R4out <= 1;     // rotate count
-			 Zlowin <= 1;
-			 Zhighin <= 1;
-		end
-		T5: begin
-			 R4out <= 0;
+			 R7out <= 0;
 			 Zlowin <= 0;
-			 Zhighin <= 0;
 
 			 Zlowout <= 1;
-			 R7in <= 1;
+			 R4in <= 1;
 		end
-		T6: begin
+		T5: begin
 			 Zlowout <= 0;
-			 R7in <= 0;
+			 R4in <= 0;
 		end
+
 
 
 
 			
 	endcase
 end
-endmodule
-			
-			
-			
-			
-		
-	
-				  
-				  
-	
-	
+endmodule	

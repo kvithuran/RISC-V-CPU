@@ -1,6 +1,6 @@
 `timescale 1ns / 10ps
 
-module rotate_right_tb;
+module rotate_left_tb;
 
     reg PCout, Zlowout, Zhighout, MDRout;
     reg R2out, R3out, R4out; 
@@ -166,7 +166,7 @@ module rotate_right_tb;
 
 			MDRout <= 1;
 			IRin <= 1;
-			opcode <= 5'b00111;  // your ROR opcode
+			opcode <= 5'b01000;  // your ROR opcode
 		end
 		T3: begin
 			 MDRout <= 0;
@@ -201,14 +201,4 @@ module rotate_right_tb;
 			
 	endcase
 end
-endmodule
-			
-			
-			
-			
-		
-	
-				  
-				  
-	
-	
+endmodule	

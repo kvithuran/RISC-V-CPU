@@ -201,14 +201,4 @@ module rotate_right_tb;
 			
 	endcase
 end
-endmodule
-			
-			
-			
-			
-		
-	
-				  
-				  
-	
-	
+endmodule	
