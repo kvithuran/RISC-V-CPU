@@ -6,41 +6,42 @@ module andTB();
 	reg IncPC, Read, AND, R2in, R5in, R6in;
 	
 	reg [31:0] Mdatain;
-	
-	//Defining non relevant signals.
-	 reg R0out, R1out, R2out, R4out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out;
-    reg HIout, LOout, InPortout, Cout, IRout, MARout;
-    reg R0in, R1in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in;
-    reg HIin, LOin, InPortin, Cin;
-	
-	
-	
-	
-	
 	parameter 	Default = 4'b0000, Reg_load1a = 4'b0001, Reg_load1b = 4'b0010, Reg_load2a = 4'b0011,
 					Reg_load2b = 4'b0100, Reg_load3a = 4'b0101, Reg_load3b = 4'b0110, T0 = 4'b0111,
 					T1 = 4'b1000, T2 = 4'b1001, T3 = 4'b1010, T4 = 4'b1011, T5 = 4'b1100;
 	reg [3:0] Present_state = Default;
-DataPath DPTest(.clock(Clock), .clear(Clear), .opcode(opcode),
-							
-						.R0out(R0out), .R1out(R1out), .R2out(R2out), .R3out(R3out), .R4out(R4out), .R5out(R5out), .R6out(R6out), .R7out(R7out), .R8out(R8out), 
-						.R9out(R9out), .R10out(R10out), .R11out(R11out), .R12out(R12out), .R13out(R13out), .R14out(R14out), .R15out(R15out),
-						.R0in(R0in), .R1in(R1in), .R2in(R2in), .R3in(R3in), .R4in(R4in), .R5in(R5in), .R6in(R6in), .R7in(R7in), .R8in(R8in), 
-						.R9in(R9in), .R10in(R10in), .R11in(R11in), .R12in(R12in), .R13in(R13in), .R14in(R14in), .R15in(R15in),
-						.Yin(Yin), .Zlowin(Zlowin), .Zhighin(Zhighin), .Zlowout(Zlowout), .Zhighout(Zhighout),
-					
-						.PCout(PCout), .MDRout(MDRout), .PCin(PCin), .MDRin(MDRin), .IRin(IRin), .MARin(MARin),
-						
-						.Mdatain(Mdatain)
-						
-						);
+DataPath DUT (
+    .clock(clock),
+    .clear(1'b0),
 
-						//add test logic here
-						initial
-							begin
-								clock = 0;
-								forever #10 clock = ~ clock;
-						end
+    .A(32'b0),
+    .RegisterAImmediate(32'b0),
+    .Register1Immediate(32'b0),
+    .Register2Immediate(32'b0),
+
+    .RZout(1'b0),
+    .RAout(1'b0),
+    .RBout(1'b0),
+    .R5out(R5out),
+    .R6out(R6out),
+    .Zlowout(Zlowout),
+    .MDRout(MDRout),
+    .PCout(PCout),
+
+    .R2in(R2in),
+    .R5in(R5in),
+    .R6in(R6in),
+    .PCin(PCin),
+    .MDRin(MDRin),
+    .Zlowin(Zin)
+);
+
+//add test logic here
+initial
+	begin
+		clock = 0;
+		forever #10 clock = ~ clock;
+end
 
 always @(posedge clock) // finite state machine; if clock rising-edge
 	begin
@@ -110,7 +111,7 @@ always @(Present_state) // do the required job in each state
 			end
 			T3: begin
 					R5out <= 1; Yin <= 1;
-			end
+						end
 			T4: begin
 					R6out <= 1; AND <= 1; Zin <= 1;
 			end

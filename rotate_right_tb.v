@@ -1,6 +1,6 @@
 `timescale 1ns / 10ps
 
-module divisionTB;
+module rotate_right_tb;
 
     reg PCout, Zlowout, Zhighout, MDRout;
     reg R2out, R3out, R4out; 
@@ -33,8 +33,6 @@ module divisionTB;
 						.R0in(R0in), .R1in(R1in), .R2in(R2in), .R3in(R3in), .R4in(R4in), .R5in(R5in), .R6in(R6in), .R7in(R7in), .R8in(R8in), 
 						.R9in(R9in), .R10in(R10in), .R11in(R11in), .R12in(R12in), .R13in(R13in), .R14in(R14in), .R15in(R15in),
 						.Yin(Yin), .Zlowin(Zlowin), .Zhighin(Zhighin), .Zlowout(Zlowout), .Zhighout(Zhighout),
-						.HIout(HIout), .LOout(LOout), .InPortout(InPortout), .Cout(Cout), .IRout(IRout), .MARout(MARout), .HIin(HIin), .LOin(LOin),
-						.InPortin(InPortin), .Cin(Cin),
 					
 						.PCout(PCout), .MDRout(MDRout), .PCin(PCin), .MDRin(MDRin), .IRin(IRin), .MARin(MARin),
 						
@@ -57,9 +55,7 @@ module divisionTB;
 				Reg_load1a : Present_state = Reg_load1b;
 				Reg_load1b : Present_state = Reg_load2a;
 				Reg_load2a : Present_state = Reg_load2b;
-				Reg_load2b : Present_state = Reg_load3a;
-				Reg_load3a : Present_state = Reg_load3b;
-				Reg_load3b : Present_state = T0;
+				Reg_load2b : Present_state = T0;
 				
 				T0 : Present_state = T1;
 				T1 : Present_state = T2;
@@ -75,11 +71,11 @@ module divisionTB;
 		case (Present_state) // assert the required signals in each clock cycle
 			Default: begin
 				PCout <= 0; Zlowout <= 0; MDRout <= 0; // initialize the signals
-				 R2out <= 0; R3out <= 0; R4out <= 0; MARin <= 0;
+				 R0out <= 0; R4out <= 0; R7out <= 0; MARin <= 0;
 				 Zlowin <= 0; Zhighin <= 0;
 				 PCin <=0; MDRin <= 0; IRin <= 0; Yin <= 0;
 				 IncPC <= 0; Read <= 0; opcode <= 0;
-				 R2in <= 0; R3in <= 0; R4in <= 0;
+				 R0in <= 0; R4in <= 0; R7in <= 0;
 				 Mdatain <= 32'b0;
 				 Clear <= 1;
 				 
@@ -100,12 +96,12 @@ module divisionTB;
 		
 		Reg_load1b: begin
 			MDRin <= 0;
-			MDRout <= 1; R3in <= 1;
+			MDRout <= 1; R0in <= 1;
 			
 			end
 		Reg_load2a: begin
-			MDRout <= 0; R3in <= 0;
-			Mdatain <= 32'd2000;
+			MDRout <= 0; R0in <= 0;
+			Mdatain <= 32'd4;
 			//Read <= 0;
 			MDRin <= 1;
 			
@@ -114,22 +110,12 @@ module divisionTB;
 			end
 		Reg_load2b: begin
 			MDRin <= 0;
-			MDRout <= 1; R1in <= 1;
+			MDRout <= 1; R4in <= 1;
 		end
-		Reg_load3a: begin
-			MDRout <= 0; R1in <= 0;
-			Mdatain <= 32'd67;
-			//Read <= 1;
-			MDRin <= 1;
-			//Read <= 1;
-		end
-		Reg_load3b: begin
-			MDRin <= 0;
-			MDRout <= 1; R2in <= 1;
-		end
+	
 		
 		T0: begin
-			MDRout <= 0; R2in <= 0;
+			MDRout <= 0; R4in <= 0;
 			PCout <= 1; MARin <= 1;
 			IncPC <= 1;
 			Zlowin <= 1;
@@ -145,32 +131,72 @@ module divisionTB;
 			Zlowout <= 1;
 			
 		end
+//		T2: begin
+//			MDRin <= 0;
+//			MDRout <= 1; IRin <= 1;
+//			opcode <= 5'b00111;
+//			end
+//		T3: begin
+//			MDRout <= 0; IRin <= 0;
+//			R3out <= 1; Yin <= 1;
+//		end
+//		T4: begin
+//			R3out <= 0; Yin <= 0;
+//			
+//			R1out <= 1; 
+//			Zlowin <= 1;
+//			Zhighin <=1;
+//		end
+//		T5: begin
+//			R1out <= 0; Zlowin <= 0; Zhighin <= 0;
+//			Zlowout <= 1; LOin <= 1;
+//		end
+//		T6: begin
+//			Zlowout <= 0; LOin <= 0;
+//			Zhighout <= 1; HIin <= 1;
+//			#20 Zhighout <= 0; HIin <=0;
+//			
+//		end
 		T2: begin
+			Zlowout <= 0;
+			PCin <= 0;
+			Read <= 0;
 			MDRin <= 0;
-			MDRout <= 1; IRin <= 1;
-			opcode <= 5'b01100;
-			end
+
+			MDRout <= 1;
+			IRin <= 1;
+			opcode <= 5'b00111;  // your ROR opcode
+		end
 		T3: begin
-			MDRout <= 0; IRin <= 0;
-			R3out <= 1; Yin <= 1;
+			 MDRout <= 0;
+			 IRin <= 0;
+
+			 R0out <= 1;   // source register
+			 Yin <= 1;
 		end
 		T4: begin
-			R3out <= 0; Yin <= 0;
-			
-			R1out <= 1; 
-			Zlowin <= 1;
-			Zhighin <=1;
+			 R0out <= 0;
+			 Yin <= 0;
+
+			 R4out <= 1;     // rotate count
+			 Zlowin <= 1;
+			 Zhighin <= 1;
 		end
 		T5: begin
-			R1out <= 0; Zlowin <= 0; Zhighin <= 0;
-			Zlowout <= 1; LOin <= 1;
+			 R4out <= 0;
+			 Zlowin <= 0;
+			 Zhighin <= 0;
+
+			 Zlowout <= 1;
+			 R7in <= 1;
 		end
 		T6: begin
-			Zlowout <= 0; LOin <= 0;
-			Zhighout <= 1; HIin <= 1;
-			#20 Zhighout <= 0; HIin <=0;
-			
+			 Zlowout <= 0;
+			 R7in <= 0;
 		end
+
+
+
 			
 	endcase
 end
