@@ -274,7 +274,7 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH divisionTB -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH multiplication_tb -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME tutorial_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tutorial_tb
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "500 ns" -section_id tutorial_tb
@@ -525,6 +525,8 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME andTB -section_id andTB
 set_global_assignment -name EDA_TEST_BENCH_NAME rotate_right_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id rotate_right_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME rotate_right_tb -section_id rotate_right_tb
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "2000 ns" -section_id andTB
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "2000 ns" -section_id rotate_right_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE tutorial_tb.v -section_id tutorial_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE multiplication_tb.v -section_id multiplication_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE divisionTB.v -section_id divisionTB

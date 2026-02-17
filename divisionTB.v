@@ -88,7 +88,7 @@ module divisionTB;
 		end
 
 		Reg_load1a: begin
-			R2in <= 0; R5in <= 0; R6in <= 0; R2out <= 0; R5out <= 0; R6out <= 0; Yin <= 0; Zhighin <= 0; Zhighout <= 0; Zlowin <= 0; Zlowout <= 0; MDRin <= 0; MDRout <= 0;
+			R3in <= 0; R1in <= 0; R6in <= 0; HIin <= 0; LOin <= 0; LOout <= 0; HIout <= 0; R3out <= 0; R1out <= 0; Yin <= 0; Zhighin <= 0; Zhighout <= 0; Zlowin <= 0; Zlowout <= 0; MDRin <= 0; MDRout <= 0;
 			Clear <= 0;
 			Mdatain <= 32'd4056;
 			//Read <= 0;
@@ -133,10 +133,11 @@ module divisionTB;
 			PCout <= 1; MARin <= 1;
 			IncPC <= 1;
 			Zlowin <= 1;
+			zhighin <= 1;
 			
 		end
 		T1: begin
-			IncPC <= 0; Zlowin <= 0;
+			IncPC <= 0; Zlowin <= 0; zhighin <= 0;
 			PCout <= 0; MARin <= 0;
 			Mdatain <= 32'd0;
 			Read <= 1;
@@ -146,7 +147,10 @@ module divisionTB;
 			
 		end
 		T2: begin
+			Zlowout <= 0;
+			PCin <= 0;
 			MDRin <= 0;
+			Read <= 0;
 			MDRout <= 1; IRin <= 1;
 			opcode <= 5'b01100;
 			end
@@ -159,7 +163,7 @@ module divisionTB;
 			
 			R1out <= 1; 
 			Zlowin <= 1;
-			Zhighin <=1;
+			Zhighin <= 1;
 		end
 		T5: begin
 			R1out <= 0; Zlowin <= 0; Zhighin <= 0;

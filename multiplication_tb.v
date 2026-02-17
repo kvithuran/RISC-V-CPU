@@ -37,7 +37,9 @@ module multiplication_tb;
 					
 						.PCout(PCout), .MDRout(MDRout), .PCin(PCin), .MDRin(MDRin), .IRin(IRin), .MARin(MARin),
 						
-						.Mdatain(Mdatain)
+						.Mdatain(Mdatain),
+						
+						.HIin(HIin), .HIout(HIout), .LOin(LOin), .LOout(LOout)
 						
 						);
 						
@@ -87,6 +89,7 @@ module multiplication_tb;
 
 		Reg_load1a: begin
 			R2in <= 0; R1in <= 0; R3in <= 0; R2out <= 0; R1out <= 0; R3out <= 0; R4in <= 0; R4out <= 0; Yin <= 0; Zhighin <= 0; Zhighout <= 0; Zlowin <= 0; Zlowout <= 0; MDRin <= 0; MDRout <= 0;
+			HIin <= 0; LOin <= 0; HIout <= 0; LOout <= 0;
 			Clear <= 0;
 			Mdatain <= -32'd21267091;
 			//Read <= 0;
