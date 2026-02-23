@@ -1,6 +1,6 @@
 `timescale 1ns / 10ps
 
-module andTB;
+module orTB;
 
     reg PCout, Zlowout, Zhighout, MDRout;
     reg R2out, R3out, R4out;
@@ -148,7 +148,7 @@ module andTB;
 			Read <= 0;
 			MDRin <= 0;
 			MDRout <= 1; IRin <= 1;
-			opcode <= 5'b00010;
+			opcode <= 5'b00011;
 			end
 		T3: begin
 			MDRout <= 0; IRin <= 0;
