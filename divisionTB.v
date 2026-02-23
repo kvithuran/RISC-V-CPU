@@ -133,11 +133,11 @@ module divisionTB;
 			PCout <= 1; MARin <= 1;
 			IncPC <= 1;
 			Zlowin <= 1;
-			zhighin <= 1;
+			Zhighin <= 1;
 			
 		end
 		T1: begin
-			IncPC <= 0; Zlowin <= 0; zhighin <= 0;
+			IncPC <= 0; Zlowin <= 0; Zhighin <= 0;
 			PCout <= 0; MARin <= 0;
 			Mdatain <= 32'd0;
 			Read <= 1;
