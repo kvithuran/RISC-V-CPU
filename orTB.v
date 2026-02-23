@@ -1,17 +1,18 @@
 `timescale 1ns / 10ps
 
-module divisionTB;
+module orTB;
 
     reg PCout, Zlowout, Zhighout, MDRout;
-    reg R2out, R3out, R4out; 
+    reg R2out, R3out, R4out;
     reg MARin, Zlowin, Zhighin, PCin, MDRin, IRin, Yin;
-    reg IncPC, Read; 
+    reg IncPC, Read;
     reg R2in, R3in, R4in;
     reg Clock, Clear;
     reg [31:0] Mdatain;
-    reg [4:0] opcode;   
+    reg [4:0] opcode;
 	 
 	 
+	 //Defining non relevant signals.
 	 reg R0out, R1out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out;
     reg HIout, LOout, InPortout, Cout, IRout, MARout;
     reg R0in, R1in, R5in, R6in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in;
@@ -33,8 +34,6 @@ module divisionTB;
 						.R0in(R0in), .R1in(R1in), .R2in(R2in), .R3in(R3in), .R4in(R4in), .R5in(R5in), .R6in(R6in), .R7in(R7in), .R8in(R8in), 
 						.R9in(R9in), .R10in(R10in), .R11in(R11in), .R12in(R12in), .R13in(R13in), .R14in(R14in), .R15in(R15in),
 						.Yin(Yin), .Zlowin(Zlowin), .Zhighin(Zhighin), .Zlowout(Zlowout), .Zhighout(Zhighout),
-						.HIout(HIout), .LOout(LOout), .InPortout(InPortout), .Cout(Cout), .IRout(IRout), .MARout(MARout), .HIin(HIin), .LOin(LOin),
-						.InPortin(InPortin), .Cin(Cin),
 					
 						.PCout(PCout), .MDRout(MDRout), .PCin(PCin), .MDRin(MDRin), .IRin(IRin), .MARin(MARin),
 						
@@ -60,7 +59,6 @@ module divisionTB;
 				Reg_load2b : Present_state = Reg_load3a;
 				Reg_load3a : Present_state = Reg_load3b;
 				Reg_load3b : Present_state = T0;
-				
 				T0 : Present_state = T1;
 				T1 : Present_state = T2;
 				T2 : Present_state = T3;
@@ -88,9 +86,9 @@ module divisionTB;
 		end
 
 		Reg_load1a: begin
-			R3in <= 0; R1in <= 0; R6in <= 0; HIin <= 0; LOin <= 0; LOout <= 0; HIout <= 0; R3out <= 0; R1out <= 0; Yin <= 0; Zhighin <= 0; Zhighout <= 0; Zlowin <= 0; Zlowout <= 0; MDRin <= 0; MDRout <= 0;
+			R2in <= 0; R5in <= 0; R6in <= 0; R2out <= 0; R5out <= 0; R6out <= 0; R4in <= 0; R4out <= 0; Yin <= 0; Zhighin <= 0; Zhighout <= 0; Zlowin <= 0; Zlowout <= 0; MDRin <= 0; MDRout <= 0;
 			Clear <= 0;
-			Mdatain <= 32'd4056;
+			Mdatain <= 32'd1200376219;
 			//Read <= 0;
 			MDRin <= 1;
 			//Read <= 1; 
@@ -100,12 +98,12 @@ module divisionTB;
 		
 		Reg_load1b: begin
 			MDRin <= 0;
-			MDRout <= 1; R3in <= 1;
+			MDRout <= 1; R5in <= 1;
 			
 			end
 		Reg_load2a: begin
-			MDRout <= 0; R3in <= 0;
-			Mdatain <= 32'd2000;
+			MDRout <= 0; R5in <= 0;
+			Mdatain <= -32'd2107996148;
 			//Read <= 0;
 			MDRin <= 1;
 			
@@ -114,11 +112,11 @@ module divisionTB;
 			end
 		Reg_load2b: begin
 			MDRin <= 0;
-			MDRout <= 1; R1in <= 1;
+			MDRout <= 1; R6in <= 1;
 		end
 		Reg_load3a: begin
-			MDRout <= 0; R1in <= 0;
-			Mdatain <= 32'd67;
+			MDRout <= 0; R6in <= 0;
+			Mdatain <= 32'd2;
 			//Read <= 1;
 			MDRin <= 1;
 			//Read <= 1;
@@ -131,51 +129,47 @@ module divisionTB;
 		T0: begin
 			MDRout <= 0; R2in <= 0;
 			PCout <= 1; MARin <= 1;
-			IncPC <= 1;
-			Zlowin <= 1;
-			Zhighin <= 1;
+			IncPC <= 1; Zhighin <= 1; Zlowin <= 1;
 			
 		end
 		T1: begin
-			IncPC <= 0; Zlowin <= 0; Zhighin <= 0;
+			IncPC <= 0; Zhighin <= 0; Zlowin <= 0;
 			PCout <= 0; MARin <= 0;
+			Zlowout <= 1;
+			PCin <= 1;
 			Mdatain <= 32'd0;
 			Read <= 1;
 			MDRin <= 1;
-			PCin <= 1;
-			Zlowout <= 1;
 			
 		end
 		T2: begin
 			Zlowout <= 0;
 			PCin <= 0;
-			MDRin <= 0;
 			Read <= 0;
+			MDRin <= 0;
 			MDRout <= 1; IRin <= 1;
-			opcode <= 5'b01100;
+			opcode <= 5'b00011;
 			end
 		T3: begin
 			MDRout <= 0; IRin <= 0;
-			R3out <= 1; Yin <= 1;
+			R5out <= 1; Yin <= 1;
 		end
 		T4: begin
-			R3out <= 0; Yin <= 0;
+			R5out <= 0; Yin <= 0;
 			
-			R1out <= 1; 
+			R6out <= 1;
+			Zhighin <= 1; 
 			Zlowin <= 1;
-			Zhighin <= 1;
 		end
 		T5: begin
-			R1out <= 0; Zlowin <= 0; Zhighin <= 0;
-			Zlowout <= 1; LOin <= 1;
+			R6out <= 0; Zhighin <= 0; Zlowin <= 0;
+			Zlowout <= 1; R2in <= 1;
 		end
-		T6: begin
-			Zlowout <= 0; LOin <= 0;
-			Zhighout <= 1; HIin <= 1;
-			#20 Zhighout <= 0; HIin <=0;
-			
+		T6: begin 
+			Zlowout <= 0; R2in <= 0;
+			Zhighout <= 1; R4in <= 1;
+			#20 Zhighout <= 0; R4in <= 0;
 		end
-			
 	endcase
 end
 endmodule
