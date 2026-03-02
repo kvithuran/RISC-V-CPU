@@ -47,11 +47,11 @@ always @(*)
 		
 		5'b00011 : zlow = A | B;//or
 		
-		5'b00100 : zlow = A >> B;	//Shift right logical
+		5'b00100 : zlow = A >> B[4:0];	//Shift right logical
 			
-		5'b00101 : zlow = A >>> B; //Shift right arithmetic
+		5'b00101 : zlow = $signed(A) >>> B[4:0];   //Shift right arithmetic
 		
-		5'b00110 : zlow = A << B; //Shift left
+		5'b00110 : zlow = A << B[4:0]; //Shift left
 			
 		5'b00111 : zlow = (A >> B) | (A << (32 - B)); //Rotate right
 			
