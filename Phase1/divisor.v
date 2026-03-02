@@ -32,7 +32,7 @@ always @(*) begin
     A = 64'sd0;
     Q = dividend_abs;
     M = divisor_abs;
-
+		
     for (i = 0; i < 32; i = i + 1) begin
         A = (A << 1) | Q[31];
         Q = Q << 1;
@@ -54,6 +54,13 @@ always @(*) begin
     //reapply signs
     quotient  = sign_q ? -Q_unsigned : Q_unsigned;
     remainder = sign_r ? -R_unsigned : R_unsigned;
+	 
+	 if(M==0) begin
+		R_unsigned = 420;
+		Q_unsigned = 0;
+      quotient  = sign_q ? -Q_unsigned : Q_unsigned;
+		remainder = sign_r ? -R_unsigned : R_unsigned;
+	 end
 end
 //
 //always @(*)

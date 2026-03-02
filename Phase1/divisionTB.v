@@ -90,7 +90,7 @@ module divisionTB;
 		Reg_load1a: begin
 			R3in <= 0; R1in <= 0; R6in <= 0; HIin <= 0; LOin <= 0; LOout <= 0; HIout <= 0; R3out <= 0; R1out <= 0; Yin <= 0; Zhighin <= 0; Zhighout <= 0; Zlowin <= 0; Zlowout <= 0; MDRin <= 0; MDRout <= 0;
 			Clear <= 0;
-			Mdatain <= 32'd4056;
+			Mdatain <= -32'd4056;
 			//Read <= 0;
 			MDRin <= 1;
 			//Read <= 1; 
@@ -105,7 +105,7 @@ module divisionTB;
 			end
 		Reg_load2a: begin
 			MDRout <= 0; R3in <= 0;
-			Mdatain <= 32'd2000;
+			Mdatain <= -32'd200;
 			//Read <= 0;
 			MDRin <= 1;
 			

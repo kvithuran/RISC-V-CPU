@@ -101,7 +101,7 @@ module rotate_right_tb;
 			end
 		Reg_load2a: begin
 			MDRout <= 0; R0in <= 0;
-			Mdatain <= 32'd4;
+			Mdatain <= 32'd6;
 			//Read <= 0;
 			MDRin <= 1;
 			

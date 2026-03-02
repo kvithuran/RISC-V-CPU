@@ -88,7 +88,7 @@ module addition_tb;
 		Reg_load1a: begin
 			R2in <= 0; R5in <= 0; R6in <= 0; R2out <= 0; R5out <= 0; R6out <= 0; R4in <= 0; R4out <= 0; Yin <= 0; Zhighin <= 0; Zhighout <= 0; Zlowin <= 0; Zlowout <= 0; MDRin <= 0; MDRout <= 0;
 			Clear <= 0;
-			Mdatain <= 32'd1200376219;
+			Mdatain <= 32'd379;
 			//Read <= 0;
 			MDRin <= 1;
 			//Read <= 1; 
@@ -103,7 +103,7 @@ module addition_tb;
 			end
 		Reg_load2a: begin
 			MDRout <= 0; R5in <= 0;
-			Mdatain <= -32'd2107996148;
+			Mdatain <= -32'd998;
 			//Read <= 0;
 			MDRin <= 1;
 			
