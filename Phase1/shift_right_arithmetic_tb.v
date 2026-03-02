@@ -146,7 +146,6 @@ module shift_right_arithmetic_tb;
             T5: begin
                 Zlowout = 1;
                 R7in    = 1;
-                #20 $finish;
             end
         endcase
     end
