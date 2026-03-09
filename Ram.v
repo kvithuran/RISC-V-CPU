@@ -1,10 +1,10 @@
-module RAM (input clock, input read, input write, input [8:0] Address, inout wire [31:0] Data);
+module RAM (input clock, input read, input write, input [8:0] Address, input [31:0] DataIn, output [31:0] DataOut);
 	
 	reg[31:0] RAM1[0:511];
 	
 	reg [31:0] dataReg;
 	
-	assign Data = (read && !write) ? dataReg : 32'bz;
+	//Must assert read for one clock cycle and get data in MDR on the next clock cycle.
 				
 	always @(posedge clock)
 	begin
@@ -14,10 +14,12 @@ module RAM (input clock, input read, input write, input [8:0] Address, inout wir
 			end
 			
 		  else if (write)
-		  
 		  begin
-			RAM1[Address] <= Data;
+			RAM1[Address] <= DataIn;
 		  end
 		  
-		end
+	end
+		
+	assign DataOut = dataReg;
+	
 endmodule

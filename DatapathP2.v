@@ -3,12 +3,14 @@ module DataPathP2(
 	 input wire [4:0] opcode,
     input wire HIout, LOout, Zhighout, Zlowout, PCout, MDRout, InPortout, Cout, IRout, MARout,
     input wire HIin, LOin, Zhighin, Zlowin, PCin, MDRin, InPortin, Cin, IRin, Yin, MARin,
-	 input wire [31:0] Mdatain
+	 
 	 input wire read, write, IncPC, Grb, Gra, Grc
 );
 
 wire R0in,R1in,R2in,R3in,R4in,R5in,R6in,R7in,R8in,R9in,R10in,R11in,R12in,R13in,R14in,R15in;
 wire R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out;
+
+wire [31:0] Mdatain
 
 //Outputs from each register to go to bus multiplexer.
 wire [31:0] BusMuxOut;
@@ -46,6 +48,8 @@ wire [31:0] zlowresult;
 
 wire [31:0] AddrToMem;
 
+wire [31:0] DataFromRAM;
+
 //The registers themselves. Feed in clear to clear anytime, clock for synchronization, R in to allow register to latch value, BusMuxOut to feed into the register (input to register) and BusMuxIn signals defined above to feed to bus multiplexer.
 register R0(clear, clock, R0in, BusMuxOut, BusMuxInR0);
 register R1(clear, clock, R1in, BusMuxOut, BusMuxInR1);
@@ -68,14 +72,14 @@ register LO(clear, clock, LOin, BusMuxOut, BusMuxInLO);
 register Zhigh(clear, clock, Zhighin, zhiresult, BusMuxInZHI);
 register Zlow(clear, clock, Zlowin, zlowresult, BusMuxInZLO);
 register PC(clear, clock, PCin, BusMuxOut, BusMuxInPC);
-register MDR(clear, clock, MDRin, Mdatain, BusMuxInMDR);
+register registerMDR(clear, clock, MDRin, read, DataFromRAM, BusMuxOut, BusMuxInMDR);
 register InPort(clear, clock, InPortin, BusMuxOut, BusMuxInInPort);
 register CSignExtended(clear, clock, Cin, BusMuxOut, BusMuxInCSignExtended);
 register IR(clear, clock, IRin, BusMuxOut, BusMuxInIR);
 register Y(clear, clock, Yin, BusMuxOut, YtoALU);
 register MAR(clear, clock, MARin, BusMuxOut, AddrToMem);
 
-RAM ram(clock, read, write, AddrToMem[8:0], M
+RAM ram(clock, read, write, AddrToMem[8:0], BusMuxInMDR, DataFromRAM);
 
 
 //ALU
