@@ -7,10 +7,11 @@ module Select_and_Encode(
 	 
 	 output reg R0in, R1in, R2in, R3in, R4in, R5in, R6in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in,
 	 output reg R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out,
-	 output CSignExtended
+	 output [31:0] CSignExtended
 );
 
 wire [3:0] Ra, Rb, Rc;
+wire [14:0] C;
 reg  [3:0] reg_sel;
 reg  [15:0] decoder;
 
@@ -18,6 +19,7 @@ reg  [15:0] decoder;
 assign Ra = Instruction[26:23];
 assign Rb = Instruction[22:19];
 assign Rc = Instruction[18:15];
+assign C = Instruction[14:0];
 
 
 always @(*) begin
@@ -80,14 +82,10 @@ always @(*) begin
 	 
 	 
 end
-always @(*) begin
-	if (Cout) begin
-		
-	
-	
-	end
 
-end
+if (Cout)
+	assign CsignExtended = {{17{C[14]}}, C};
+
 
 
 endmodule
