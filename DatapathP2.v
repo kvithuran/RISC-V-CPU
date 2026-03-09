@@ -50,6 +50,8 @@ wire [31:0] AddrToMem;
 
 wire [31:0] DataFromRAM;
 
+wire [31:0] Instruction;
+
 //The registers themselves. Feed in clear to clear anytime, clock for synchronization, R in to allow register to latch value, BusMuxOut to feed into the register (input to register) and BusMuxIn signals defined above to feed to bus multiplexer.
 register R0(clear, clock, R0in, BusMuxOut, BusMuxInR0);
 register R1(clear, clock, R1in, BusMuxOut, BusMuxInR1);
@@ -93,5 +95,9 @@ Bus bus( //Mux
     R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, InPortout, Cout, IRout, MARout,
 
     BusMuxOut);
+
+Select_and_Encode Select_and_Encode(Instruction, Gra, Grb, Grc, 
+												R0in, R1in, R2in, R3in, R4in, R5in, R6in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in,
+												R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out, BusMuxInCSignExtended);
 
 endmodule
