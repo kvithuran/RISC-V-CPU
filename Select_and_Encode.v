@@ -83,9 +83,7 @@ always @(*) begin
 	 
 end
 
-if (Cout)
-	assign CsignExtended = {{17{C[14]}}, C};
-
+assign CSignExtended = Cout ? {{17{C[14]}}, C} : 32'b0;
 
 
 endmodule
