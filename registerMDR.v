@@ -1,6 +1,6 @@
 module registerMDR #(parameter DATA_WIDTH_IN = 32, DATA_WIDTH_OUT = 32, INIT = 32'h0)(
-    input clear, clock, enable, read
-	 input [DATA_WIDTH_IN-1:0]Mdatain
+    input clear, clock, enable, read,
+	 input [DATA_WIDTH_IN-1:0]Mdatain,
     input  [DATA_WIDTH_IN-1:0]BusMuxOut,
     output wire [DATA_WIDTH_OUT-1:0]BusMuxIn
 );
@@ -16,9 +16,9 @@ always @ (posedge clock)
 		 else if (enable) begin
 				
 				if (read) begin
-				```q <= Mdatain;
+					q <= Mdatain;
 				end
-				else
+				else begin
 					q <= BusMuxOut;
 				end
 		 end
