@@ -1,4 +1,4 @@
-module DataPath(
+module DataPathP2(
     input wire clock, clear,
 	 input wire [4:0] opcode,
     input wire R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, InPortout, Cout, IRout, MARout,
@@ -68,6 +68,7 @@ register CSignExtended(clear, clock, Cin, BusMuxOut, BusMuxInCSignExtended);
 register IR(clear, clock, IRin, BusMuxOut, BusMuxInIR);
 register Y(clear, clock, Yin, BusMuxOut, YtoALU);
 register MAR(clear, clock, MARin, BusMuxOut, BusMuxInMAR);
+
 
 
 

@@ -571,3 +571,5 @@ set_global_assignment -name VERILOG_FILE Phase1/andTB.v
 set_global_assignment -name VERILOG_FILE Phase1/ALU.v
 set_global_assignment -name VERILOG_FILE Phase1/addition_tb.v
 set_global_assignment -name VERILOG_FILE Ram.v
+set_global_assignment -name VERILOG_FILE DatapathP2.v
+set_global_assignment -name VERILOG_FILE registerMDR.v
