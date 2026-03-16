@@ -2,7 +2,7 @@ module DataPathP2(
     input wire clock, clear,
 	 input wire [4:0] opcode,
     input wire HIout, LOout, Zhighout, Zlowout, PCout, MDRout, InPortout, Cout, IRout, MARout, OutPortout,
-    input wire HIin, LOin, Zhighin, Zlowin, PCin, MDRin, InPortin, Cin, IRin, Yin, MARin, OutPortin
+    input wire HIin, LOin, Zhighin, Zlowin, PCin, MDRin, InPortin, Cin, IRin, Yin, MARin, OutPortin,
 	 input wire CONin,
 	output wire CON,
 	 input wire read, write, IncPC, Grb, Gra, Grc
@@ -92,13 +92,13 @@ RAM ram(clock, read, write, AddrToMem[8:0], BusMuxInMDR, DataFromRAM);
 
 alu alu(YtoALU, BusMuxOut, opcode, zhiresult, zlowresult);
 
-// CON FF
+//CONFF
 con_ff CONFF(
-    .clear(clear),
-    .clock(clock),
+    .clk(clock),
+    .reset(clear),
     .CONin(CONin),
     .bus_data(BusMuxOut),
-    .IR_data(BusMuxInIR),
+    .IR(BusMuxInIR),
     .CON(CON)
 );
 	
