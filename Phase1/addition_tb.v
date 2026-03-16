@@ -2,18 +2,21 @@
 
 module addition_tb;
 
-    reg PCout, Zlowout, Zhighout, MDRout, MARout;
+    reg PCout, Zlowout, Zhighout, MDRout;
+    reg R2out, R3out, R4out;
     reg MARin, Zlowin, Zhighin, PCin, MDRin, IRin, Yin;
-    reg IncPC;
+    reg IncPC, Read;
+    reg R2in, R3in, R4in;
     reg Clock, Clear;
     reg [31:0] Mdatain;
     reg [4:0] opcode;
-	 reg HIout, LOout, HIin, LOin
-	 reg CONin,
-	 reg read, write, IncPC, Grb, Gra, Grc, Cin, Cout,
-	 reg InPortin, OutPortin, InPortout, OutPortout
 	 
 	 
+	 //Defining non relevant signals.
+	 reg R0out, R1out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out;
+    reg HIout, LOout, InPortout, Cout, IRout, MARout;
+    reg R0in, R1in, R5in, R6in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in;
+    reg HIin, LOin, InPortin, Cin;
 	 
 	 //State machine definitions.
 	 parameter Default = 5'b00000, Reg_load1a = 5'b00001, Reg_load1b = 5'b00010, Reg_load2a = 5'b00011, Reg_load2b = 5'b00100, Reg_load3a = 5'b00101, Reg_load3b = 5'b00110, 
@@ -24,15 +27,19 @@ module addition_tb;
 
 	reg [4:0] Present_state = Default;
 	
-	DataPath DPTest(.clock(Clock), .clear(Clear), .HIout(HIout), .LOout(LOout), .HIin(HIin), .LOin(LOin),
+	DataPath DPTest(.clock(Clock), .clear(Clear), .opcode(opcode),
 							
+						.R0out(R0out), .R1out(R1out), .R2out(R2out), .R3out(R3out), .R4out(R4out), .R5out(R5out), .R6out(R6out), .R7out(R7out), .R8out(R8out), 
+						.R9out(R9out), .R10out(R10out), .R11out(R11out), .R12out(R12out), .R13out(R13out), .R14out(R14out), .R15out(R15out),
+						.R0in(R0in), .R1in(R1in), .R2in(R2in), .R3in(R3in), .R4in(R4in), .R5in(R5in), .R6in(R6in), .R7in(R7in), .R8in(R8in), 
+						.R9in(R9in), .R10in(R10in), .R11in(R11in), .R12in(R12in), .R13in(R13in), .R14in(R14in), .R15in(R15in),
 						.Yin(Yin), .Zlowin(Zlowin), .Zhighin(Zhighin), .Zlowout(Zlowout), .Zhighout(Zhighout),
 					
 						.PCout(PCout), .MDRout(MDRout), .PCin(PCin), .MDRin(MDRin), .IRin(IRin), .MARin(MARin),
 						
-						.Mdatain(Mdatain), .read(read), .write(write), .IncPC(IncPC), .Gra(Gra), .Grb(Grb), .Grc(Grc), .CONin(CONin)
+						.Mdatain(Mdatain)
 						
-						.InPortin(InPortin), .OutPortin(OutPortin), .InPortout(InPortout), .OutPortout(OutPortout), .Cin(Cin));
+						);
 						
 						initial
 							begin
