@@ -80,7 +80,6 @@ registerPC PC(clear, clock, PCin, BusMuxOut, BusMuxInPC, IncPC);
 registerMDR registerMDR(clear, clock, MDRin, read, DataFromRAM, BusMuxOut, BusMuxInMDR);
 register InPort(clear, clock, 1'b1, FromInputUnit, BusMuxInInPort);
 register OutPort(clear, clock, OutPortin, BusMuxOut, ToOutputUnit);
-register CSignExtended(clear, clock, Cin, BusMuxOut, BusMuxInCSignExtended);
 register IR(clear, clock, IRin, BusMuxOut, BusMuxInIR);
 register Y(clear, clock, Yin, BusMuxOut, YtoALU);
 register MAR(clear, clock, MARin, BusMuxOut, AddrToMem);
