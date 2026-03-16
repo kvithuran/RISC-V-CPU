@@ -4,7 +4,7 @@ module DatapathP2(
     input wire HIin, LOin, Zhighin, Zlowin, PCin, MDRin, InPortin, Cin, IRin, Yin, MARin, OutPortin,
 	 input wire CONin,
 	output wire CON,
-	 input wire read, write, IncPC, Grb, Gra, Grc
+	 input wire read, write, IncPC, Grb, Gra, Grc,
 	 input wire Rout, Rin, BAout
 );
 
@@ -76,7 +76,7 @@ register HI(clear, clock, HIin, BusMuxOut, BusMuxInHI);
 register LO(clear, clock, LOin, BusMuxOut, BusMuxInLO);
 register Zhigh(clear, clock, Zhighin, zhiresult, BusMuxInZHI);
 register Zlow(clear, clock, Zlowin, zlowresult, BusMuxInZLO);
-register PC(clear, clock, PCin, BusMuxOut, BusMuxInPC);
+registerPC PC(clear, clock, PCin, BusMuxOut, BusMuxInPC, IncPC);
 registerMDR registerMDR(clear, clock, MDRin, read, DataFromRAM, BusMuxOut, BusMuxInMDR);
 register InPort(clear, clock, 1'b1, FromInputUnit, BusMuxInInPort);
 register OutPort(clear, clock, OutPortin, BusMuxOut, ToOutputUnit);
@@ -103,7 +103,7 @@ con_ff CONFF(
 );
 	
 Bus bus( //Mux
-    BusMuxInR0, BusMuxInR1, BusMuxInR2, BusMuxInR3, BusMuxInR4, BusMuxInR5, BusMuxInR6, BusMuxInR7, BusMuxInR8, BusMuxInR9, BusMuxInR10, BusMuxInR11, BusMuxInR12, BusMuxInR13, BusMuxInR14, BusMuxInR15, BusMuxInHI, BusMuxInLO, BusMuxInZHI, BusMuxInZLO, BusMuxInPC, BusMuxInMDR, BusMuxInInPort, ignExtended, BusMuxInIR, BusMuxInMAR,
+    BusMuxInR0, BusMuxInR1, BusMuxInR2, BusMuxInR3, BusMuxInR4, BusMuxInR5, BusMuxInR6, BusMuxInR7, BusMuxInR8, BusMuxInR9, BusMuxInR10, BusMuxInR11, BusMuxInR12, BusMuxInR13, BusMuxInR14, BusMuxInR15, BusMuxInHI, BusMuxInLO, BusMuxInZHI, BusMuxInZLO, BusMuxInPC, BusMuxInMDR, BusMuxInInPort, BusMuxInCSignExtended, BusMuxInIR, BusMuxInMAR,
     
 	 //Encoder
     R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, InPortout, Cout, IRout, MARout,
