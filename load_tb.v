@@ -4,7 +4,7 @@ module load_tb;
 
     reg PCout, Zlowout, Zhighout, MDRout;
     reg MARin, Zlowin, Zhighin, PCin, MDRin, IRin, Yin;
-    reg IncPC, Read;
+    reg IncPC, read;
     reg Clock, Clear;
     reg [31:0] Mdatain;
     reg [4:0] opcode;
@@ -13,10 +13,12 @@ module load_tb;
 	 //Defining non relevant signals.
     reg HIout, LOout, InPortout, Cout, IRout, MARout;
     reg HIin, LOin, InPortin, Cin;
+	 reg Gra, Grb, Grc, Rin, Rout, BAout;
 	 
 	 //State machine definitions.
 	 parameter Default = 5'b00000, Reg_load1a = 5'b00001, Reg_load1b = 5'b00010, Reg_load2a = 5'b00011, Reg_load2b = 5'b00100, Reg_load3a = 5'b00101, Reg_load3b = 5'b00110, 
-              T0 = 5'b01000, T1 = 5'b01001, T2 = 5'b01010, T3 = 5'b01011, T4 = 5'b01100, T5 = 5'b01101, T6 = 5'b01110;
+              T0 = 5'b01000, T1 = 5'b01001, T2 = 5'b01010, T3 = 5'b01011, T4 = 5'b01100, T5 = 5'b01101, T6 = 5'b01110,
+				  T7 = 5'b01111, T8 = 5'b10000, T9 = 5'b10001, T10 = 5'b10010, T11 = 5'b10011, T12 = 5'b10100, T13 = 5'b10101;
 				  
 
 	
@@ -29,7 +31,8 @@ module load_tb;
 					
 						.PCout(PCout), .MDRout(MDRout), .PCin(PCin), .MDRin(MDRin), .IRin(IRin), .MARin(MARin),
 						
-						.Mdatain(Mdatain)
+						.Mdatain(Mdatain), .read(read), .Gra(Gra), .Grb(Grb), .Grc(Grc), .Rin(Rin), .Rout(Rout), .BAout(BAout),
+						.Cout(Cout), .Cin(Cin)
 						
 						);
 						
@@ -70,7 +73,6 @@ module load_tb;
 				 PCin <=0; MDRin <= 0; IRin <= 0; Yin <= 0;
 				 IncPC <= 0; Read <= 0; opcode <= 0;
 				 R2in <= 0; R3in <= 0; R4in <= 0;
-				 Mdatain <= 32'b0;
 				 Clear <= 1;
 				 
 				 
@@ -78,83 +80,68 @@ module load_tb;
 		end
 
 		Reg_load1a: begin
-			R2in <= 0; R5in <= 0; R6in <= 0; R2out <= 0; R5out <= 0; R6out <= 0; R4in <= 0; R4out <= 0; Yin <= 0; Zhighin <= 0; Zhighout <= 0; Zlowin <= 0; Zlowout <= 0; MDRin <= 0; MDRout <= 0;
-			Clear <= 0;
-			Mdatain <= 32'd379;
-			//Read <= 0;
-			MDRin <= 1;
-			//Read <= 1; 
 			
-			//#25 Read <= 0; MDRin <= 0; // for your current implementation
 		end
 		
 		Reg_load1b: begin
-			MDRin <= 0;
-			MDRout <= 1; R5in <= 1;
 			
-			end
+		end
 		Reg_load2a: begin
-			MDRout <= 0; R5in <= 0;
-			Mdatain <= -32'd998;
-			//Read <= 0;
-			MDRin <= 1;
-			
-			//Read <= 0;
 			
 			end
 		Reg_load2b: begin
-			MDRin <= 0;
-			MDRout <= 1; R6in <= 1;
+			
 		end
 		Reg_load3a: begin
-			MDRout <= 0; R6in <= 0;
-			Mdatain <= 32'd2;
-			//Read <= 1;
-			MDRin <= 1;
-			//Read <= 1;
+			
 		end
 		Reg_load3b: begin
-			MDRin <= 0;
-			MDRout <= 1; R2in <= 1;
+			
 		end
 		
 		T0: begin
-			MDRout <= 0; R2in <= 0;
-			PCout <= 1; MARin <= 1;
-			IncPC <= 1; Zhighin <= 1; Zlowin <= 1;
+			PCout <= 1;
+			MARin <= 1;
+			IncPC <= 1; 
+			Zhighin <= 1; Zlowin <= 1;
 			
 		end
 		T1: begin
-			IncPC <= 0; Zhighin <= 0; Zlowin <= 0;
-			PCout <= 0; MARin <= 0;
+			PCout <= 0;
+			MARin <= 0;
+			IncPC <= 0; 
+			Zhighin <= 0; Zlowin <= 0;
 			Zlowout <= 1;
 			PCin <= 1;
-			Mdatain <= 32'd0;
-			Read <= 1;
+			read <= 1;
 			MDRin <= 1;
 			
 		end
 		T2: begin
 			Zlowout <= 0;
 			PCin <= 0;
-			Read <= 0;
+			read <= 0;
 			MDRin <= 0;
 			MDRout <= 1; IRin <= 1;
-			opcode <= 5'b00000;
 			end
 		T3: begin
 			MDRout <= 0; IRin <= 0;
-			R5out <= 1; Yin <= 1;
+			Grb <= 1;
+			BAout <= 1;
+			Yin <= 1;
 		end
 		T4: begin
-			R5out <= 0; Yin <= 0;
+			Yin <= 0;
+			Grb <= 0;
+			BAout <= 0;
 			
-			R6out <= 1;
+			Cout <= 1;
 			Zhighin <= 1; 
 			Zlowin <= 1;
+			
 		end
 		T5: begin
-			R6out <= 0; Zhighin <= 0; Zlowin <= 0;
+			Cout <= 0; Zhighin <= 0; Zlowin <= 0;
 			Zlowout <= 1; R2in <= 1;
 		end
 		T6: begin 
