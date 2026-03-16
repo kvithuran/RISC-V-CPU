@@ -11,7 +11,7 @@ module Select_and_Encode(
 );
 
 wire [3:0] Ra, Rb, Rc;
-wire [14:0] C;
+wire [18:0] C;
 reg  [3:0] reg_sel;
 reg  [15:0] decoder;
 
@@ -19,7 +19,7 @@ reg  [15:0] decoder;
 assign Ra = Instruction[26:23];
 assign Rb = Instruction[22:19];
 assign Rc = Instruction[18:15];
-assign C = Instruction[14:0];
+assign C = Instruction[18:0];
 
 
 always @(*) begin
@@ -83,7 +83,7 @@ always @(*) begin
 	 
 end
 
-assign CSignExtended = Cout ? {{17{C[14]}}, C} : 32'b0;
+assign CSignExtended = Cout ? {{13{C[18]}}, C} : 32'b0;
 
 
 endmodule
