@@ -11,7 +11,7 @@ module Select_and_Encode(
 );
 
 wire [3:0] Ra, Rb, Rc;
-wire [14:0] C;
+wire [18:0] C;
 reg  [3:0] reg_sel;
 reg  [15:0] decoder;
 
