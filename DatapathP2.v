@@ -77,7 +77,7 @@ register LO(clear, clock, LOin, BusMuxOut, BusMuxInLO);
 register Zhigh(clear, clock, Zhighin, zhiresult, BusMuxInZHI);
 register Zlow(clear, clock, Zlowin, zlowresult, BusMuxInZLO);
 register PC(clear, clock, PCin, BusMuxOut, BusMuxInPC);
-register registerMDR(clear, clock, MDRin, read, DataFromRAM, BusMuxOut, BusMuxInMDR);
+registerMDR registerMDR(clear, clock, MDRin, read, DataFromRAM, BusMuxOut, BusMuxInMDR);
 register InPort(clear, clock, 1'b1, FromInputUnit, BusMuxInInPort);
 register OutPort(clear, clock, OutPortin, BusMuxOut, ToOutputUnit);
 register CSignExtended(clear, clock, Cin, BusMuxOut, BusMuxInCSignExtended);
