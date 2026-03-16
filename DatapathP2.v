@@ -1,8 +1,8 @@
 module DataPathP2(
     input wire clock, clear,
 	 input wire [4:0] opcode,
-    input wire HIout, LOout, Zhighout, Zlowout, PCout, MDRout, InPortout, Cout, IRout, MARout,
-    input wire HIin, LOin, Zhighin, Zlowin, PCin, MDRin, InPortin, Cin, IRin, Yin, MARin,
+    input wire HIout, LOout, Zhighout, Zlowout, PCout, MDRout, InPortout, Cout, IRout, MARout, OutPortout,
+    input wire HIin, LOin, Zhighin, Zlowin, PCin, MDRin, InPortin, Cin, IRin, Yin, MARin, OutPortin
 	 input wire CONin,
 	output wire CON,
 	 input wire read, write, IncPC, Grb, Gra, Grc
@@ -52,6 +52,8 @@ wire [31:0] AddrToMem;
 wire [31:0] DataFromRAM;
 
 wire [31:0] Instruction;
+wire [31:0] ToOutputUnit;
+wire [31:0] FromInputUnit;
 
 //The registers themselves. Feed in clear to clear anytime, clock for synchronization, R in to allow register to latch value, BusMuxOut to feed into the register (input to register) and BusMuxIn signals defined above to feed to bus multiplexer.
 register R0(clear, clock, R0in, BusMuxOut, BusMuxInR0);
@@ -76,7 +78,8 @@ register Zhigh(clear, clock, Zhighin, zhiresult, BusMuxInZHI);
 register Zlow(clear, clock, Zlowin, zlowresult, BusMuxInZLO);
 register PC(clear, clock, PCin, BusMuxOut, BusMuxInPC);
 register registerMDR(clear, clock, MDRin, read, DataFromRAM, BusMuxOut, BusMuxInMDR);
-register InPort(clear, clock, InPortin, BusMuxOut, BusMuxInInPort);
+register InPort(clear, clock, 1'b1, FromInputUnit, BusMuxInInPort);
+register OutPort(clear, clock, OutPortin, BusMuxOut, ToOutputUnit);
 register CSignExtended(clear, clock, Cin, BusMuxOut, BusMuxInCSignExtended);
 register IR(clear, clock, IRin, BusMuxOut, BusMuxInIR);
 register Y(clear, clock, Yin, BusMuxOut, YtoALU);
