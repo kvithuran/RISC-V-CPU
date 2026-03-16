@@ -1,7 +1,7 @@
 module registerPC #(parameter DATA_WIDTH_IN = 32, DATA_WIDTH_OUT = 32, INIT = 32'h0)(
     input clear, clock, enable,
     input  [DATA_WIDTH_IN-1:0]BusMuxOut,
-    output wire [DATA_WIDTH_OUT-1:0]BusMuxIn
+    output wire [DATA_WIDTH_OUT-1:0]BusMuxIn,
 	 input IncPC
 );
 
@@ -16,7 +16,7 @@ always @ (posedge clock)
 		 else if (enable) begin
 			  q <= BusMuxOut;
 		 end
-		 else if (IncPC)
+		 else if (IncPC) begin
 			q <= q + 1;
 		end
 	end
