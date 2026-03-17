@@ -1,6 +1,6 @@
 `timescale 1ns / 10ps
 
-module immediateTB;
+module inputOutputTB;
     reg  PCout, Zlowout, Zhighout, MDRout, IRout, MARout;
     reg  HIout, LOout, InPortout, Cout;
 
@@ -16,8 +16,7 @@ module immediateTB;
     parameter
 		 Default = 5'd0,
 		 T0  = 5'd1,  T1  = 5'd2,  T1b = 5'd3,
-		 T2  = 5'd4,  T3  = 5'd5,  T4  = 5'd6,
-		 T5  = 5'd7,  T6  = 5'd8;
+		 T2  = 5'd4,  T3  = 5'd5,  T4  = 5'd6;
 
     reg [4:0] Present_state = Default;
 
@@ -43,9 +42,14 @@ module immediateTB;
     );
 
     initial begin
-        Clock = 0;
-        forever #10 Clock = ~Clock;
-    end
+			Clock = 0;
+			forever #10 Clock = ~Clock;
+	 end
+
+	 initial begin
+		 #25; // wait past Default state clear
+		 DUT.R7.q = 32'hABCD1234;
+	 end
 
 
 
@@ -53,13 +57,11 @@ module immediateTB;
     case (Present_state)
         Default : Present_state <= T0;
         T0      : Present_state <= T1;
-        T1      : Present_state <= T1b;  // extra cycle for RAM
+        T1      : Present_state <= T1b;
         T1b     : Present_state <= T2;
         T2      : Present_state <= T3;
         T3      : Present_state <= T4;
-        T4      : Present_state <= T5;
-        T5      : Present_state <= T6;
-		  T6      : Present_state <= T6;
+        T4      : Present_state <= T4;
     endcase
 end
 
@@ -122,28 +124,15 @@ end
 					MDRin <= 0;
 					MDRout <= 1; IRin <= 1;
 					end
-					
-            // Execute T3: Grb, Rout, Yin  (R0 -> bus -> Y)
-            T3: begin
-                MDRout <= 0; IRin   <= 0;
-                Grb    <= 1; Rout   <= 1; Yin    <= 1;
-            end
-            // Execute T4: Cout, Zin  (sign-ext(100) -> bus; ALU: Y+C -> Z)
-            T4: begin
-                Grb    <= 0; Rout   <= 0; Yin    <= 0;
-                Cout   <= 1; Zhighin<= 1; Zlowin <= 1;
-            end
-            // Execute T5: Zlowout, Gra, Rin  (Z-low -> R4)
-            T5: begin
-                Cout   <= 0; Zhighin<= 0; Zlowin <= 0;
-                Zlowout<= 1; Gra    <= 1; Rin    <= 1;
+				T3: begin
+					MDRout <= 0; IRin   <= 0;
+					Gra <= 1; Rout <= 1; OutPortin <= 1;
 				end
-				T6: begin
-					 Zlowout<=0; Gra    <= 0; Rin    <= 0;
-					 
-            end
-
-        endcase
+				
+				T4: begin
+					Gra <= 0; Rout <= 0; OutPortin <= 0;
+				end
+		endcase
     end
 
 endmodule
