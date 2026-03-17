@@ -144,6 +144,7 @@ module load_tb(output wire CON);
 			Yin <= 0;
 			Grb <= 0;
 			BAout <= 0;
+			Rout <= 0;
 			
 			Cout <= 1;
 			//Zhighin <= 1; 
