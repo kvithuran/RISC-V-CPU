@@ -56,7 +56,7 @@ wire [31:0] ToOutputUnit;
 wire [31:0] FromInputUnit;
 
 //The registers themselves. Feed in clear to clear anytime, clock for synchronization, R in to allow register to latch value, BusMuxOut to feed into the register (input to register) and BusMuxIn signals defined above to feed to bus multiplexer.
-register R0(clear, clock, R0in, BusMuxOut, BusMuxInR0);
+registerR0 R0(clear, clock, R0in, BusMuxOut, BusMuxInR0, BAout);
 register R1(clear, clock, R1in, BusMuxOut, BusMuxInR1);
 register R2(clear, clock, R2in, BusMuxOut, BusMuxInR2);
 register R3(clear, clock, R3in, BusMuxOut, BusMuxInR3);

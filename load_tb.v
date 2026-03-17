@@ -62,6 +62,7 @@ module load_tb(output wire CON);
 				T6 : Present_state = T7;
 				T7 : Present_state = T8;
 				T8 : Present_state = T9;
+				T9 : Present_state = T10;
 	endcase
  end
  
@@ -77,13 +78,7 @@ module load_tb(output wire CON);
     Clear <= 0;
 		case (Present_state) // assert the required signals in each clock cycle
 			Default: begin	
-				PCout <= 0; Zlowout <= 0; MDRout <= 0; // initialize the signals
-				 R2out <= 0; R3out <= 0; R4out <= 0; MARin <= 0;
-				 Zlowin <= 0; Zhighin <= 0;
-				 PCin <=0; MDRin <= 0; IRin <= 0; Yin <= 0;
-				 IncPC <= 0; read <= 0; opcode <= 0;
-				 R2in <= 0; R3in <= 0; R4in <= 0;
-				 Clear <= 1;
+
 				 
 				 
 				 
@@ -121,8 +116,8 @@ module load_tb(output wire CON);
 			MARin <= 0;
 			IncPC <= 0; 
 			Zhighin <= 0; Zlowin <= 0;
-//			Zlowout <= 1;
-//			PCin <= 1;
+	//		Zlowout <= 1;
+		//	PCin <= 1;
 			read <= 1;
 			MDRin <= 0;
 			
@@ -142,6 +137,7 @@ module load_tb(output wire CON);
 			MDRout <= 0; IRin <= 0;
 			Grb <= 1;
 			BAout <= 1;
+			Rout <= 1;
 			Yin <= 1;
 		end
 		T5: begin
