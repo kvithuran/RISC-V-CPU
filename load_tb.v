@@ -71,7 +71,7 @@ module load_tb;
 				 R2out <= 0; R3out <= 0; R4out <= 0; MARin <= 0;
 				 Zlowin <= 0; Zhighin <= 0;
 				 PCin <=0; MDRin <= 0; IRin <= 0; Yin <= 0;
-				 IncPC <= 0; Read <= 0; opcode <= 0;
+				 IncPC <= 0; read <= 0; opcode <= 0;
 				 R2in <= 0; R3in <= 0; R4in <= 0;
 				 Clear <= 1;
 				 

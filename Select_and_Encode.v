@@ -79,8 +79,40 @@ always @(*) begin
 				
 		 endcase
 	 end
-	 
-	 
+	 else begin
+			R0out = 0;
+			R1out = 0;
+			R2out = 0;
+			R3out = 0;
+			R4out = 0;
+			R5out = 0;
+			R6out = 0;
+			R7out = 0;
+			R8out = 0;
+			R9out = 0;
+			R10out = 0;
+			R11out = 0;
+			R12out = 0;
+			R13out = 0;
+			R14out = 0;
+			R15out = 0;
+			R0in = 0;
+			R1in = 0;
+			R2in = 0;
+			R3in = 0;
+			R4in = 0;
+			R5in = 0;
+			R6in = 0;
+			R7in = 0;
+			R8in = 0;
+			R9in = 0;
+			R10in = 0;
+			R11in = 0;
+			R12in = 0;
+			R13in = 0;
+			R14in = 0;
+			R15in = 0;
+	 end
 	 
 end
 
