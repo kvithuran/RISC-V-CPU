@@ -33,7 +33,7 @@ always @(*)
 	
 	case (opcode) 
 		
-		5'b00000 : begin
+		5'b00000, 5'b10000, 5'b10001, 5'b10010, 5'b10101 : begin
 			zlow = adder_out; //Addition
 			zhi = overflow_flag_out;
 			end
