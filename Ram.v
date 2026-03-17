@@ -15,7 +15,8 @@ module RAM (input clock, input read, input write, input [8:0] Address, input [31
 		RAM1[201] = 32'hC9;
 		
 		//Vithuran Program
-		RAM1[0] = 32'h4BA7FFF7;
+		//addi
+		//RAM1[0] = 32'h4BA7FFF7;
 		
 		//andi
 		//RAM1[0] = 32'h53A00071;
@@ -26,7 +27,7 @@ module RAM (input clock, input read, input write, input [8:0] Address, input [31
 		//out r7
 		//RAM1[0] = 32'hBB800000;
 		//in r5
-		//RAM1[0] = 32'hB2800000;
+		RAM1[0] = 32'hB2800000;
 		
 		//$display("RAM1[0] = %h", RAM1[0]);
 		end
