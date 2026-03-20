@@ -274,7 +274,7 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH inputOutput2TB -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH loadi_tb -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME tutorial_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tutorial_tb
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "500 ns" -section_id tutorial_tb
@@ -755,6 +755,11 @@ set_global_assignment -name EDA_TEST_BENCH_NAME inputOutput2TB -section_id eda_s
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id inputOutput2TB
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME inputOutput2TB -section_id inputOutput2TB
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "2000 ns" -section_id inputOutput2TB
+set_global_assignment -name EDA_TEST_BENCH_NAME load_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id load_tb
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "750 ns" -section_id load_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME load_tb -section_id load_tb
+set_global_assignment -name VERILOG_FILE registerR0.v
 set_global_assignment -name VERILOG_FILE load_tb.v
 set_global_assignment -name VERILOG_FILE immediateTB.v
 set_global_assignment -name VERILOG_FILE con_ff.v
@@ -787,6 +792,11 @@ set_global_assignment -name VERILOG_FILE registerMDR.v
 set_global_assignment -name VERILOG_FILE registerPC.v
 set_global_assignment -name VERILOG_FILE inputOutputTB.v
 set_global_assignment -name VERILOG_FILE inputOutput2TB.v
+set_global_assignment -name VERILOG_FILE loadi_tb.v
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id loadi_TB
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "750 ns" -section_id loadi_TB
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME loadi_tb -section_id loadi_tb
+set_global_assignment -name EDA_TEST_BENCH_NAME loadi_tb -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_FILE tutorial_tb.v -section_id tutorial_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE multiplication_tb.v -section_id multiplication_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE divisionTB.v -section_id divisionTB
@@ -803,4 +813,6 @@ set_global_assignment -name EDA_TEST_BENCH_FILE shift_right_tb.v -section_id shi
 set_global_assignment -name EDA_TEST_BENCH_FILE immediateTB.v -section_id immediateTB
 set_global_assignment -name EDA_TEST_BENCH_FILE inputOutputTB.v -section_id inputOutputTB
 set_global_assignment -name EDA_TEST_BENCH_FILE inputOutput2TB.v -section_id inputOutput2TB
+set_global_assignment -name EDA_TEST_BENCH_FILE load_tb.v -section_id load_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE loadi_tb.v -section_id loadi_tb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

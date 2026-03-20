@@ -1,6 +1,6 @@
 `timescale 1ns / 10ps
 
-module load_tb(output wire CON);
+module loadi_tb(output wire CON);
 
     reg PCout, Zlowout, Zhighout, MDRout;
     reg MARin, Zlowin, Zhighin, PCin, MDRin, IRin, Yin;
@@ -79,8 +79,8 @@ module load_tb(output wire CON);
 		case (Present_state) // assert the required signals in each clock cycle
 			Default: begin	
 
-				 
 			
+				 
 				 
 		end
 
@@ -149,18 +149,16 @@ module load_tb(output wire CON);
 		end
 		T6: begin
 			Cout <= 0; Zhighin <= 0; Zlowin <= 0;
-			Zlowout <= 1; MARin <= 1;
+			Zlowout <= 1; Gra <= 1; Rin <= 1;
 		end
 		T7: begin 
-			Zlowout <= 0; MARin <= 0;
-			read <= 1; MDRin <= 1;
+			Zlowout <= 0; Gra <= 0; Rin <= 0;
 		end
 		T8: begin 
-			read <= 1; MDRin <= 1;
+			
 		end
 		T9: begin
-		read <= 0; MDRin <= 0;
-		MDRout <= 1;  Gra <= 1; Rin <= 1;
+		
 		end
 	endcase
 end

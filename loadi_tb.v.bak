@@ -1,6 +1,6 @@
 `timescale 1ns / 10ps
 
-module load_tb(output wire CON);
+module loadi_tb(output wire CON);
 
     reg PCout, Zlowout, Zhighout, MDRout;
     reg MARin, Zlowin, Zhighin, PCin, MDRin, IRin, Yin;
@@ -80,7 +80,7 @@ module load_tb(output wire CON);
 			Default: begin	
 
 				 
-			
+				 
 				 
 		end
 
@@ -92,7 +92,7 @@ module load_tb(output wire CON);
 			Clear <= 0;
 		end
 		Reg_load2a: begin
-			DPTest.R2.q = 32'h57;
+			
 			end
 		Reg_load2b: begin
 			
@@ -148,17 +148,21 @@ module load_tb(output wire CON);
 			
 		end
 		T6: begin
+			Cout <= 1;
+			Zlowin <= 1;
+		end
+		T7: begin
 			Cout <= 0; Zhighin <= 0; Zlowin <= 0;
 			Zlowout <= 1; MARin <= 1;
 		end
-		T7: begin 
+		T8: begin 
 			Zlowout <= 0; MARin <= 0;
 			read <= 1; MDRin <= 1;
 		end
-		T8: begin 
+		T9: begin 
 			read <= 1; MDRin <= 1;
 		end
-		T9: begin
+		T10: begin
 		read <= 0; MDRin <= 0;
 		MDRout <= 1;  Gra <= 1; Rin <= 1;
 		end
