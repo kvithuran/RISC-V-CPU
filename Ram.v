@@ -35,6 +35,17 @@ module RAM (input clock, input read, input write, input [8:0] Address, input [31
 		//RAM1[0] = 32'hB2800000;
 		
 		//$display("RAM1[0] = %h", RAM1[0]);
+
+		//Thomas
+		// RAM1[0] = 32'h81800030; // brzr R3, 48
+		// RAM1[16] = 32'h81800030; // brzr R3, 48
+		// RAM1[16] = 32'h89880030; brnz R3,48
+		// RAM1[16] = 32'h91900030; brpl R3, 48
+		// RAM1[16] = 32'h99980030; brmi R3,48
+		
+		//RAM1[16] = 32'hA6000000; // jr R12
+		//RAM1[16] = 32'hAA000000; // jal R4
+		//RAM1[17] = 32'hAE000000; // helper word Ra=R12 (bits[26:23]=1100)
 		end
 	
 	
