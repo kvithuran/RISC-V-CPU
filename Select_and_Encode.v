@@ -30,7 +30,7 @@ always @(*) begin
     else if (Grc)
         reg_sel = Rc;
     else
-        reg_sel = 4'b0000;
+        reg_sel = 4'bzzzz;
 end
 
 

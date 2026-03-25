@@ -7,12 +7,12 @@ module RAM (input clock, input read, input write, input [8:0] Address, input [31
 	initial begin
 		 
 		//Tyler Program
-		//RAM1[0] = 32'h03800065; //ld R7, 0x65
-		//RAM1[0] = 32'h00100072; //ld R0, 0x72(R2)
+		//RAM1[0] = 32'h83800065; //ld R7, 0x65
+		//RAM1[0] = 32'h80100072; //ld R0, 0x72(R2)
 		//RAM1[0] = 32'h8B800065; //ldi R7, 0x65
-		//RAM1[0] = 32'h88100072; //ldi R0, 0x72(R2)
+		RAM1[0] = 32'h88100072; //ldi R0, 0x72(R2)
 		//RAM1[0] = 32'h9300001F; // st 0x1F, R6
-		RAM1[0] = 32'h9330001F; // st 0x1F(R6), R6
+		//RAM1[0] = 32'h9330001F; // st 0x1F(R6), R6
 		
 		RAM1[101] = 32'h84;
 		RAM1[201] = 32'h2B;

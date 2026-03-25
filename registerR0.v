@@ -13,14 +13,11 @@ always @ (posedge clock)
 		 if (clear) begin
 			  q <= {DATA_WIDTH_IN{1'b0}};
 		 end
-		 else if (BAout) begin
-			q <= {DATA_WIDTH_IN{1'b0}};
-		end
 		 else if (enable) begin
 			  q <= BusMuxOut;
 		 end
 	end
 
-assign BusMuxIn = q[DATA_WIDTH_OUT-1:0];
+assign BusMuxIn = BAout ? {DATA_WIDTH_IN{1'b0}} : q[DATA_WIDTH_OUT-1:0];
 
 endmodule
