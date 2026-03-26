@@ -10,14 +10,14 @@ module RAM (input clock, input read, input write, input [8:0] Address, input [31
 		//RAM1[0] = 32'h83800065; //ld R7, 0x65
 		//RAM1[0] = 32'h80100072; //ld R0, 0x72(R2)
 		//RAM1[0] = 32'h8B800065; //ldi R7, 0x65
-		RAM1[0] = 32'h88100072; //ldi R0, 0x72(R2)
+		//RAM1[0] = 32'h88100072; //ldi R0, 0x72(R2)
 		//RAM1[0] = 32'h9300001F; // st 0x1F, R6
 		//RAM1[0] = 32'h9330001F; // st 0x1F(R6), R6
 		
-		RAM1[101] = 32'h84;
-		RAM1[201] = 32'h2B;
-		RAM1[31] = 32'hD4;
-		RAM1[130] = 32'hA7;
+		//RAM1[101] = 32'h84;
+		//RAM1[201] = 32'h2B;
+		//RAM1[31] = 32'hD4;
+		//RAM1[130] = 32'hA7;
 		
 		//Vithuran Program
 		//addi
@@ -33,6 +33,10 @@ module RAM (input clock, input read, input write, input [8:0] Address, input [31
 		//RAM1[0] = 32'hBB800000;
 		//in r5
 		//RAM1[0] = 32'hB2800000;
+		//mfhi
+		RAM1[0] = 32'hC2800000;
+		//mflo
+		//RAM1[0] = 32'hC8800000;
 		
 		//$display("RAM1[0] = %h", RAM1[0]);
 
