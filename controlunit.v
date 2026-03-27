@@ -17,7 +17,8 @@ always @(posedge Clock, posedge Reset) // finite state machine; if clock or rese
 		else case (present_state)
 			reset_state: present_state = fetch0;
 			fetch0: present_state = fetch1;
-			fetch1: present_state = fetch2;
+			fetch1: present_state = fetch1b;
+			fetch1b: present_state = fetch2;
 			fetch2: begin
 
 					case (IR[31:27]) // inst. decoding based on the opcode to set the next state
