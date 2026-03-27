@@ -759,6 +759,40 @@ set_global_assignment -name EDA_TEST_BENCH_NAME load_tb -section_id eda_simulati
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id load_tb
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "750 ns" -section_id load_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME load_tb -section_id load_tb
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id loadi_TB
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "750 ns" -section_id loadi_TB
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME loadi_tb -section_id loadi_tb
+set_global_assignment -name EDA_TEST_BENCH_NAME loadi_tb -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME store_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id store_tb
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "750 ns" -section_id store_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME store_tb -section_id store_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE tutorial_tb.v -section_id tutorial_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE multiplication_tb.v -section_id multiplication_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE divisionTB.v -section_id divisionTB
+set_global_assignment -name EDA_TEST_BENCH_FILE addition_tb.v -section_id addition_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE subtraction_tb.v -section_id subtraction_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE andTB.v -section_id andTB
+set_global_assignment -name EDA_TEST_BENCH_FILE rotate_right_tb.v -section_id rotate_right_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE shift_left_tb.v -section_id shift_left_tb.v
+set_global_assignment -name EDA_TEST_BENCH_FILE orTB.v -section_id orTB
+set_global_assignment -name EDA_TEST_BENCH_FILE negate_tb.v -section_id negate_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE not_tb.v -section_id not_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE rotate_left_tb.v -section_id rotate_left_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE shift_right_tb.v -section_id shift_right_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE immediateTB.v -section_id immediateTB
+set_global_assignment -name EDA_TEST_BENCH_FILE inputOutputTB.v -section_id inputOutputTB
+set_global_assignment -name EDA_TEST_BENCH_FILE inputOutput2TB.v -section_id inputOutput2TB
+set_global_assignment -name EDA_TEST_BENCH_FILE load_tb.v -section_id load_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE loadi_tb.v -section_id loadi_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE store_tb.v -section_id store_tb
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VERILOG_FILE mfloTB.v
+set_global_assignment -name VERILOG_FILE mfhiTB.v
+set_global_assignment -name VERILOG_FILE jr_tb.v
+set_global_assignment -name VERILOG_FILE jal_tb.v
+set_global_assignment -name VERILOG_FILE brzr_tb.v
+set_global_assignment -name VERILOG_FILE controlunit.v
 set_global_assignment -name VERILOG_FILE registerR0.v
 set_global_assignment -name VERILOG_FILE load_tb.v
 set_global_assignment -name VERILOG_FILE immediateTB.v
@@ -793,32 +827,4 @@ set_global_assignment -name VERILOG_FILE registerPC.v
 set_global_assignment -name VERILOG_FILE inputOutputTB.v
 set_global_assignment -name VERILOG_FILE inputOutput2TB.v
 set_global_assignment -name VERILOG_FILE loadi_tb.v
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id loadi_TB
-set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "750 ns" -section_id loadi_TB
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME loadi_tb -section_id loadi_tb
-set_global_assignment -name EDA_TEST_BENCH_NAME loadi_tb -section_id eda_simulation
 set_global_assignment -name VERILOG_FILE store_tb.v
-set_global_assignment -name EDA_TEST_BENCH_NAME store_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id store_tb
-set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "750 ns" -section_id store_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME store_tb -section_id store_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE tutorial_tb.v -section_id tutorial_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE multiplication_tb.v -section_id multiplication_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE divisionTB.v -section_id divisionTB
-set_global_assignment -name EDA_TEST_BENCH_FILE addition_tb.v -section_id addition_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE subtraction_tb.v -section_id subtraction_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE andTB.v -section_id andTB
-set_global_assignment -name EDA_TEST_BENCH_FILE rotate_right_tb.v -section_id rotate_right_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE shift_left_tb.v -section_id shift_left_tb.v
-set_global_assignment -name EDA_TEST_BENCH_FILE orTB.v -section_id orTB
-set_global_assignment -name EDA_TEST_BENCH_FILE negate_tb.v -section_id negate_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE not_tb.v -section_id not_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE rotate_left_tb.v -section_id rotate_left_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE shift_right_tb.v -section_id shift_right_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE immediateTB.v -section_id immediateTB
-set_global_assignment -name EDA_TEST_BENCH_FILE inputOutputTB.v -section_id inputOutputTB
-set_global_assignment -name EDA_TEST_BENCH_FILE inputOutput2TB.v -section_id inputOutput2TB
-set_global_assignment -name EDA_TEST_BENCH_FILE load_tb.v -section_id load_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE loadi_tb.v -section_id loadi_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE store_tb.v -section_id store_tb
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

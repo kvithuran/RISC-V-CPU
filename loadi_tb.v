@@ -108,16 +108,14 @@ module loadi_tb(output wire CON);
 			PCout <= 1;
 			MARin <= 1;
 			IncPC <= 1; 
-			Zhighin <= 1; Zlowin <= 1;
 			
 		end
 		T1: begin
 			PCout <= 0;
 			MARin <= 0;
 			IncPC <= 0; 
-			Zhighin <= 0; Zlowin <= 0;
 			read <= 1;
-			MDRin <= 0;
+			MDRin <= 1;
 			
 		end
 		T2: begin
@@ -125,7 +123,6 @@ module loadi_tb(output wire CON);
 			read <= 1;
 		end
 		T3: begin
-			Zlowout <= 0;
 			read <= 0;
 			MDRin <= 0;
 			MDRout <= 1; IRin <= 1;
