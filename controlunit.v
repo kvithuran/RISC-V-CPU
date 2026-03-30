@@ -455,21 +455,21 @@ always @(present_state) // do the job for each state : HERE PUT YOUR ACTUAL CLOC
 			end
 
 			in3: begin
-								 MDRout = 0; IRin   = 0;
+							MDRout = 0; IRin   = 0;
 							Gra = 1; Rin = 1; InPortout = 1;
 			end
 
 			in4: begin
-								Gra = 0; Rin = 0; InPortout = 0;
+							Gra = 0; Rin = 0; InPortout = 0;
 			end
 
 			out3: begin
-								 MDRout = 0; IRin   = 0;
+							MDRout = 0; IRin   = 0;
 							Gra = 1; Rout = 1; OutPortin = 1;
 			end
 
 			out4: begin
-								 Gra = 0; Rout = 0; OutPortin = 0;
+							Gra = 0; Rout = 0; OutPortin = 0;
 			end
 
 			mfhi3: begin

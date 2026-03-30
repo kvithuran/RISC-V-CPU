@@ -6,6 +6,7 @@ module phase3_running_tb;
 	
 	DatapathP3 DP( .clock(clock), .Stop(Stop), .Reset(Reset) );
 	
+	
 	initial begin
 		clock <= 0;
 		forever #20
@@ -17,6 +18,7 @@ module phase3_running_tb;
 		Stop = 0;
 		#21
 		Reset = 0;
+		DP.InPort.q = 32'h000000E0;
 	end
 	
 	always@ (*) begin
