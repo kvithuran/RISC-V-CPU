@@ -15,7 +15,7 @@ parameter 	reset_state = 8'b00000000, fetch0 = 8'b00000001, fetch1 = 8'b00000010
 				store3 = 8'b00010111, store4 = 8'b00011000, store5 = 8'b00011001, store6 = 8'b00011010, store7 = 8'b00011011, store8 = 8'b00011100,
 				halt3 = 8'b00011101, fetch1b = 8'b00011110, branch3 = 8'b00011111, branch4 = 8'b00100000, branch5 = 8'b00100001, branch6 = 8'b00100010, nop3 = 8'b00100011, 
 				sh3 =8'b00100100, rot3 = 8'b00100101, imm3 = 8'b00100110, muldiv3 = 8'b00100111, negnot3 = 8'b00101000, jal3 = 8'b00101001, jr3 = 8'b00101010, in3 = 8'b00101011, out3 = 8'b00101100, mfhi3 = 8'b00101101, mflo3 = 8'b00101110,
-				load9 = 8'b00101111;
+				load9 = 8'b00101111, fetch3 = 8'b00110000;
 				reg [7:0] present_state = reset_state; // adjust the bit pattern based on the number of states
 	
 	
@@ -28,8 +28,8 @@ always @(posedge clock, posedge Reset) // finite state machine; if clock or rese
 			fetch0: present_state = fetch1;
 			fetch1: present_state = fetch1b;
 			fetch1b: present_state = fetch2;
-			fetch2: begin
-
+			fetch2: present_state = fetch3;
+			fetch3: begin
 					case (IR[31:27]) // inst. decoding based on the opcode to set the next state
 						5'b00000: present_state = addsub3; // this is the add instruction Tyler
 						5'b00001: present_state = addsub3; 
@@ -108,188 +108,185 @@ always @(present_state) // do the job for each state : HERE PUT YOUR ACTUAL CLOC
 	begin
 		case (present_state) // assert the required signals in each state
 			reset_state: begin
-				Gra <= 0; Grb <= 0; Grc <= 0; Yin <= 0; // initialize the signals
-				Zhighin <= 0; Zlowin <= 0; Zhighout <= 0; Zlowout <= 0; PCout <= 0; IncPC <= 0; MARin <= 0;
-				read <= 0; write <= 0; clear <= 1;
-				HIout <= 0; LOout <= 0; InPortout <= 0; Cout <= 0; IRout <= 0; MARout <= 0; OutPortout <= 0;
-				HIin <= 0; LOin <= 0; InPortin <= 0; Cin <= 0; OutPortin <= 0;
+				Gra = 0; Grb = 0; Grc = 0; Yin = 0; // initialize the signals
+				Zhighin = 0; Zlowin = 0; Zhighout = 0; Zlowout = 0; PCout = 0; IncPC = 0; MARin = 0;
+				read = 0; write = 0; clear = 1;
+				HIout = 0; LOout = 0; InPortout = 0; Cout = 0; IRout = 0; MARout = 0; OutPortout = 0;
+				HIin = 0; LOin = 0; InPortin = 0; Cin = 0; OutPortin = 0;
 			end
 			fetch0: begin
-					clear <= 0;
-					PCout <= 1; // see if you need to de-assert these signals
-					MARin <= 1;
-					IncPC <= 1;
+					clear = 0;
+					PCout = 1; // see if you need to de-assert these signals
+					MARin = 1;
+					IncPC = 1;
 			end
 			fetch1: begin
-				PCout <= 0;
-				MARin <= 0;
-				IncPC <= 0; 
-				read <= 1;
-				MDRin <= 1;
+				PCout = 0;
+				MARin = 0;
+				IncPC = 0; 
+				read = 1;
+				MDRin = 1;
 			end
 			fetch1b: begin
-				MDRin <= 1;
-				read <= 1;
+				MDRin = 1;
+				read = 1;
 			end
 			fetch2: begin
-				read <= 0;
-				MDRin <= 0;
-				MDRout <= 1; IRin <= 1;
+				read = 0;
+				MDRin = 0;
+				MDRout = 1; IRin = 1;
+			end
+			fetch3: begin
+				MDRout = 0; IRin = 0;
 			end
 			addsub3: begin
-				MDRout <= 0; IRin <= 0;
-				Grb <= 1; Rout <= 1;
-				Yin <= 1;
+				Grb = 1; Rout = 1;
+				Yin = 1;
 			end
 			addsub4: begin
-				Grb <= 0; Rout <= 0; Yin <= 0;
-				Grc <= 1; Rout <= 1;
-				Zhighin <= 1; Zlowin <= 1;
+				Grb = 0; Rout = 0; Yin = 0;
+				Grc = 1; Rout = 1;
+				Zhighin = 1; Zlowin = 1;
 			end
 			addsub5: begin
-				Grc <= 0; Rout <= 0;
-				Zhighin <= 0; Zlowin <= 0;
-				Zlowout <= 1; Gra <= 1; Rin <= 1;
+				Grc = 0; Rout = 0;
+				Zhighin = 0; Zlowin = 0;
+				Zlowout = 1; Gra = 1; Rin = 1;
 			end
 			addsub6: begin
-				Zlowout <= 0; Gra <= 0; Rin <= 0;
-				Zhighout <= 1; HIin <= 1;
+				Zlowout = 0; Gra = 0; Rin = 0;
+				Zhighout = 1; HIin = 1;
 			end
 			addsub7: begin
-				Zhighout <= 0; HIin <= 0;
+				Zhighout = 0; HIin = 0;
 			end
 			andor3: begin
-				MDRout <= 0; IRin <= 0;
-				Grb <= 1; Rout <= 1;
-				Yin <= 1;
+				Grb = 1; Rout = 1;
+				Yin = 1;
 			end
 			andor4: begin
-				Grb <= 0; Rout <= 0; Yin <= 0;
-				Grc <= 1; Rout <= 1;
-				Zhighin <= 1; Zlowin <= 1;
+				Grb = 0; Rout = 0; Yin = 0;
+				Grc = 1; Rout = 1;
+				Zhighin = 1; Zlowin = 1;
 			end
 			andor5: begin
-				Grc <= 0; Rout <= 0;
-				Zhighin <= 0; Zlowin <= 0;
-				Zlowout <= 1; Gra <= 1; Rin <= 1;
+				Grc = 0; Rout = 0;
+				Zhighin = 0; Zlowin = 0;
+				Zlowout = 1; Gra = 1; Rin = 1;
 			end
 			andor6: begin
-				Zlowout <= 0; Gra <= 0; Rin <= 0;
+				Zlowout = 0; Gra = 0; Rin = 0;
 			end
 			load3: begin
-				MDRout <= 0; IRin <= 0;
-				Grb <= 1;
-				BAout <= 1;
-				Rout <= 1;
-				Yin <= 1;
+				Grb = 1;
+				BAout = 1;
+				Rout = 1;
+				Yin = 1;
 			end
 			load4: begin
-				Yin <= 0;
-				Grb <= 0;
-				BAout <= 0;
-				Rout <= 0;
+				Yin = 0;
+				Grb = 0;
+				BAout = 0;
+				Rout = 0;
 				
-				Cout <= 1;
-				Zlowin <= 1;
+				Cout = 1;
+				Zlowin = 1;
 				
 			end
 			load5: begin
-				Cout <= 0; Zhighin <= 0; Zlowin <= 0;
-				Zlowout <= 1; MARin <= 1;
+				Cout = 0; Zhighin = 0; Zlowin = 0;
+				Zlowout = 1; MARin = 1;
 			end
 			load6: begin
-				Zlowout <= 0; MARin <= 0;
-				read <= 1; MDRin <= 1;
+				Zlowout = 0; MARin = 0;
+				read = 1; MDRin = 1;
 			end
 			load7: begin
-				read <= 1; MDRin <= 1;
+				read = 1; MDRin = 1;
 			end
 			load8: begin
-				read <= 0; MDRin <= 0;
-				MDRout <= 1;  Gra <= 1; Rin <= 1;
+				read = 0; MDRin = 0;
+				MDRout = 1;  Gra = 1; Rin = 1;
 			end
 			load9: begin
-				MDRout <= 0; Gra <= 0; Rin <= 0;
+				MDRout = 0; Gra = 0; Rin = 0;
 			end
 			loadi3: begin
-				MDRout <= 0; IRin <= 0;
-				Grb <= 1;
-				BAout <= 1;
-				Rout <= 1;
-				Yin <= 1;
+				Grb = 1;
+				BAout = 1;
+				Rout = 1;
+				Yin = 1;
 			end
 			loadi4: begin
-				Yin <= 0;
-				Grb <= 0;
-				BAout <= 0;
-				Rout <= 0;
+				Yin = 0;
+				Grb = 0;
+				BAout = 0;
+				Rout = 0;
 				
-				Cout <= 1;
-				Zlowin <= 1;
+				Cout = 1;
+				Zlowin = 1;
 				
 			end
 			loadi5: begin
-				Cout <= 0; Zhighin <= 0; Zlowin <= 0;
-				Zlowout <= 1; Gra <= 1; Rin <= 1;
+				Cout = 0; Zhighin = 0; Zlowin = 0;
+				Zlowout = 1; Gra = 1; Rin = 1;
 			end
 			loadi6: begin
-				Zlowout <= 0; Gra <= 0; Rin <= 0;
+				Zlowout = 0; Gra = 0; Rin = 0;
 			end
 			store3: begin
-				MDRout <= 0; IRin <= 0;
-				Grb <= 1;
-				BAout <= 1;
-				Rout <= 1;
-				Yin <= 1;
+				Grb = 1;
+				BAout = 1;
+				Rout = 1;
+				Yin = 1;
 			end
 			store4: begin
-				Yin <= 0;
-				Grb <= 0;
-				BAout <= 0;
-				Rout <= 0;
+				Yin = 0;
+				Grb = 0;
+				BAout = 0;
+				Rout = 0;
 				
-				Cout <= 1;
-				Zlowin <= 1;
+				Cout = 1;
+				Zlowin = 1;
 				
 			end
 			store5: begin
-				Cout <= 0; Zhighin <= 0; Zlowin <= 0;
-				Zlowout <= 1; MARin <= 1;
+				Cout = 0; Zhighin = 0; Zlowin = 0;
+				Zlowout = 1; MARin = 1;
 			end
 			store6: begin
-				Zlowout <= 0; MARin <= 0;
-				Gra <= 1; Rout <= 1; MDRin <= 1;
+				Zlowout = 0; MARin = 0;
+				Gra = 1; Rout = 1; MDRin = 1;
 			end
 			store7: begin
-				Gra <= 0; Rout <= 0; MDRin <= 0;
-				write <= 1;
+				Gra = 0; Rout = 0; MDRin = 0;
+				write = 1;
 			end
 			store8: begin
-				write <= 0;
+				write = 0;
 			end
 			branch3: begin
-    			MDRout <= 0; IRin <= 0;
-    			Gra <= 1; Rout <= 1; CONin <= 1; 
+    			Gra = 1; Rout = 1; CONin = 1; 
 			end
 			branch4: begin
-    			Gra <= 0; Rout <= 0; CONin <= 0;
-    			PCout <= 1; Yin <= 1;             
+    			Gra = 0; Rout = 0; CONin = 0;
+    			PCout = 1; Yin = 1;             
 			end
 			branch5: begin
-   				PCout <= 0; Yin <= 0;
-    			Cout <= 1; Zhighin <= 1; Zlowin <= 1; 
+   				PCout = 0; Yin = 0;
+    			Cout = 1; Zhighin = 1; Zlowin = 1; 
 			end
 			branch6: begin
-    			Cout <= 0; Zhighin <= 0; Zlowin <= 0;
-   			 	Zlowout <= 1;
-    			if (Con_FF) PCin <= 1;            
-    			else        PCin <= 0;
+    			Cout = 0; Zhighin = 0; Zlowin = 0;
+   			 	Zlowout = 1;
+    			if (Con_FF) PCin = 1;            
+    			else        PCin = 0;
 			end
-			nop3: begin
-    			MDRout <= 0; IRin <= 0;           
+			nop3: begin 
+
 			end
 			halt3: begin
-				
+
 			end
 				
 		endcase
