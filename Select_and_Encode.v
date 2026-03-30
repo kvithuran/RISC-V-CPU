@@ -1,6 +1,6 @@
 module Select_and_Encode(
     input [31:0] Instruction,
-    input Gra, Grb, Grc,
+    input Gra, Grb, Grc, R12ForceIn,
     input Rin, Rout, BAout,
 	 input Cout,
 	 
@@ -112,6 +112,9 @@ always @(*) begin
 			  4'd15: R15out = 1;
 				
 		 endcase
+	 end
+	 else if (R12ForceIn) begin
+		 R12in = 1;
 	 end
 	 else begin
 			R0out = 0;
