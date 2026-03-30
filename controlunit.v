@@ -326,167 +326,167 @@ always @(present_state) // do the job for each state : HERE PUT YOUR ACTUAL CLOC
 
 			end
 			muldiv3: begin
-			MDRout <= 0; IRin <= 0;
-			Gra <= 1; Yin <= 1;
-            Rout <= 1;
+			MDRout = 0; IRin = 0;
+			Gra = 1; Yin = 1;
+            Rout = 1;
 			end
 
 
 			muldiv4: begin
-						Gra <= 0; Yin <= 0;
-						Rout <= 0;
-						Grb <= 1; 
-							Rout <= 1;
-						Zlowin <= 1;
-						Zhighin <= 1;
+						Gra = 0; Yin = 0;
+						Rout = 0;
+						Grb = 1; 
+							Rout = 1;
+						Zlowin = 1;
+						Zhighin = 1;
 			end
 
 			muldiv5: begin
-						Grb <= 0; Rout <= 0; Zlowin <= 0; Zhighin <= 0;
-						Zlowout <= 1; LOin <= 1;
+						Grb = 0; Rout = 0; Zlowin = 0; Zhighin = 0;
+						Zlowout = 1; LOin = 1;
 			end
 
 			muldiv6: begin
-						Zlowout <= 0; LOin <= 0;
-						Zhighout <= 1; HIin <= 1;
-						#20 Zhighout <= 0; HIin <=0;
+						Zlowout = 0; LOin = 0;
+						Zhighout = 1; HIin = 1;
+						#20 Zhighout = 0; HIin =0;
 			end
 
 			negnot3: begin
-						 MDRout <= 0;
-						 IRin <= 0;
-							 Grb <= 1;
-							 Rout <= 1;
-						 Zlowin <= 1;
+						 MDRout = 0;
+						 IRin = 0;
+							 Grb = 1;
+							 Rout = 1;
+						 Zlowin = 1;
 			end
 
 			negnot4: begin
-						 //R7out <= 0;
-						 Grb <= 0;
-							 Rout <= 0;
-							 Zlowin <= 0;
+						 //R7out = 0;
+						 Grb = 0;
+							 Rout = 0;
+							 Zlowin = 0;
 
-						 Zlowout <= 1;
-						 //R4in <= 1;
-							 Gra <= 1;
-							 Rin <= 1;
+						 Zlowout = 1;
+						 //R4in = 1;
+							 Gra = 1;
+							 Rin = 1;
 			end
 
 			negnot5: begin
-						 Zlowout <= 0;
-						 //R4in <= 0;
-							 Gra <= 0;
-							 Rin <= 0;
+						 Zlowout = 0;
+						 //R4in = 0;
+							 Gra = 0;
+							 Rin = 0;
 			end
 
 
 
 			rot3: begin
-						 MDRout <= 0;
-						 IRin <= 0;
+						 MDRout = 0;
+						 IRin = 0;
 
-						 //R0out <= 1;   // source register
-							 Grb <= 1;
-							 Rout <= 1;
-						 Yin <= 1;
+						 //R0out = 1;   // source register
+							 Grb = 1;
+							 Rout = 1;
+						 Yin = 1;
 			end
 
 			rot4: begin
-						 //R0out <= 0;
-							 Grb <= 0;
-							 Rout <= 0;
-						 Yin <= 0;
+						 //R0out = 0;
+							 Grb = 0;
+							 Rout = 0;
+						 Yin = 0;
 
-						 //R4out <= 1;     // rotate count
-							 Grc <= 1;
-							 Rout <= 1;
-						 Zlowin <= 1;
-						 Zhighin <= 1;
+						 //R4out = 1;     // rotate count
+							 Grc = 1;
+							 Rout = 1;
+						 Zlowin = 1;
+						 Zhighin = 1;
 			end
 
 
 			rot5: begin
-						 //R4out <= 0;
-							 Grc <= 0;
-							 Rout <= 0;
-						 Zlowin <= 0;
-						 Zhighin <= 0;
+						 //R4out = 0;
+							 Grc = 0;
+							 Rout = 0;
+						 Zlowin = 0;
+						 Zhighin = 0;
 
-						 Zlowout <= 1;
-						 //R7in <= 1;
-							 Gra <= 1;
-							 Rin <= 1;
+						 Zlowout = 1;
+						 //R7in = 1;
+							 Gra = 1;
+							 Rin = 1;
 			end
 
 			rot6: begin
-						 Zlowout <= 0;
-						 //R7in <= 0;
-							 Gra <= 0;
-							 Rin <= 0;
+						 Zlowout = 0;
+						 //R7in = 0;
+							 Gra = 0;
+							 Rin = 0;
 			end
 
 
 
 			imm3: begin
-								 MDRout <= 0; IRin   <= 0;
-								 Grb    <= 1; Rout   <= 1; Yin    <= 1;
+								 MDRout = 0; IRin   = 0;
+								 Grb    = 1; Rout   = 1; Yin    = 1;
 			end
 
 			imm4: begin
-								 Grb    <= 0; Rout   <= 0; Yin    <= 0;
-								 Cout   <= 1; Zhighin<= 1; Zlowin <= 1;
+								 Grb    = 0; Rout   = 0; Yin    = 0;
+								 Cout   = 1; Zhighin= 1; Zlowin = 1;
 			end
 
 			imm5: begin
-								 Cout   <= 0; Zhighin<= 0; Zlowin <= 0;
-								 Zlowout<= 1; Gra    <= 1; Rin    <= 1;
+								 Cout   = 0; Zhighin= 0; Zlowin = 0;
+								 Zlowout= 1; Gra    = 1; Rin    = 1;
 			end
 
 			imm6: begin
-								 Zlowout<= 0; Gra    <= 0; Rin    <= 0;
+								 Zlowout= 0; Gra    = 0; Rin    = 0;
 			end
 
 			in3: begin
-								 MDRout <= 0; IRin   <= 0;
-							Gra <= 1; Rin <= 1; InPortout <= 1;
+								 MDRout = 0; IRin   = 0;
+							Gra = 1; Rin = 1; InPortout = 1;
 			end
 
 			in4: begin
-								 Gra <= 0; Rin <= 0; InPortout <= 0;
+								 Gra = 0; Rin = 0; InPortout = 0;
 			end
 
 			out3: begin
-								 MDRout <= 0; IRin   <= 0;
-							Gra <= 1; Rout <= 1; OutPortin <= 1;
+								 MDRout = 0; IRin   = 0;
+							Gra = 1; Rout = 1; OutPortin = 1;
 			end
 
 			out4: begin
-								 Gra <= 0; Rout <= 0; OutPortin <= 0;
+								 Gra = 0; Rout = 0; OutPortin = 0;
 			end
 
 			mfhi3: begin
-								 MDRout <= 0; IRin   <= 0;
-								 HIout <= 1;
-								 Gra   <= 1;
-								 Rin   <= 1;
+								 MDRout = 0; IRin   = 0;
+								 HIout = 1;
+								 Gra   = 1;
+								 Rin   = 1;
 			end
 			mfhi4: begin
-								 HIout <= 0;
-								 Gra   <= 0;
-								 Rin   <= 0;
+								 HIout = 0;
+								 Gra   = 0;
+								 Rin   = 0;
 			end
 
 			mflo3: begin
-								 MDRout <= 0; IRin   <= 0;
-								 LOout <= 1;
-								 Gra   <= 1;
-								 Rin   <= 1;
+								 MDRout = 0; IRin   = 0;
+								 LOout = 1;
+								 Gra   = 1;
+								 Rin   = 1;
 			end
 
 			mflo4: begin
-								 LOout <= 0;
-								 Gra   <= 0;
-								 Rin   <= 0;
+								 LOout = 0;
+								 Gra   = 0;
+								 Rin   = 0;
 			end
 			sh3: begin
                 Grb = 1;
