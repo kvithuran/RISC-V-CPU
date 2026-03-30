@@ -13,7 +13,7 @@ parameter 	reset_state = 8'b00000000, fetch0 = 8'b00000001, fetch1 = 8'b00000010
 				load3 = 8'b00001101, load4 = 8'b00001110, load5 = 8'b00001111, load6 = 8'b00010000, load7 = 8'b00010001, load8 = 8'b00010010,
 				loadi3 = 8'b00010011, loadi4 = 8'b00010100, loadi5 = 8'b00010101, loadi6 = 8'b00010110,
 				store3 = 8'b00010111, store4 = 8'b00011000, store5 = 8'b00011001, store6 = 8'b00011010, store7 = 8'b00011011, store8 = 8'b00011100,
-				halt3 = 8'b00011101, fetch1b = 8'b00011110;
+				halt3 = 8'b00011101, fetch1b = 8'b00011110; branch3 = 8'b00011111, branch4 = 8'b00100000, branch5 = 8'b00100001, branch6 = 8'b00100010, nop3 = 8'b00100011
 	reg 			[7:0] present_state = reset_state; // adjust the bit pattern based on the number of states
 	
 	
@@ -92,6 +92,11 @@ always @(posedge Clock, posedge Reset) // finite state machine; if clock or rese
 			store6: present_state = store7;
 			store7: present_state = store8;
 			store8: present_state = fetch0;
+			branch3: present_state = branch4;
+			branch4: present_state = branch5;
+			branch5: present_state = branch6;
+			branch6: present_state = fetch0;
+			nop3:    present_state = fetch0;
 			halt3: present_state = halt3;
 			//⁞
 		endcase
@@ -255,6 +260,27 @@ always @(present_state) // do the job for each state : HERE PUT YOUR ACTUAL CLOC
 			end
 			store8: begin
 				write <= 0;
+			end
+			branch3: begin
+    			MDRout <= 0; IRin <= 0;
+    			Gra <= 1; Rout <= 1; CONin <= 1; 
+			end
+			branch4: begin
+    			Gra <= 0; Rout <= 0; CONin <= 0;
+    			PCout <= 1; Yin <= 1;             
+			end
+			branch5: begin
+   				PCout <= 0; Yin <= 0;
+    			Cout <= 1; Zhighin <= 1; Zlowin <= 1; 
+			end
+			branch6: begin
+    			Cout <= 0; Zhighin <= 0; Zlowin <= 0;
+   			 	Zlowout <= 1;
+    			if (Con_FF) PCin <= 1;            
+    			else        PCin <= 0;
+			end
+			nop3: begin
+    			MDRout <= 0; IRin <= 0;           
 			end
 			halt3: begin
 				
