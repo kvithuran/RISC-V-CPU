@@ -1,7 +1,7 @@
 module DatapathP2(
     input wire clock
 	output wire CON
-    input wire Reset, Stop, Con_FF
+    input wire Reset, Stop,
 );
 
 wire clear;
@@ -122,7 +122,7 @@ control_unit control_unit(
     .read(read), .write(write), .IncPC(IncPC), .Grb(Grb), .Gra(Gra), .Grc(Grc),
     .Rout(Rout), .Rin(Rin), .BAout(BAout),
     .IR(BusMuxInIR)
-    .Reset(Reset), .Stop(Stop), .Con_FF(Con_FF)
+	.Reset(Reset), .Stop(Stop), .Con_FF(CON)
 );
 
 endmodule
