@@ -3,7 +3,7 @@ module control_unit (
 	output reg 		clear, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, InPortout, Cout, IRout, MARout, OutPortout,
 					HIin, LOin, Zhighin, Zlowin, PCin, MDRin, InPortin, Cin, IRin, Yin, MARin, OutPortin, CONin,
 					read, write, IncPC, Grb, Gra, Grc,
-					Rout, Rin, BAout,	
+					Rout, Rin, BAout, R12ForceIn,
 	input 		[31:0] IR,
 	input 		clock, Reset, Stop, Con_FF);
 	
@@ -17,7 +17,7 @@ parameter reset_state = 8'b00000000, fetch0 = 8'b00000001, fetch1 = 8'b00000010,
     sh3 = 8'b00100100, rot3 = 8'b00100101, imm3 = 8'b00100110, muldiv3 = 8'b00100111, negnot3 = 8'b00101000, jal3 = 8'b00101001, jr3 = 8'b00101010, in3 = 8'b00101011, out3 = 8'b00101100, mfhi3 = 8'b00101101, mflo3 = 8'b00101110,
     load9 = 8'b00101111, fetch3 = 8'b00110000, mfhi4 = 8'b00110001, mflo4 = 8'b00110010,
     rot4 = 8'b00110101, rot5 = 8'b00110110, rot6 = 8'b00110111, imm4 = 8'b00111000, imm5 = 8'b00111001, imm6 = 8'b00111010,
-    in4 = 8'b00111011, out4 = 8'b00111100, muldiv4 = 8'b00111101, muldiv5 = 8'b00111110, muldiv6 = 8'b00111111, negnot4 = 8'b01000000, negnot5 = 8'b01000001, sh4 = 8'b01000010, sh5 = 8'b01000011, sh6 = 8'b01000100, jr4 = 8'b01000101, jal4 = 8'b01000110, jal5 = 8'b01000111, branch7 = 8'b01001000;
+    in4 = 8'b00111011, out4 = 8'b00111100, muldiv4 = 8'b00111101, muldiv5 = 8'b00111110, muldiv6 = 8'b00111111, negnot4 = 8'b01000000, negnot5 = 8'b01000001, sh4 = 8'b01000010, sh5 = 8'b01000011, sh6 = 8'b01000100, jr4 = 8'b01000101, jal4 = 8'b01000110, jal5 = 8'b01000111;
 				
 	reg [7:0] present_state = reset_state; // adjust the bit pattern based on the number of states
 	
@@ -101,8 +101,7 @@ always @(posedge clock, posedge Reset) // finite state machine; if clock or rese
 			branch3: present_state = branch4;
 			branch4: present_state = branch5;
 			branch5: present_state = branch6;
-			branch6: present_state = branch7;
-			branch7: present_state = fetch0;
+			branch6: present_state = fetch0;
 			nop3:    present_state = fetch0;
 			halt3: present_state = halt3;
 			muldiv3: present_state = muldiv4;
@@ -320,10 +319,6 @@ always @(present_state) // do the job for each state : HERE PUT YOUR ACTUAL CLOC
     			if (Con_FF) PCin = 1;            
     			else        PCin = 0;
 			end
-			branch7: begin
-					Zlowout = 0;
-					PCin = 0;
-			end
 			nop3: begin 
 
 			end
@@ -457,7 +452,7 @@ always @(present_state) // do the job for each state : HERE PUT YOUR ACTUAL CLOC
 			end
 
 			in4: begin
-								 Gra = 0; Rin = 0; InPortout = 0;
+								Gra = 0; Rin = 0; InPortout = 0;
 			end
 
 			out3: begin

@@ -12,7 +12,7 @@ wire read, write, IncPC, Grb, Gra, Grc;
 wire Rout, Rin, BAout;
 wire R0in,R1in,R2in,R3in,R4in,R5in,R6in,R7in,R8in,R9in,R10in,R11in,R12in,R13in,R14in,R15in;
 wire R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out;
-
+wire R12ForceIn;
 wire [31:0] Mdatain;
 
 //Outputs from each register to go to bus multiplexer.
@@ -112,7 +112,7 @@ Bus bus( //Mux
     BusMuxOut);
 
 
-	Select_and_Encode Select_and_Encode(BusMuxInIR, Gra, Grb, Grc, Rin, Rout, BAout, Cout, 
+	Select_and_Encode Select_and_Encode(BusMuxInIR, Gra, Grb, Grc, R12ForceIn, Rin, Rout, BAout, Cout, 
 												R0in, R1in, R2in, R3in, R4in, R5in, R6in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in,
 												R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out, BusMuxInCSignExtended);
 
@@ -122,7 +122,7 @@ control_unit control_unit(
     .read(read), .write(write), .IncPC(IncPC), .Grb(Grb), .Gra(Gra), .Grc(Grc),
     .Rout(Rout), .Rin(Rin), .BAout(BAout),
     .IR(BusMuxInIR),
-	.Reset(Reset), .Stop(Stop), .Con_FF(CON)
+	.Reset(Reset), .Stop(Stop), .Con_FF(CON), .R12ForceIn(R12ForceIn)
 );
 
 endmodule
