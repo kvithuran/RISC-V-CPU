@@ -18,7 +18,7 @@ parameter reset_state = 8'b00000000, fetch0 = 8'b00000001, fetch1 = 8'b00000010,
     load9 = 8'b00101111, fetch3 = 8'b00110000, mfhi4 = 8'b00110001, mflo4 = 8'b00110010,
     rot4 = 8'b00110101, rot5 = 8'b00110110, rot6 = 8'b00110111, imm4 = 8'b00111000, imm5 = 8'b00111001, imm6 = 8'b00111010,
     in4 = 8'b00111011, out4 = 8'b00111100, muldiv4 = 8'b00111101, muldiv5 = 8'b00111110, muldiv6 = 8'b00111111, negnot4 = 8'b01000000, negnot5 = 8'b01000001, sh4 = 8'b01000010, sh5 = 8'b01000011, sh6 = 8'b01000100, jr4 = 8'b01000101, jal4 = 8'b01000110, jal5 = 8'b01000111,
-	branch7 = 8'b01001000;
+	branch7 = 8'b01001000, muldiv7 = 8'b01001001;
 				
 	reg [7:0] present_state = reset_state; // adjust the bit pattern based on the number of states
 	
@@ -109,7 +109,8 @@ always @(posedge clock, posedge Reset) // finite state machine; if clock or rese
 			muldiv3: present_state = muldiv4;
 			muldiv4: present_state = muldiv5;
 			muldiv5: present_state = muldiv6;
-			muldiv6: present_state = fetch0;
+			muldiv6: present_state = muldiv7;
+			muldiv7: present_state = fetch0;
 			negnot3: present_state = negnot4;
 			negnot4: present_state = negnot5;
 			negnot5: present_state = fetch0;
@@ -354,7 +355,9 @@ always @(present_state) // do the job for each state : HERE PUT YOUR ACTUAL CLOC
 			muldiv6: begin
 						Zlowout = 0; LOin = 0;
 						Zhighout = 1; HIin = 1;
-						#20 Zhighout = 0; HIin =0;
+			end
+			muldiv7: begin
+						Zhighout = 0; HIin =0;
 			end
 
 			negnot3: begin
