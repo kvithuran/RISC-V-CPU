@@ -7,18 +7,19 @@ module control_unit (
 	input 		[31:0] IR,
 	input 		clock, Reset, Stop, Con_FF);
 	
-parameter 	reset_state = 8'b00000000, fetch0 = 8'b00000001, fetch1 = 8'b00000010, fetch2 = 8'b00000011,
-				addsub3 = 8'b00000100, addsub4 = 8'b00000101, addsub5 = 8'b00000110, addsub6 = 8'b00000111, addsub7 = 8'b00001000,
-				andor3 = 8'b00001001, andor4 = 8'b00001010, andor5 = 8'b00001011, andor6 = 8'b00001100,
-				load3 = 8'b00001101, load4 = 8'b00001110, load5 = 8'b00001111, load6 = 8'b00010000, load7 = 8'b00010001, load8 = 8'b00010010,
-				loadi3 = 8'b00010011, loadi4 = 8'b00010100, loadi5 = 8'b00010101, loadi6 = 8'b00010110,
-				store3 = 8'b00010111, store4 = 8'b00011000, store5 = 8'b00011001, store6 = 8'b00011010, store7 = 8'b00011011, store8 = 8'b00011100,
-				halt3 = 8'b00011101, fetch1b = 8'b00011110, branch3 = 8'b00011111, branch4 = 8'b00100000, branch5 = 8'b00100001, branch6 = 8'b00100010, nop3 = 8'b00100011, 
-				sh3 =8'b00100100, rot3 = 8'b00100101, imm3 = 8'b00100110, muldiv3 = 8'b00100111, negnot3 = 8'b00101000, jal3 = 8'b00101001, jr3 = 8'b00101010, in3 = 8'b00101011, out3 = 8'b00101100, mfhi3 = 8'b00101101, mflo3 = 8'b00101110,
-				load9 = 8'b00101111, fetch3 = 8'b00110000, mfhi4 = 8'b00110000, mflo4 = 8'b00110001, sh4 = 8'b00110010, sh5 = 8'b00110011, sh6 = 8'b00110100, rot4 = 8'b00110101, rot5 = 8'b00110110, rot6 = 8'b00110111, imm4 = 8'b00111000, imm5 = 8'b00111001, imm6 = 8'b00111010,
-				in4 = 8'b00111011, out4 = 8'b00111100, muldiv4 = 8'b00111101, muldiv5 = 8'b00111110, muldiv6 = 8'b00111111, negnot4 = 8'b01000000, negnot5 = 8'b01000001;
-
-				reg [7:0] present_state = reset_state; // adjust the bit pattern based on the number of states
+parameter reset_state = 8'b00000000, fetch0 = 8'b00000001, fetch1 = 8'b00000010, fetch2 = 8'b00000011,
+    addsub3 = 8'b00000100, addsub4 = 8'b00000101, addsub5 = 8'b00000110, addsub6 = 8'b00000111, addsub7 = 8'b00001000,
+    andor3 = 8'b00001001, andor4 = 8'b00001010, andor5 = 8'b00001011, andor6 = 8'b00001100,
+    load3 = 8'b00001101, load4 = 8'b00001110, load5 = 8'b00001111, load6 = 8'b00010000, load7 = 8'b00010001, load8 = 8'b00010010,
+    loadi3 = 8'b00010011, loadi4 = 8'b00010100, loadi5 = 8'b00010101, loadi6 = 8'b00010110,
+    store3 = 8'b00010111, store4 = 8'b00011000, store5 = 8'b00011001, store6 = 8'b00011010, store7 = 8'b00011011, store8 = 8'b00011100,
+    halt3 = 8'b00011101, fetch1b = 8'b00011110, branch3 = 8'b00011111, branch4 = 8'b00100000, branch5 = 8'b00100001, branch6 = 8'b00100010, nop3 = 8'b00100011,
+    sh3 = 8'b00100100, rot3 = 8'b00100101, imm3 = 8'b00100110, muldiv3 = 8'b00100111, negnot3 = 8'b00101000, jal3 = 8'b00101001, jr3 = 8'b00101010, in3 = 8'b00101011, out3 = 8'b00101100, mfhi3 = 8'b00101101, mflo3 = 8'b00101110,
+    load9 = 8'b00101111, fetch3 = 8'b00110000, mfhi4 = 8'b00110001, mflo4 = 8'b00110010,
+    rot4 = 8'b00110101, rot5 = 8'b00110110, rot6 = 8'b00110111, imm4 = 8'b00111000, imm5 = 8'b00111001, imm6 = 8'b00111010,
+    in4 = 8'b00111011, out4 = 8'b00111100, muldiv4 = 8'b00111101, muldiv5 = 8'b00111110, muldiv6 = 8'b00111111, negnot4 = 8'b01000000, negnot5 = 8'b01000001, sh4 = 8'b01000010, sh5 = 8'b01000011, sh6 = 8'b01000100, jr4 = 8'b01000101, jal4 = 8'b01000110, jal5 = 8'b01000111;
+				
+	reg [7:0] present_state = reset_state; // adjust the bit pattern based on the number of states
 	
 	
 always @(posedge clock, posedge Reset) // finite state machine; if clock or reset rising-edge
@@ -126,6 +127,15 @@ always @(posedge clock, posedge Reset) // finite state machine; if clock or rese
 			mfhi4: present_state = fetch0;
 			mflo3: present_state = mflo4;
 			mflo4: present_state = fetch0;
+			sh3: present_state = sh4;
+			sh4: present_state = sh5;
+			sh5: present_state = sh6;
+			sh6: present_state = fetch0;
+			jr3: present_state = jr4;
+			jr4: present_state = fetch0;
+			jal3: present_state = jal4;
+			jal4: present_state = jal5;
+			jal5: present_state = fetch0;
 
 			
 			//⁞
@@ -301,10 +311,10 @@ always @(present_state) // do the job for each state : HERE PUT YOUR ACTUAL CLOC
 			end
 			branch5: begin
    				PCout = 0; Yin = 0;
-    			Cout = 1; Zhighin = 1; Zlowin = 1; 
+					Cout = 1; Zhighin = 1; Zlowin = 1; 
 			end
 			branch6: begin
-    			Cout = 0; Zhighin = 0; Zlowin = 0;
+					Cout = 0; Zhighin = 0; Zlowin = 0;
    			 	Zlowout = 1;
     			if (Con_FF) PCin = 1;            
     			else        PCin = 0;
@@ -478,7 +488,47 @@ always @(present_state) // do the job for each state : HERE PUT YOUR ACTUAL CLOC
 								 Gra   <= 0;
 								 Rin   <= 0;
 			end
-				
+			sh3: begin
+                Grb = 1;
+					 Rout = 1;
+                Yin   = 1;
+			end
+			sh4: begin
+					 Grb = 0; Rout = 0; Yin = 0;  // de-assert sh3 signals
+					 Grc = 1; Rout = 1;
+					 Zlowin = 1; Zhighin = 1;
+			end
+			sh5: begin
+			       Zlowout = 1;
+                Gra = 1;
+					 Rin = 1;
+			end
+			sh6: begin 
+					 Zlowout = 0;
+					 Gra = 0;
+					 Rin = 0;
+			end
+			jr3: begin
+					MDRout = 0; IRin = 0;
+					Gra = 1; Rout = 1; PCin = 1;
+			end
+
+			jr4: begin
+					Gra = 0; Rout = 0; PCin = 0;
+			end
+
+			jal3: begin
+				MDRout = 0; IRin = 0;
+				PCout = 1; Grb = 1; Rin = 1;
+			end
+			jal4: begin
+				PCout = 0; Grb = 0; Rin = 0;
+				Gra = 1; Rout = 1; PCin = 1;
+			end
+			jal5: begin
+				Gra = 0; Rout = 0; PCin = 0;
+			end
+			
 		endcase
 	end
 endmodule

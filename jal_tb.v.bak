@@ -78,7 +78,6 @@ module jal_tb;
 					 DUT.R4.q  = 32'h000000AA;
 					 DUT.R12.q = 32'h00000000;
 					 DUT.PC.q  = 32'h00000010;
-					 DUT.ram.Memory[17] = 32'h99180000;
             end
 
             T0: begin
