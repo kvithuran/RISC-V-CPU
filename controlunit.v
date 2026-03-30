@@ -15,7 +15,9 @@ parameter 	reset_state = 8'b00000000, fetch0 = 8'b00000001, fetch1 = 8'b00000010
 				store3 = 8'b00010111, store4 = 8'b00011000, store5 = 8'b00011001, store6 = 8'b00011010, store7 = 8'b00011011, store8 = 8'b00011100,
 				halt3 = 8'b00011101, fetch1b = 8'b00011110, branch3 = 8'b00011111, branch4 = 8'b00100000, branch5 = 8'b00100001, branch6 = 8'b00100010, nop3 = 8'b00100011, 
 				sh3 =8'b00100100, rot3 = 8'b00100101, imm3 = 8'b00100110, muldiv3 = 8'b00100111, negnot3 = 8'b00101000, jal3 = 8'b00101001, jr3 = 8'b00101010, in3 = 8'b00101011, out3 = 8'b00101100, mfhi3 = 8'b00101101, mflo3 = 8'b00101110,
-				load9 = 8'b00101111, fetch3 = 8'b00110000;
+				load9 = 8'b00101111, fetch3 = 8'b00110000, mfhi4 = 8'b00110000, mflo4 = 8'b00110001, sh4 = 8'b00110010, sh5 = 8'b00110011, sh6 = 8'b00110100, rot4 = 8'b00110101, rot5 = 8'b00110110, rot6 = 8'b00110111, imm4 = 8'b00111000, imm5 = 8'b00111001, imm6 = 8'b00111010,
+				in4 = 8'b00111011, out4 = 8'b00111100, muldiv4 = 8'b00111101, muldiv5 = 8'b00111110, muldiv6 = 8'b00111111, negnot4 = 8'b01000000, negnot5 = 8'b01000001;
+
 				reg [7:0] present_state = reset_state; // adjust the bit pattern based on the number of states
 	
 	
@@ -101,6 +103,31 @@ always @(posedge clock, posedge Reset) // finite state machine; if clock or rese
 			branch6: present_state = fetch0;
 			nop3:    present_state = fetch0;
 			halt3: present_state = halt3;
+			muldiv3: present_state = muldiv4;
+			muldiv4: present_state = muldiv5;
+			muldiv5: present_state = muldiv6;
+			muldiv6: present_state = fetch0;
+			negnot3: present_state = negnot4;
+			negnot4: present_state = negnot5;
+			negnot5: present_state = fetch0;
+			rot3: present_state = rot4;
+			rot4: present_state = rot5;
+			rot5: present_state = rot6;
+			rot6: present_state = fetch0;
+			imm3: present_state = imm4;
+			imm4: present_state = imm5;
+			imm5: present_state = imm6;
+			imm6: present_state = fetch0;
+			in3: present_state = in4;
+			in4: present_state = fetch0;
+			out3: present_state = out4;
+			out4: present_state = fetch0;
+			mfhi3: present_state = mfhi4;
+			mfhi4: present_state = fetch0;
+			mflo3: present_state = mflo4;
+			mflo4: present_state = fetch0;
+
+			
 			//⁞
 		endcase
 	end
@@ -287,6 +314,169 @@ always @(present_state) // do the job for each state : HERE PUT YOUR ACTUAL CLOC
 			end
 			halt3: begin
 
+			end
+			muldiv3: begin
+			MDRout <= 0; IRin <= 0;
+			Gra <= 1; Yin <= 1;
+            Rout <= 1;
+			end
+
+
+			muldiv4: begin
+						Gra <= 0; Yin <= 0;
+						Rout <= 0;
+						Grb <= 1; 
+							Rout <= 1;
+						Zlowin <= 1;
+						Zhighin <= 1;
+			end
+
+			muldiv5: begin
+						Grb <= 0; Rout <= 0; Zlowin <= 0; Zhighin <= 0;
+						Zlowout <= 1; LOin <= 1;
+			end
+
+			muldiv6: begin
+						Zlowout <= 0; LOin <= 0;
+						Zhighout <= 1; HIin <= 1;
+						#20 Zhighout <= 0; HIin <=0;
+			end
+
+			negnot3: begin
+						 MDRout <= 0;
+						 IRin <= 0;
+							 Grb <= 1;
+							 Rout <= 1;
+						 Zlowin <= 1;
+			end
+
+			negnot4: begin
+						 //R7out <= 0;
+						 Grb <= 0;
+							 Rout <= 0;
+							 Zlowin <= 0;
+
+						 Zlowout <= 1;
+						 //R4in <= 1;
+							 Gra <= 1;
+							 Rin <= 1;
+			end
+
+			negnot5: begin
+						 Zlowout <= 0;
+						 //R4in <= 0;
+							 Gra <= 0;
+							 Rin <= 0;
+			end
+
+
+
+			rot3: begin
+						 MDRout <= 0;
+						 IRin <= 0;
+
+						 //R0out <= 1;   // source register
+							 Grb <= 1;
+							 Rout <= 1;
+						 Yin <= 1;
+			end
+
+			rot4: begin
+						 //R0out <= 0;
+							 Grb <= 0;
+							 Rout <= 0;
+						 Yin <= 0;
+
+						 //R4out <= 1;     // rotate count
+							 Grc <= 1;
+							 Rout <= 1;
+						 Zlowin <= 1;
+						 Zhighin <= 1;
+			end
+
+
+			rot5: begin
+						 //R4out <= 0;
+							 Grc <= 0;
+							 Rout <= 0;
+						 Zlowin <= 0;
+						 Zhighin <= 0;
+
+						 Zlowout <= 1;
+						 //R7in <= 1;
+							 Gra <= 1;
+							 Rin <= 1;
+			end
+
+			rot6: begin
+						 Zlowout <= 0;
+						 //R7in <= 0;
+							 Gra <= 0;
+							 Rin <= 0;
+			end
+
+
+
+			imm3: begin
+								 MDRout <= 0; IRin   <= 0;
+								 Grb    <= 1; Rout   <= 1; Yin    <= 1;
+			end
+
+			imm4: begin
+								 Grb    <= 0; Rout   <= 0; Yin    <= 0;
+								 Cout   <= 1; Zhighin<= 1; Zlowin <= 1;
+			end
+
+			imm5: begin
+								 Cout   <= 0; Zhighin<= 0; Zlowin <= 0;
+								 Zlowout<= 1; Gra    <= 1; Rin    <= 1;
+			end
+
+			imm6: begin
+								 Zlowout<= 0; Gra    <= 0; Rin    <= 0;
+			end
+
+			in3: begin
+								 MDRout <= 0; IRin   <= 0;
+							Gra <= 1; Rin <= 1; InPortout <= 1;
+			end
+
+			in4: begin
+								 Gra <= 0; Rin <= 0; InPortout <= 0;
+			end
+
+			out3: begin
+								 MDRout <= 0; IRin   <= 0;
+							Gra <= 1; Rout <= 1; OutPortin <= 1;
+			end
+
+			out4: begin
+								 Gra <= 0; Rout <= 0; OutPortin <= 0;
+			end
+
+			mfhi3: begin
+								 MDRout <= 0; IRin   <= 0;
+								 HIout <= 1;
+								 Gra   <= 1;
+								 Rin   <= 1;
+			end
+			mfhi4: begin
+								 HIout <= 0;
+								 Gra   <= 0;
+								 Rin   <= 0;
+			end
+
+			mflo3: begin
+								 MDRout <= 0; IRin   <= 0;
+								 LOout <= 1;
+								 Gra   <= 1;
+								 Rin   <= 1;
+			end
+
+			mflo4: begin
+								 LOout <= 0;
+								 Gra   <= 0;
+								 Rin   <= 0;
 			end
 				
 		endcase
