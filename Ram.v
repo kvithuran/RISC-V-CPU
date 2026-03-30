@@ -34,7 +34,7 @@ module RAM (input clock, input read, input write, input [8:0] Address, input [31
 		//in r5
 		//RAM1[0] = 32'hB2800000;
 		//mfhi
-		RAM1[0] = 32'hC2800000;
+		//RAM1[0] = 32'hC2800000;
 		//mflo
 		//RAM1[0] = 32'hC8800000;
 		
@@ -50,6 +50,17 @@ module RAM (input clock, input read, input write, input [8:0] Address, input [31
 		//RAM1[16] = 32'hA6000000; // jr R12
 		//RAM1[16] = 32'hAA000000; // jal R4
 		//RAM1[17] = 32'hAE000000; // helper word Ra=R12 (bits[26:23]=1100)
+		
+		
+		RAM1[0] = 32'h82800008;
+		RAM1[1] = 32'h83000009;
+		RAM1[2] = 32'h012B0000;
+		RAM1[3] = 32'h09AB0000;
+		RAM1[4] = 32'hD8000000;
+		RAM1[8] = 32'd8;
+		RAM1[9] = 32'd4;
+		
+		
 		end
 	
 	

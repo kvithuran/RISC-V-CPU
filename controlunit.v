@@ -13,14 +13,16 @@ parameter 	reset_state = 8'b00000000, fetch0 = 8'b00000001, fetch1 = 8'b00000010
 				load3 = 8'b00001101, load4 = 8'b00001110, load5 = 8'b00001111, load6 = 8'b00010000, load7 = 8'b00010001, load8 = 8'b00010010,
 				loadi3 = 8'b00010011, loadi4 = 8'b00010100, loadi5 = 8'b00010101, loadi6 = 8'b00010110,
 				store3 = 8'b00010111, store4 = 8'b00011000, store5 = 8'b00011001, store6 = 8'b00011010, store7 = 8'b00011011, store8 = 8'b00011100,
-				halt3 = 8'b00011101, fetch1b = 8'b00011110; branch3 = 8'b00011111, branch4 = 8'b00100000, branch5 = 8'b00100001, branch6 = 8'b00100010, nop3 = 8'b00100011
-	reg 			[7:0] present_state = reset_state; // adjust the bit pattern based on the number of states
+				halt3 = 8'b00011101, fetch1b = 8'b00011110, branch3 = 8'b00011111, branch4 = 8'b00100000, branch5 = 8'b00100001, branch6 = 8'b00100010, nop3 = 8'b00100011, 
+				sh3 =8'b00100100, rot3 = 8'b00100101, imm3 = 8'b00100110, muldiv3 = 8'b00100111, negnot3 = 8'b00101000, jal3 = 8'b00101001, jr3 = 8'b00101010, in3 = 8'b00101011, out3 = 8'b00101100, mfhi3 = 8'b00101101, mflo3 = 8'b00101110,
+				load9 = 8'b00101111;
+				reg [7:0] present_state = reset_state; // adjust the bit pattern based on the number of states
 	
 	
-always @(posedge Clock, posedge Reset) // finite state machine; if clock or reset rising-edge
+always @(posedge clock, posedge Reset) // finite state machine; if clock or reset rising-edge
 	begin
 		if (Reset == 1'b1) present_state = reset_state;
-		else if (stop == 1'b1) present_state = halt3; // define a stop state if needed
+		else if (Stop == 1'b1) present_state = halt3; // define a stop state if needed
 		else case (present_state)
 			reset_state: present_state = fetch0;
 			fetch0: present_state = fetch1;
@@ -81,7 +83,8 @@ always @(posedge Clock, posedge Reset) // finite state machine; if clock or rese
 			load5: present_state = load6;
 			load6: present_state = load7;
 			load7: present_state = load8;
-			load8: present_state = fetch0;
+			load8: present_state = load9;
+			load9: present_state = fetch0;
 			loadi3: present_state = loadi4;
 			loadi4: present_state = loadi5;
 			loadi5: present_state = loadi6;
@@ -204,6 +207,9 @@ always @(present_state) // do the job for each state : HERE PUT YOUR ACTUAL CLOC
 			load8: begin
 				read <= 0; MDRin <= 0;
 				MDRout <= 1;  Gra <= 1; Rin <= 1;
+			end
+			load9: begin
+				MDRout <= 0; Gra <= 0; Rin <= 0;
 			end
 			loadi3: begin
 				MDRout <= 0; IRin <= 0;

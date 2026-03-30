@@ -1,7 +1,7 @@
-module DatapathP3(
-    input wire clock,
-	output wire CON,
-    input wire Reset, Stop
+module DatapathP2(
+    input wire clock
+	output wire CON
+    input wire Reset, Stop,
 );
 
 wire clear;
@@ -121,7 +121,7 @@ control_unit control_unit(
     .HIin(HIin), .LOin(LOin), .Zhighin(Zhighin), .Zlowin(Zlowin), .PCin(PCin), .MDRin(MDRin), .InPortin(InPortin), .Cin(Cin), .IRin(IRin), .Yin(Yin), .MARin(MARin), .OutPortin(OutPortin), .CONin(CONin),
     .read(read), .write(write), .IncPC(IncPC), .Grb(Grb), .Gra(Gra), .Grc(Grc),
     .Rout(Rout), .Rin(Rin), .BAout(BAout),
-    .IR(BusMuxInIR),
+    .IR(BusMuxInIR)
 	.Reset(Reset), .Stop(Stop), .Con_FF(CON)
 );
 

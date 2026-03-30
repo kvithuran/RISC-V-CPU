@@ -162,6 +162,9 @@ module load_tb(output wire CON);
 		read <= 0; MDRin <= 0;
 		MDRout <= 1;  Gra <= 1; Rin <= 1;
 		end
+		T10: begin
+			MDRout <= 0; Gra <= 0; Rin <= 0;
+		end
 	endcase
 end
 endmodule
