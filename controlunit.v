@@ -17,7 +17,8 @@ parameter reset_state = 8'b00000000, fetch0 = 8'b00000001, fetch1 = 8'b00000010,
     sh3 = 8'b00100100, rot3 = 8'b00100101, imm3 = 8'b00100110, muldiv3 = 8'b00100111, negnot3 = 8'b00101000, jal3 = 8'b00101001, jr3 = 8'b00101010, in3 = 8'b00101011, out3 = 8'b00101100, mfhi3 = 8'b00101101, mflo3 = 8'b00101110,
     load9 = 8'b00101111, fetch3 = 8'b00110000, mfhi4 = 8'b00110001, mflo4 = 8'b00110010,
     rot4 = 8'b00110101, rot5 = 8'b00110110, rot6 = 8'b00110111, imm4 = 8'b00111000, imm5 = 8'b00111001, imm6 = 8'b00111010,
-    in4 = 8'b00111011, out4 = 8'b00111100, muldiv4 = 8'b00111101, muldiv5 = 8'b00111110, muldiv6 = 8'b00111111, negnot4 = 8'b01000000, negnot5 = 8'b01000001, sh4 = 8'b01000010, sh5 = 8'b01000011, sh6 = 8'b01000100, jr4 = 8'b01000101, jal4 = 8'b01000110, jal5 = 8'b01000111;
+    in4 = 8'b00111011, out4 = 8'b00111100, muldiv4 = 8'b00111101, muldiv5 = 8'b00111110, muldiv6 = 8'b00111111, negnot4 = 8'b01000000, negnot5 = 8'b01000001, sh4 = 8'b01000010, sh5 = 8'b01000011, sh6 = 8'b01000100, jr4 = 8'b01000101, jal4 = 8'b01000110, jal5 = 8'b01000111,
+	branch7 = 8'b01001000;
 				
 	reg [7:0] present_state = reset_state; // adjust the bit pattern based on the number of states
 	
@@ -101,7 +102,8 @@ always @(posedge clock, posedge Reset) // finite state machine; if clock or rese
 			branch3: present_state = branch4;
 			branch4: present_state = branch5;
 			branch5: present_state = branch6;
-			branch6: present_state = fetch0;
+			branch6: present_state = branch7;
+			branch7: present_state = fetch0;
 			nop3:    present_state = fetch0;
 			halt3: present_state = halt3;
 			muldiv3: present_state = muldiv4;
@@ -319,6 +321,9 @@ always @(present_state) // do the job for each state : HERE PUT YOUR ACTUAL CLOC
     			if (Con_FF) PCin = 1;            
     			else        PCin = 0;
 			end
+			branch7: begin
+				Zlowout = 0; PCin = 0;
+			end
 			nop3: begin 
 
 			end
@@ -519,10 +524,10 @@ always @(present_state) // do the job for each state : HERE PUT YOUR ACTUAL CLOC
 
 			jal3: begin
 				MDRout = 0; IRin = 0;
-				PCout = 1; Grb = 1; Rin = 1;
+				PCout = 1; R12ForceIn = 1;
 			end
 			jal4: begin
-				PCout = 0; Grb = 0; Rin = 0;
+				PCout = 0; R12ForceIn = 0;
 				Gra = 1; Rout = 1; PCin = 1;
 			end
 			jal5: begin
