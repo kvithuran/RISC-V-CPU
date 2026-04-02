@@ -10,9 +10,11 @@ module phase3_running_tb;
 	
 	initial begin
 		clock <= 0;
-		forever #20
+		forever begin 
+		#20
 		clock = ~clock;
 		clock_cycles = clock_cycles + 1;
+		end
 	end
 	
 	initial begin
