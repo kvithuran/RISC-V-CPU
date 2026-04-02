@@ -21,15 +21,22 @@ parameter reset_state = 8'b00000000, fetch0 = 8'b00000001, fetch1 = 8'b00000010,
 	branch7 = 8'b01001000, muldiv7 = 8'b01001001;
 				
 	reg [7:0] present_state = reset_state; // adjust the bit pattern based on the number of states
-	
+	reg [31:0] instructions_executed = 32'd0;
 	
 always @(posedge clock, posedge Reset) // finite state machine; if clock or reset rising-edge
 	begin
 		if (Reset == 1'b1) present_state = reset_state;
 		else if (Stop == 1'b1) present_state = halt3; // define a stop state if needed
 		else case (present_state)
-			reset_state: present_state = fetch0;
-			fetch0: present_state = fetch1;
+			reset_state: begin
+			present_state = fetch0;
+			instructions_executed = 32'd0;
+			end
+			fetch0: begin
+			present_state = fetch1;
+			instructions_executed = instructions_executed + 1;
+			
+			end
 			fetch1: present_state = fetch1b;
 			fetch1b: present_state = fetch2;
 			fetch2: present_state = fetch3;
@@ -77,36 +84,36 @@ always @(posedge clock, posedge Reset) // finite state machine; if clock or rese
 			addsub4: present_state = addsub5;
 			addsub5: present_state = addsub6;
 			addsub6: present_state = addsub7;
-			addsub7: present_state = fetch0;
+			addsub7: present_state = fetch0; //Add/Sub instructions take 10 clock cycles
 			andor3: present_state = andor4;
 			andor4: present_state = andor5;
 			andor5: present_state = andor6;
-			andor6: present_state = fetch0;
-			load3: present_state = load4;
+			andor6: present_state = fetch0; //And/or instructions take 9 clock cycles
+			load3: present_state = load4; //Load instructions take 12 clock cycles
 			load4: present_state = load5;
 			load5: present_state = load6;
 			load6: present_state = load7;
 			load7: present_state = load8;
 			load8: present_state = load9;
 			load9: present_state = fetch0;
-			loadi3: present_state = loadi4;
+			loadi3: present_state = loadi4; //Load immediate instructions take 9 clock cycles
 			loadi4: present_state = loadi5;
 			loadi5: present_state = loadi6;
 			loadi6: present_state = fetch0;
-			store3: present_state = store4;
+			store3: present_state = store4; //Store instructions take 11 clock cycles
 			store4: present_state = store5;
 			store5: present_state = store6;
 			store6: present_state = store7;
 			store7: present_state = store8;
 			store8: present_state = fetch0;
-			branch3: present_state = branch4;
+			branch3: present_state = branch4; //Branch instructions take 10 clock cycles
 			branch4: present_state = branch5;
 			branch5: present_state = branch6;
 			branch6: present_state = branch7;
 			branch7: present_state = fetch0;
-			nop3:    present_state = fetch0;
-			halt3: present_state = halt3;
-			muldiv3: present_state = muldiv4;
+			nop3:    present_state = fetch0; //Nop takes 6 clock cycles
+			halt3: present_state = halt3;    //Halt takes 6 clock cycles
+			muldiv3: present_state = muldiv4; //
 			muldiv4: present_state = muldiv5;
 			muldiv5: present_state = muldiv6;
 			muldiv6: present_state = muldiv7;

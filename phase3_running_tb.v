@@ -6,14 +6,17 @@ module phase3_running_tb;
 	
 	DatapathP3 DP( .clock(clock), .Stop(Stop), .Reset(Reset) );
 	
+	reg [31:0] clock_cycles;
 	
 	initial begin
 		clock <= 0;
 		forever #20
 		clock = ~clock;
+		clock_cycles = clock_cycles + 1;
 	end
 	
 	initial begin
+		clock_cycles = 32'd0;
 		Reset = 1;
 		Stop = 0;
 		#21
